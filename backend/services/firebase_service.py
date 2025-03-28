@@ -1,23 +1,21 @@
-cat << 'EOF' > ~/projects/innerjourney/backend/services/firebase_service.py
-import os
+import json
+from google.cloud import secretmanager
 import firebase_admin
 from firebase_admin import credentials, firestore
 
-# Försök att ladda Firebase-uppgifter från en säker plats
-try:
-    cred_path = os.path.expanduser("~/.secrets/api-keys.json")
-    if os.path.exists(cred_path):
-        cred = credentials.Certificate(cred_path)
-        firebase_admin.initialize_app(cred)
-        db = firestore.client()
-        def save_to_firestore(collection, doc_id, data):
-            db.collection(collection).document(doc_id).set(data)
-    else:
-        print("Firebase credentials not found at ~/.secrets/api-keys.json. Using mock instead.")
-        def save_to_firestore(collection, doc_id, data):
-            print(f"Mock: Saving to {collection}/{doc_id}: {data}")
-except Exception as e:
-    print(f"Failed to initialize Firebase: {e}. Using mock instead.")
-    def save_to_firestore(collection, doc_id, data):
-        print(f"Mock: Saving to {collection}/{doc_id}: {data}")
-EOF
+# Hämta hemligheter från Secret Manager
+def get_secret(secret_name):
+    client = secretmanager.SecretManagerServiceClient()
+    secret_version = f"projects/innerjourney-c007e/secrets/{secret_name}/versions/latest"
+    response = client.access_secret_version(name=secret_version)
+    return response.payload.data.decode("UTF-8")
+
+# Hämta Firebase-uppgifter
+firebase_credentials_json = get_secret("firebase-credentials")
+cred = credentials.Certificate(json.loads(firebase_credentials_json))
+firebase_admin.initialize_app(cred)
+db = firestore.client()
+
+# Spara data till Firestore
+def save_to_firestore(collection, doc_id, data):
+    db.collection(collection).document(doc_id).set(data)

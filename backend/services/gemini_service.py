@@ -1,18 +1,23 @@
 import os
+from google.cloud import secretmanager
 from google.generativeai import GenerativeModel
 import google.generativeai as genai
 
-# Load API key from environment variable
-api_key = os.getenv("GEMINI_API_KEY")
-if not api_key:
-    # Mock if no API key is provided
-    def generate_activation(mood: int, goal: str):
-        return '{"title": "Mock Step", "description": "This is a mock step for testing."}'
-else:
-    genai.configure(api_key=api_key)
-    model = GenerativeModel("gemini-pro")
+# Hämta hemligheter från Secret Manager
+def get_secret(secret_name):
+    client = secretmanager.SecretManagerServiceClient()
+    secret_version = f"projects/innerjourney-c007e/secrets/{secret_name}/versions/latest"
+    response = client.access_secret_version(name=secret_version)
+    return response.payload.data.decode("UTF-8")
 
-    def generate_activation(mood: int, goal: str):
-        prompt = f"Given mood {mood}/5 and goal '{goal}', suggest a small step for personal development in JSON format."
-        response = model.generate_content(prompt)
-        return response.text
+# Hämta Gemini API-nyckel
+api_key = get_secret("gemini-api-key")
+genai.configure(api_key=api_key)
+
+# Definiera modellen och generera aktivering
+model = GenerativeModel("gemini-1.5-pro")
+
+def generate_activation(mood: int, goal: str):
+    prompt = f"Given mood {mood}/5 and goal '{goal}', suggest a small step for personal development in JSON format."
+    response = model.generate_content(prompt)
+    return response.text
