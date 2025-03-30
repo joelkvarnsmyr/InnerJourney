@@ -1,7 +1,7 @@
 from fastapi import APIRouter
-from backend.services.gemini_service import generate_activation
-from backend.services.firebase_service import save_to_firestore
-from backend.models.activation import ActivationRequest, ActivationResponse
+from services.gemini_service import generate_activation
+from services.firebase_service import save_to_firestore
+from models.activation import ActivationRequest, ActivationResponse
 import json
 import logging
 

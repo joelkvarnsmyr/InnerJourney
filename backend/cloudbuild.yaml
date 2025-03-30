@@ -1,0 +1,25 @@
+steps:
+  # Steg 1: Bygg Docker-imagen för backend
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/innerjourney-backend', '.']
+    dir: 'backend'
+
+  # Steg 2: Pusha Docker-imagen till Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/innerjourney-backend']
+
+  # Steg 3: Distribuera till Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'innerjourney-backend'
+      - '--image=gcr.io/$PROJECT_ID/innerjourney-backend'
+      - '--platform=managed'
+      - '--region=europe-west1'
+      - '--allow-unauthenticated'
+    entrypoint: 'gcloud'
+
+# Artifacts som skapas
+images:
+  - 'gcr.io/$PROJECT_ID/innerjourney-backend'

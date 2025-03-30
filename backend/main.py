@@ -2,7 +2,7 @@ import os
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from backend.routes import gemini  # Importera routern från gemini.py
+from routes import gemini  # Importera routern från gemini.py
 
 app = FastAPI()
 
