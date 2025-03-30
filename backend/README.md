@@ -167,7 +167,7 @@ gcloud run deploy innerjourney-backend \
 Efter deployment får du en publik URL, t.ex. `https://innerjourney-backend-xxxxxxxxxx.europe-west1.run.app`. Testa den:
 
 ```bash
-curl -X POST "https://innerjourney-backend-xxxxxxxxxx.europe-west1.run.app/gemini/getActivation" \
+curl -X POST "https://innerjourney-backend-975065734812.europe-west1.run.app/gemini/getActivation" \
 -H "Content-Type: application/json" \
 -d '{"mood": 2, "goal": "komma igång"}'
 ```
