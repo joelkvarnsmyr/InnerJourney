@@ -1,0 +1,16 @@
+{
+  "name": "innerjourney",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.5.3"
+  },
+  "private": true
+},
+  "proxy": "https://innerjourney-backend-975065734812.europe-west1.run.app"
+}
