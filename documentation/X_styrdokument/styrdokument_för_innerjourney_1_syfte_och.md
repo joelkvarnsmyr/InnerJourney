@@ -45,7 +45,7 @@
 ### Frontend
 
 -   **Navigering:** `React Router` för smidig sidnavigering.
--   **Komponenter:** Återanvändbara komponenter som `BirthdayInput.tsx` och `AstroResults.tsx`.
+-   **Komponenter:** Återanvändbara komponenter som `ActivationForm.tsx` och `AstroResults.tsx`.
 -   **State management:** `React Context` eller `Redux` för global tillståndshantering.
 
 ## 5. Säkerhet

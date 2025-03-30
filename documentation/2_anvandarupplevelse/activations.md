@@ -304,7 +304,7 @@ Användaren loggar sina upplevelser via appens terminalgränssnitt:
 
 *   **activationId:** `limit_beliefs_001`
 *   **title:** "Bryta Begränsande Övertygelser"
-*   **description:** Följ instruktionerna i terminalen och besvara AI-frågor för att identifiera och omforma begränsande övertygelser.
+*   **description:** Följ instruktionerna och besvara AI-frågor för att identifiera och omforma begränsande övertygelser.
 *   **duration:** 30 minuter
 *   **activation_type:** `ai_assessment`
 *   **category_id:** `manifest`

@@ -66,7 +66,7 @@ Backend är live och tillgänglig via sin `Cloud Run`-URL. Frontend är konfigur
 
 ### Att Göra
 *   Bygg och deploya den nuvarande versionen av frontend till `Firebase Hosting` genom att köra kommandona `npm run build` (i `frontend/`-mappen) följt av `firebase deploy --only hosting`.
-*   Slutför implementationen av API-anrop i `frontend/src/api.ts` och integrera dessa med relevanta frontend-komponenter (t.ex., koppla anropet för att spara födelsedata till formuläret i `BirthdayInput.tsx` eller motsvarande komponent).
+*   Slutför implementationen av API-anrop i `frontend/src/api.ts` och integrera dessa med relevanta frontend-komponenter (t.ex., koppla anropet för att spara födelsedata till formuläret i `ActivationForm.tsx` eller motsvarande komponent).
 *   Planera och implementera ytterligare funktioner i nästa iteration, såsom:
     *   Telefonverifiering under onboarding.
     *   Sidor/komponenter för att visa sparade reflektioner eller astrologisk data hämtad från backend.
