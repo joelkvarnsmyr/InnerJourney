@@ -1,49 +1,50 @@
-import { createContext, useContext, useState, useEffect } from 'react';
-import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
-import app from '../services/firebase';
+import { createContext, useContext, useState } from 'react';
+import { auth } from '../firebase';
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 
 interface AuthContextType {
-    user: any;
-    login: (email: string, password: string) => Promise<any>;
-    register: (email: string, password: string) => Promise<any>;
+    login: (email: string, password: string) => Promise<void>;
+    register: (email: string, password: string) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export function AuthProvider({ children }: { children: React.ReactNode }) {
-    const [user, setUser] = useState<any>(null);
-    const auth = getAuth(app);
-
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            setUser(currentUser);
-        });
-        return () => unsubscribe();
-    }, []);
-
-    const login = async (email: string, password: string) => {
-        const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        setUser(userCredential.user);
-        return userCredential.user;
-    };
-
-    const register = async (email: string, password: string) => {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        setUser(userCredential.user);
-        return userCredential.user;
-    };
-
-    return (
-        <AuthContext.Provider value={{ user, login, register }}>
-            {children}
-        </AuthContext.Provider>
-    );
-}
-
 export const useAuth = () => {
     const context = useContext(AuthContext);
     if (!context) {
-        throw new Error('useAuth must be used within an AuthProvider');
+        throw new Error('useAuth måste användas inom en AuthProvider');
     }
     return context;
+};
+
+export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+    const [loading, setLoading] = useState(false);
+
+    const login = async (email: string, password: string) => {
+        setLoading(true);
+        try {
+            await signInWithEmailAndPassword(auth, email, password);
+        } catch (error: any) {
+            throw new Error(error.message);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const register = async (email: string, password: string) => {
+        setLoading(true);
+        try {
+            await createUserWithEmailAndPassword(auth, email, password);
+        } catch (error: any) {
+            throw new Error(error.message);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    return (
+        <AuthContext.Provider value={{ login, register }}>
+            {children}
+        </AuthContext.Provider>
+    );
 };

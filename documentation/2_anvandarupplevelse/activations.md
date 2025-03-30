@@ -1,28 +1,28 @@
 # Aktiveringar
 
-**Version:** 3
-**Datum:** 2025-03-19
-**Författare:** Bo Joel Kvarnsmyr
-**Senast reviderad av:** Bo Joel Kvarnsmyr
+*Version: 3*
+*Datum: 2025-03-19*
+*Författare: Bo Joel Kvarnsmyr*
+*Senast reviderad av: Bo Joel Kvarnsmyr*
 
-## Syfte
+## Syfte och Översikt
 
-Det här dokumentet definierar och beskriver `activations` (uppdrag) för Inner Journey – små steg på din väg mot personlig och spirituell utveckling. Genom fysiska, sociala, meditativa och AI-drivna övningar vill vi guida dig på en resa som känns både jordnära och meningsfull. Alla `activations` är utformade för att fungera smidigt med appens teknik och databas i Google `Firestore`.
+Detta dokument definierar och beskriver de olika `activations` (uppdrag/övningar) som finns tillgängliga inom Inner Journey. Dessa `activations` representerar små, hanterbara steg på användarens väg mot personlig och spirituell utveckling. Genom en blandning av fysiska, sociala, meditativa och AI-drivna övningar strävar vi efter att guida användaren på en resa som upplevs både jordnära och meningsfull.
 
-## Översikt
+Alla `activations` är utformade för att integreras smidigt med applikationens tekniska plattform och databasstruktur i Google `Firestore`.
 
-Här presenteras 18 `activations`, indelade i kategorier som `inner_child`, `manifest`, `shadows`, `brainsync` och `sleep`. Varje `activation` innehåller:
+Dokumentet presenterar 18 `activations`, indelade i kategorier som `inner_child`, `manifest`, `shadows`, `brainsync` och `sleep`. Varje `activation` specificeras med följande information:
 
-*   **Titel och beskrivning:** Skrivna för att kännas nära och engagerande.
-*   **Loggtyp:** `text`, `video` eller `audio` – vald efter vad som bäst fångar upplevelsen.
-*   **Tekniska specifikationer:** Tydliga instruktioner så att du vet vad du behöver.
-*   **Backlog:** Syfte, varför övningen görs, vad den är bra för, vad den ska leda till och vilket område som tränas.
+*   **Titel och beskrivning:** Formulerade för att vara engagerande och lättförståeliga.
+*   **Loggtyp:** Anger om loggningen sker via `text`, `video` eller `audio`, beroende på vad som bäst fångar upplevelsen.
+*   **Tekniska specifikationer:** Tydliga instruktioner och krav för övningen.
+*   **Backlog:** Förklarar syfte, motivation, fördelar, mål och träningsområde för övningen.
 
-Du loggar alltid dina upplevelser via terminalen i appen:
+Användaren loggar sina upplevelser via appens terminalgränssnitt:
 
-*   **Text:** För tankar och reflektioner.
-*   **Video:** För rörelser eller visuella övningar.
-*   **Audio:** För ord eller dialoger.
+*   **Text:** För reflektioner, tankar och insikter.
+*   **Video:** För att dokumentera rörelser eller visuella aspekter av en övning.
+*   **Audio:** För att spela in talade reflektioner eller dialoger.
 
 ## Beskrivning av Aktiveringar
 
@@ -47,8 +47,7 @@ Du loggar alltid dina upplevelser via terminalen i appen:
 *   **introduction_message:** Förbered dig på att möta någon genom tystnad.
 *   **preparation_message:** Se till att ha en stabil uppkoppling och en lugn plats.
 
-#### Backlog
-
+**Backlog**
 *   **Syfte:** Öva på närvaro och icke-verbal koppling genom ögonkontakt.
 *   **Varför:** Bygger komfort med tystnad och stärker förmågan att vara närvarande med andra.
 *   **Vad den är bra för:** Förbättrar social medvetenhet och emotionell resiliens.
@@ -76,8 +75,7 @@ Du loggar alltid dina upplevelser via terminalen i appen:
 *   **introduction_message:** Välkommen till en 12-dagars resa med kropp och själ.
 *   **preparation_message:** Ha en yogamatta redo och terminalen tillgänglig.
 
-#### Backlog
-
+**Backlog**
 *   **Syfte:** Bygga fysisk och mental disciplin genom daglig rörelse.
 *   **Varför:** Regelbundna solhälsningar synkar kropp och sinne över tid.
 *   **Vad den är bra för:** Ökar energi, fokus och kroppsmedvetenhet.
@@ -96,15 +94,14 @@ Du loggar alltid dina upplevelser via terminalen i appen:
 *   **log_type:** `video`
 *   **prerequisite:** Ingen
 *   **repetitions:** 1
-*   **questions:** []
+*   **questions:** *(Inga specifika frågor)*
 *   **ai_assessment:** `True`
 *   **coach_approval_required:** `False`
 *   **net_enabled:** `False`
 *   **introduction_message:** Testa din hjärnas förmåga att synkronisera rörelser.
 *   **preparation_message:** Se till att terminalens kamera är på och att du har tillräckligt med ljus.
 
-#### Backlog
-
+**Backlog**
 *   **Syfte:** Träna hjärnans koordination och motorik.
 *   **Varför:** Förbättrar kopplingen mellan hjärna och kropp genom analys av rörelser.
 *   **Vad den är bra för:** Ökar finmotorik och mental skärpa.
@@ -131,8 +128,7 @@ Du loggar alltid dina upplevelser via terminalen i appen:
 *   **introduction_message:** Välkommen till en resa in i ditt undermedvetna.
 *   **preparation_message:** Använd hörlurar för bästa upplevelse.
 
-#### Backlog
-
+**Backlog**
 *   **Syfte:** Använda ljud för att balansera hjärnan och främja avslappning.
 *   **Varför:** Hemisync-toner hjälper till att synka hjärnhalvorna för djupare lugn.
 *   **Vad den är bra för:** Förbättrar sömnkvalitet och mental klarhet.
@@ -151,15 +147,14 @@ Du loggar alltid dina upplevelser via terminalen i appen:
 *   **log_type:** `audio`
 *   **prerequisite:** Ingen
 *   **repetitions:** 1
-*   **questions:** []
+*   **questions:** *(Inga specifika frågor)*
 *   **ai_assessment:** `True`
 *   **coach_approval_required:** `False`
 *   **net_enabled:** `False`
 *   **introduction_message:** Övervinn rädslor och möt dig själv genom rösten.
 *   **preparation_message:** Ha terminalen redo och testa mikrofonen innan.
 
-#### Backlog
-
+**Backlog**
 *   **Syfte:** Utforska det inre barnet genom verbal dialog med AI-stöd.
 *   **Varför:** Rösten kan låsa upp känslor och minnen kopplade till barndomen.
 *   **Vad den är bra för:** Ökar självinsikt och känslomässig bearbetning.
@@ -186,8 +181,7 @@ Du loggar alltid dina upplevelser via terminalen i appen:
 *   **introduction_message:** Andas in livet, andas ut spänningar.
 *   **preparation_message:** Sitt bekvämt framför terminalen.
 
-#### Backlog
-
+**Backlog**
 *   **Syfte:** Använda andning för att öka energi och minska stress.
 *   **Varför:** Medveten andning är ett enkelt sätt att påverka kropp och sinne positivt.
 *   **Vad den är bra för:** Förbättrar energinivåer och emotionell balans.
@@ -216,8 +210,7 @@ Du loggar alltid dina upplevelser via terminalen i appen:
 *   **introduction_message:** En kollektiv resa genom andningen väntar.
 *   **preparation_message:** Ha en stabil internetuppkoppling och sitt bekvämt.
 
-#### Backlog
-
+**Backlog**
 *   **Syfte:** Fördjupa andningspraktiken i en grupp för kollektiv energi.
 *   **Varför:** En gemensam upplevelse förstärker effekten av andning.
 *   **Vad den är bra för:** Stärker känsla av gemenskap och emotionell frigörelse.
@@ -244,8 +237,7 @@ Du loggar alltid dina upplevelser via terminalen i appen:
 *   **introduction_message:** Låt kroppen flöda i harmoni med ditt sinne.
 *   **preparation_message:** Ha en matta redo och terminalen uppställd.
 
-#### Backlog
-
+**Backlog**
 *   **Syfte:** Träna kropp och sinne genom mjuka, medvetna rörelser.
 *   **Varför:** Tai Chi och yoga balanserar energi och minskar spänningar.
 *   **Vad den är bra för:** Ökar rörlighet och inre lugn.
@@ -273,8 +265,7 @@ Du loggar alltid dina upplevelser via terminalen i appen:
 *   **introduction_message:** Avsluta dagen med rörelse och tystnad.
 *   **preparation_message:** Ha terminalen nära sängen.
 
-#### Backlog
-
+**Backlog**
 *   **Syfte:** Förbereda kroppen och sinnet för sömn genom rörelse och stillhet.
 *   **Varför:** Kombinationen lugnar nervsystemet och ökar medvetenhet.
 *   **Vad den är bra för:** Förbättrar sömnkvalitet och avslappning.
@@ -302,8 +293,7 @@ Du loggar alltid dina upplevelser via terminalen i appen:
 *   **introduction_message:** Välkommen till en resa för att läka det som format dig.
 *   **preparation_message:** Använd hörlurar och sitt bekvämt.
 
-#### Backlog
-
+**Backlog**
 *   **Syfte:** Bearbeta och läka känslor kopplade till barndomen.
 *   **Varför:** Att möta det inre barnet kan frigöra gamla blockeringar.
 *   **Vad den är bra för:** Ökar självacceptans och emotionell läkning.
@@ -331,8 +321,7 @@ Du loggar alltid dina upplevelser via terminalen i appen:
 *   **introduction_message:** Släpp det som håller dig tillbaka.
 *   **preparation_message:** Sitt vid terminalen redo att reflektera.
 
-#### Backlog
-
+**Backlog**
 *   **Syfte:** Identifiera och förändra tankemönster som begränsar.
 *   **Varför:** Övertygelser formar verkligheten, och omformulering öppnar nya möjligheter.
 *   **Vad den är bra för:** Ökar självförtroende och mental frihet.
@@ -359,8 +348,7 @@ Du loggar alltid dina upplevelser via terminalen i appen:
 *   **introduction_message:** Förvandla ditt förflutna till styrka.
 *   **preparation_message:** Ha terminalen redo för att skriva.
 
-#### Backlog
-
+**Backlog**
 *   **Syfte:** Omforma relationen till det förflutna för att hitta styrka.
 *   **Varför:** Att se det positiva i det förflutna minskar dess tyngd.
 *   **Vad den är bra för:** Främjar förlåtelse och självacceptans.
@@ -389,8 +377,7 @@ Du loggar alltid dina upplevelser via terminalen i appen:
 *   **introduction_message:** Släpp det som tynger dig.
 *   **preparation_message:** Ät lätt innan och ha terminalen redo.
 
-#### Backlog
-
+**Backlog**
 *   **Syfte:** Frigöra lagrade spänningar och trauman genom andning.
 *   **Varför:** Kroppsbaserad andning når djupare än tankar ensamma.
 *   **Vad den är bra för:** Minskar fysisk och emotionell stress.
@@ -403,7 +390,7 @@ Du loggar alltid dina upplevelser via terminalen i appen:
 *   **title:** "Bygga Bron"
 *   **description:** Skriv om din nuvarande och framtida identitet för att se vad som skiljer dem åt.
 *   **duration:** 25 minuter
-*   **activation_type:** `meditation`
+*   **activation_type:** `meditation` (*Not: Original type was 'meditation', may need review*)
 *   **category_id:** `manifest`
 *   **prompt:** Skriv om din nuvarande och framtida identitet.
 *   **log_type:** `text`
@@ -417,8 +404,7 @@ Du loggar alltid dina upplevelser via terminalen i appen:
 *   **introduction_message:** Börja resan mot din högsta potential.
 *   **preparation_message:** Sitt vid terminalen med arbetsbladet.
 
-#### Backlog
-
+**Backlog**
 *   **Syfte:** Skapa medvetenhet om skillnaden mellan nuet och framtida mål.
 *   **Varför:** Att kartlägga gapet ger riktning för personlig utveckling.
 *   **Vad den är bra för:** Ökar självinsikt och målfokusering.
@@ -446,8 +432,7 @@ Du loggar alltid dina upplevelser via terminalen i appen:
 *   **introduction_message:** Omfamna pengar som en kraft för gott.
 *   **preparation_message:** Använd hörlurar med terminalen.
 
-#### Backlog
-
+**Backlog**
 *   **Syfte:** Förändra negativa tankar om pengar till positiva.
 *   **Varför:** Ett sunt pengasinne stödjer personlig frihet och välmående.
 *   **Vad den är bra för:** Minskar stress kring ekonomi och ökar tacksamhet.
@@ -475,8 +460,7 @@ Du loggar alltid dina upplevelser via terminalen i appen:
 *   **introduction_message:** Upptäck din väg till ett meningsfullt liv.
 *   **preparation_message:** Ha terminalen redo för att skriva.
 
-#### Backlog
-
+**Backlog**
 *   **Syfte:** Reflektera över livets mening och dela med andra.
 *   **Varför:** Att artikulera syfte stärker motivation och gemenskap.
 *   **Vad den är bra för:** Ökar klarhet kring personliga mål och värderingar.
@@ -503,8 +487,7 @@ Du loggar alltid dina upplevelser via terminalen i appen:
 *   **introduction_message:** Förbered dig på att möta en annan person i tystnad – ett kraftfullt sätt att bygga närvaro.
 *   **preparation_message:** Se till att ha en stabil uppkoppling och webbkameran på.
 
-#### Backlog
-
+**Backlog**
 *   **Syfte:** Öva på närvaro och social koppling genom tystnad.
 *   **Varför:** Att möta någon i tystnad bygger icke-verbal förståelse och närvaro.
 *   **Vad den är bra för:** Förbättrar social medvetenhet och emotionell resiliens.
@@ -523,15 +506,14 @@ Du loggar alltid dina upplevelser via terminalen i appen:
 *   **log_type:** `video`
 *   **prerequisite:** Ingen
 *   **repetitions:** 1
-*   **questions:** []
+*   **questions:** *(Inga specifika frågor)*
 *   **ai_assessment:** `True`
 *   **coach_approval_required:** `False`
 *   **net_enabled:** `False`
 *   **introduction_message:** Testa din kropps balans och muskelanvändning.
 *   **preparation_message:** Se till att terminalens kamera är på och att du har tillräckligt med utrymme.
 
-#### Backlog
-
+**Backlog**
 *   **Syfte:** Analysera kroppens balans och muskelanvändning genom rörelse.
 *   **Varför:** Ger insikt i fysiska mönster och styrkor/svagheter.
 *   **Vad den är bra för:** Förbättrar kroppsmedvetenhet och kan guida fysisk utveckling.
@@ -540,12 +522,11 @@ Du loggar alltid dina upplevelser via terminalen i appen:
 
 ## Tekniska detaljer
 
-*   **Terminalen:** Loggar (`text`, `video`, `audio`) sparas via terminalen med stöd för textinmatning, kamera och mikrofon.
-*   **Video och ljud:** Meditationer och videor lagras i Firebase `Storage` och streamas i terminalen.
-*   **AI-integration:** Övningar med `ai_assessment: True` använder terminalens AI för analys (t.ex. "Fingerkoordination", "Balans och kroppsanalys").
-*   **Live-event:** Terminalen hanterar livestream-länkar för "Andningens Ceremoni" och "Somatisk Andningsfrigöring".
+*   **Terminalen:** Används för att logga upplevelser (`text`, `video`, `audio`) och stödjer textinmatning samt användning av kamera och mikrofon.
+*   **Media:** Ljudfiler för meditationer och videofiler för instruktioner lagras i Firebase `Storage` och streamas direkt i terminalgränssnittet.
+*   **AI-integration:** Övningar markerade med `ai_assessment: True` använder terminalens inbyggda AI-kapacitet för att analysera data (t.ex. rörelser i "Fingerkoordination" och "Balans och kroppsanalys").
+*   **Live-event:** Terminalen hanterar anslutning till livestream-länkar för schemalagda `live_event` som "Andningens Ceremoni" och "Somatisk Andningsfrigöring".
 
 ## Slutsats
 
-Detta dokument samlar nu 18 `activations` som täcker ett brett spektrum av personlig utveckling – från social koppling och självreflektion till fysisk balans och emotionell läkning. Varje `activation` är utformad för att passa appens tekniska ramverk och ge användaren en meningsfull upplevelse. Nästa steg är att implementera dem i appen – säg till om du vill gå vidare eller har fler justeringar!
-
+Detta dokument sammanställer 18 `activations` som utgör kärnan i InnerJourneys övningsbibliotek vid denna tidpunkt. De täcker ett brett spektrum av personlig utveckling, från social koppling och självreflektion till fysisk balans och emotionell läkning. Varje `activation` är noggrant utformad för att passa appens tekniska ramverk och ge användaren en meningsfull och engagerande upplevelse. Nästa steg involverar implementering av dessa `activations` inom applikationen.

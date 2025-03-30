@@ -1,241 +1,239 @@
-Användarmanual för AiAss.py
+# Användarmanual för AiAss.py
 
-Version: (Baserad på kod från 2025-03-24)
-Modell: Använder gemini-2.5-pro-exp-03-25 (Experimentell)
+## Översikt
 
-1. Översikt
+`AiAss.py` är ett Python-script utvecklat för projektet "InnerJourney". Det fungerar som en AI-assistent för att hantera teknisk dokumentation och besvara frågor relaterade till projektet. Scriptet använder Google Gemini API för att generera och formatera Markdown-dokument samt svara på frågor baserat på projektets kod och befintliga dokumentation.
 
-AiAss.py är ett kommandoradsverktyg designat för att hjälpa dig i ditt InnerJourney-projekt. Det använder Google Gemini för att:
+Det är designat för att köras från kommandoraden och stödjer flera användningslägen för att underlätta dokumentationsarbetet. Denna manual beskriver hur du installerar, konfigurerar och använder scriptet, inklusive praktiska exempel för varje läge.
 
-Skapa ny dokumentation: Generera Markdown-filer baserat på ett ämne du anger.
+---
 
-Formatera befintlig text: Ta råtext och formatera om den till en professionell Markdown-fil.
+## Förutsättningar
 
-Svara på frågor: Analysera och svara på frågor baserat på innehållet i specifika kod- och/eller dokumentationsfiler du anger.
+### Krav
 
-Scriptet använder alltid dina styrdokument i mappen documentation/X_styrdokument som övergripande kontext när det skapar ny dokumentation för att säkerställa konsekvens. För Q&A-läget används endast de filer du explicit anger som kontext.
+För att kunna köra `AiAss.py` behöver du följande:
 
-2. Förutsättningar
+*   **Python:** Version `3.10` eller högre.
+*   **Google Cloud-projekt:** Ett aktivt projekt (t.ex. `innerjourney-c007e`) med `Secret Manager API` aktiverat.
+*   **Gemini API-nyckel:** En giltig API-nyckel för Google Gemini, lagrad i Google Cloud Secret Manager under namnet `gemini-api-key` i ditt projekt.
+*   **Beroenden:** Nödvändiga Python-bibliotek installerade (se nedan).
 
-Innan du kan använda scriptet, se till att följande är uppfyllt:
+### Installation
 
-Python 3.x: Installerat på din dator.
+Följ dessa steg för att sätta upp din miljö:
 
-Bibliotek: Nödvändiga Python-paket installerade i din virtuella miljö (venv). Kör från projektets rotmapp (innerjourney):
+1.  **Klona projektet** (om du inte redan har det):
+    ```bash
+    git clone git@github.com:joelkvarnsmyr/InnerJourney.git
+    cd InnerJourney
+    ```
 
-source venv/bin/activate  # Eller venv\Scripts\activate på Windows
-pip install google-generativeai google-cloud-secret-manager google-api-core
-Use code with caution.
-Bash
-Google Cloud SDK (gcloud): Installerat och konfigurerat.
+2.  **Skapa en virtuell miljö** (rekommenderas för att isolera beroenden):
+    ```bash
+    python3.10 -m venv venv
+    source venv/bin/activate  # På Windows: venv\Scripts\activate
+    ```
 
-Google Cloud Autentisering: Du måste vara inloggad med ett konto som har åtkomst till Google Cloud Secret Manager för ditt projekt (innerjourney-c007e). Kör en gång i terminalen:
+3.  **Installera beroenden:** Skapa en fil `requirements.txt` (om den inte redan finns) med följande innehåll:
+    ```text
+    google-generativeai
+    google-cloud-secret-manager
+    ```
+    Kör sedan installationen:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-gcloud auth application-default login
-Use code with caution.
-Bash
-Google Cloud Secrets:
+4.  **Placera scriptet:** Säkerställ att `AiAss.py` finns i mappen `documentation/` inom projektets rot.
 
-En secret med namnet gemini-api-key måste finnas i projektet innerjourney-c007e och innehålla din giltiga Gemini API-nyckel.
+### Konfiguration
 
-Kontot du använde i gcloud auth ... måste ha rollen Secret Manager Secret Accessor för denna secret.
+*   **Google Cloud Secret Manager:** Lägg till din Gemini API-nyckel som ett secret med namnet `gemini-api-key` i ditt Google Cloud-projekt (t.ex. `innerjourney-c007e`).
+*   **Behörigheter:** Se till att det servicekonto eller den användare som kör scriptet har IAM-rollen `Secret Manager Secret Accessor` för att kunna hämta API-nyckeln.
+*   **Projektstruktur:** Scriptet förväntar sig att köras från projektets rotmapp (`InnerJourney/`) eller från `documentation/`-mappen. Det förutsätter också att styrdokument (master context) finns i undermappar till `documentation/` (t.ex. `documentation/X_styrdokument/`).
 
-Scriptets Plats: Filen AiAss.py ska ligga direkt i mappen documentation i ditt projekt.
+## Användning
 
-Styrdokument: Mappen documentation/X_styrdokument/ ska finnas och innehålla dina .md-styrdokument (t.ex. projektbeskrivning_master.md, utveckling_master.md). Scriptet läser alla .md-filer i denna mapp när du skapar ny dokumentation.
+`AiAss.py` körs från kommandoraden. Du anger vilket läge du vill använda med hjälp av olika flaggor. Det finns fyra huvudsakliga lägen:
 
-3. Köra Scriptet
+*   `--create-doc`: Skapar ett nytt Markdown-dokument baserat på ett angivet ämne.
+*   `--create-doc-from-text`: Skapar ett Markdown-dokument från text som matas in via `stdin`.
+*   `--reformat-doc`: Formaterar om en befintlig Markdown-fil för bättre struktur och läsbarhet.
+*   `--ask`: Ställer en fråga och får ett svar baserat på innehållet i specificerade kod- och dokumentationsfiler.
 
-Rekommenderad Plats: Öppna din terminal och navigera till projektets rotmapp (innerjourney). Detta gör det enklast att ange sökvägar till kodfiler.
+### Grundläggande syntax
 
-cd /sökväg/till/innerjourney
-Use code with caution.
-Bash
-Aktivera Miljö: Se till att din virtuella miljö är aktiv:
+```bash
+python documentation/AiAss.py [läge] [argument]
+```
 
-source venv/bin/activate # Eller motsvarande för Windows
-Use code with caution.
-Bash
-Grundläggande Kommando:
+Använd `--help` för att se en fullständig lista över tillgängliga flaggor och deras beskrivningar:
 
-python documentation/AiAss.py <LÄGESFLAGGA> [ARGUMENT FÖR LÄGET]
-Use code with caution.
-Bash
-Du måste alltid ange en av de tre lägesflaggorna: --create-doc, --create-doc-from-text, eller --ask.
+```bash
+python documentation/AiAss.py --help
+```
 
-4. Lägen och Användning
+## Lägen och Exempel
 
-4.1. Skapa Nytt Dokument från Ämne (--create-doc)
+### 1. Skapa Nytt Dokument från Ämne (`--create-doc`)
 
-Använd detta för att låta AI:n skriva ett nytt dokument från grunden.
+Genererar ett nytt Markdown-dokument baserat på ett ämne du anger och sparar det i en specificerad dokumentationskategori.
 
-Syfte: Generera en ny .md-fil om ett specifikt ämne.
+**Syntax:**
 
-Kommando:
+```bash
+python documentation/AiAss.py --create-doc --category <kategori> --topic "<ämne>"
+```
 
-python documentation/AiAss.py --create-doc --category "<KATEGORI>" --topic "<ÄMNE>"
-Use code with caution.
-Bash
-Argument:
+**Argument:**
 
---category "<KATEGORI>": (Obligatorisk) Anger målmappen. Använd nummer ("3") eller namn/alias ("Teknisk", "Teknisk Dokumentation"). Scriptet mappar detta till rätt undermapp (t.ex. documentation/3_teknisk_dokumentation/).
+*   `--category <kategori>`: Ange kategorins nummer eller namn (t.ex. `3` eller `teknisk`). Se listan nedan.
+*   `--topic "<ämne>"`: Ämnet för dokumentet. Använd citattecken om ämnet innehåller mellanslag.
 
---topic "<ÄMNE>": (Obligatorisk) Beskriv vad dokumentet ska handla om. Detta används som instruktion till AI:n och för att automatiskt skapa ett filnamn (t.ex. beskrivning_av_databas.md).
+**Kategorier:**
 
-Kontext: Innehållet från alla .md-filer i documentation/X_styrdokument/ skickas automatiskt med till AI:n.
+*   `1` eller `projektoversikt`: Projektöversikt
+*   `2` eller `anvandarupplevelse`: Användarupplevelse
+*   `3` eller `teknisk`: Teknisk dokumentation
+*   `4` eller `sakerhet`: Säkerhet och test
+*   `5` eller `loggar`: Loggar och backlog
+*   `6` eller `ekonomi`: Ekonomi och administration
+*   `7` eller `marknad`: Marknadsstrategi
+*   `8` eller `todo`: To-do
 
-Flöde:
+**Exempel:**
 
-Scriptet bestämmer målmapp och filnamn.
+Skapa ett dokument om "API-design för InnerJourney" i kategorin "Teknisk dokumentation":
 
-Läser styrdokumenten.
+```bash
+python documentation/AiAss.py --create-doc --category 3 --topic "API-design för InnerJourney"
+```
 
-Anropar Gemini för att generera innehållet.
+*Resultat:* En fil med ett namn liknande `api-design_for_innerjourney.md` skapas i mappen `documentation/3_teknisk_dokumentation/`.
 
-Visar en förhandsgranskning av de första raderna.
+### 2. Skapa Dokument från Text (`--create-doc-from-text`)
 
-Frågar om du vill skapa filen (eller skriva över om den finns).
+Tar emot råtext via standard input (`stdin`), formaterar den till ett strukturerat Markdown-dokument och sparar det i en vald kategori.
 
-Sparar filen vid bekräftelse (j).
+**Syntax:**
 
-Exempel:
+```bash
+echo "<text>" | python documentation/AiAss.py --create-doc-from-text --category <kategori>
+```
 
-# Skapa dokument om säkerhetsstrategi i mappen 4_sakerhet_och_test
-python documentation/AiAss.py --create-doc --category "Säkerhet" --topic "Övergripande säkerhetsstrategi för API:et"
+**Argument:**
 
-# Skapa dokument om aktiveringar i mappen 2_anvandarupplevelse
-python documentation/AiAss.py --create-doc --category "2" --topic "Hur aktiveringar föreslås till användaren"
-Use code with caution.
-Bash
-4.2. Skapa Dokument från Befintlig Text (--create-doc-from-text)
+*   `--category <kategori>`: Ange kategorins nummer eller namn (samma som ovan).
 
-Använd detta för att omvandla din egen råtext till en formaterad Markdown-fil.
+**Exempel:**
 
-Syfte: Formatera om text du tillhandahåller via terminalen till en professionell .md-fil.
+Skapa ett dokument från en textsträng i kategorin "Projektöversikt":
 
-Kommando (via fil):
+```bash
+echo "Detta är en översikt av projektet. Vi använder FastAPI och React." | python documentation/AiAss.py --create-doc-from-text --category 1
+```
 
-cat sökväg/till/min_text.txt | python documentation/AiAss.py --create-doc-from-text --category "<KATEGORI>"
-Use code with caution.
-Bash
-Kommando (via inklistring):
+*Obs:* För längre texter kan du mata in text direkt i terminalen och avsluta med `Ctrl+D` (Unix/macOS) eller `Ctrl+Z` följt av `Enter` (Windows).
 
-python documentation/AiAss.py --create-doc-from-text --category "<KATEGORI>"
-# (Klistra in text här...)
-# (Avsluta med Ctrl+D på ny rad på Linux/Mac, eller Ctrl+Z + Enter på Windows)
-Use code with caution.
-Bash
-Argument:
+*Resultat:* En fil med ett namn baserat på textens början (t.ex. `detta_ar_en_oversikt_av_projektet.md`) skapas i `documentation/1_projektoversikt/`.
 
---category "<KATEGORI>": (Obligatorisk) Anger målmappen, precis som för --create-doc.
+### 3. Reformatera Befintligt Dokument (`--reformat-doc`)
 
-Input: Texten måste skickas via "standard input" (stdin).
+Läser en befintlig Markdown-fil, låter AI:n förbättra dess struktur och formatering baserat på projektets kontext, och skriver sedan över originalfilen med den förbättrade versionen.
 
-Kontext: Innehållet från alla .md-filer i documentation/X_styrdokument/ skickas automatiskt med till AI:n för att säkerställa konsekvent formatering och terminologi.
+**Syntax:**
 
-Flöde:
+```bash
+python documentation/AiAss.py --reformat-doc [--source-file "<sökväg/till/fil.md>"]
+```
 
-Scriptet väntar på och läser text från stdin.
+**Argument:**
 
-Försöker extrahera en titel från texten för att skapa ett filnamn.
+*   `--source-file "<sökväg/till/fil.md>"` (valfritt): Ange den exakta sökvägen till filen som ska reformateras (relativt från projektets rotmapp). Om denna flagga utelämnas, visas en interaktiv lista där du kan välja filen.
 
-Bestämmer målmapp.
+**Exempel 1: Reformatera en specifik fil**
 
-Läser styrdokumenten.
+```bash
+python documentation/AiAss.py --reformat-doc --source-file "documentation/3_teknisk_dokumentation/api-design.md"
+```
 
-Anropar Gemini och instruerar den att formatera om den givna texten (inte skriva nytt).
+**Exempel 2: Reformatera med interaktiv väljare**
 
-Visar förhandsgranskning och frågar om bekräftelse.
+```bash
+python documentation/AiAss.py --reformat-doc
+```
 
-Sparar den formaterade filen vid bekräftelse (j).
+Följ instruktionerna i terminalen för att välja en fil från den presenterade listan.
 
-Exempel:
+### 4. Ställ en Fråga (`--ask`)
 
-# Läs text från filen 'raw_deployment_notes.txt' och skapa formaterad fil i Teknisk Dokumentation
-cat docs/raw_deployment_notes.txt | python documentation/AiAss.py --create-doc-from-text --category "3"
+Låter dig ställa en fråga på naturligt språk. AI:n använder innehållet från specificerade kodfiler och/eller dokumentationsfiler som kontext för att generera ett svar.
 
-# Klistra in text direkt för att skapa fil om ekonomiprocesser
-python documentation/AiAss.py --create-doc-from-text --category "Ekonomi"
-# (Klistra in...)
-# Titel: Faktureringsrutiner
-# ## Skapa faktura
-# 1. Logga in...
-# (Ctrl+D)
-Use code with caution.
-Bash
-4.3. Ställ Fråga om Kod/Dokument (--ask)
+**Syntax:**
 
-Använd detta för att ställa frågor och få svar baserat på specifika filer. Detta läge har inget minne (stateless).
+```bash
+python documentation/AiAss.py --ask --question "<fråga>" [--code-file "<kodfil>"] [--doc-file "<dokumentfil>"] [--pick-doc]
+```
 
-Syfte: Få svar på frågor om kod eller dokumentation baserat på innehållet i angivna filer.
+**Argument:**
 
-Kommando:
+*   `--question "<fråga>"`: Frågan du vill ställa (inom citattecken).
+*   `--code-file "<kodfil>"` (valfritt, kan upprepas): Sökväg till en kodfil (relativt från projektets rotmapp) som ska användas som kontext.
+*   `--doc-file "<dokumentfil>"` (valfritt, kan upprepas): Sökväg till en dokumentationsfil (relativt från `documentation/`-mappen) som ska användas som kontext.
+*   `--pick-doc` (valfritt): Visar en interaktiv lista där du kan välja en eller flera dokumentationsfiler att inkludera som kontext.
 
-python documentation/AiAss.py --ask --question "<FRÅGA>" [--code-file <FIL>...] [--doc-file <FIL>...]
-Use code with caution.
-Bash
-Argument:
+**Exempel 1: Fråga om en specifik kodfil**
 
---question "<FRÅGA>": (Obligatorisk) Din fråga.
+```bash
+python documentation/AiAss.py --ask --question "Vad gör funktionen generate_doc_markdown?" --code-file "documentation/AiAss.py"
+```
 
---code-file <FIL>: (Valfri, kan upprepas) Ange en kodfil som kontext.
+**Exempel 2: Fråga med både dokumentfil och interaktivt val**
 
-Ange sökväg relativt projektets rotmapp (innerjourney), t.ex. backend/main.py.
+```bash
+python documentation/AiAss.py --ask --question "Hur deployar man backend till Cloud Run?" --doc-file "documentation/3_teknisk_dokumentation/OnboardingBackend.md" --pick-doc
+```
 
-Du kan också ange bara filnamnet (t.ex. main.py). Scriptet söker då i projektet (ignorerar mappar som venv, node_modules, .git etc.). Om exakt en match hittas används den. Om flera hittas får du en numrerad lista och måste välja.
+*Resultat:* Scriptet skriver ut AI:ns svar på din fråga i terminalen.
 
---doc-file <FIL>: (Valfri, kan upprepas) Ange en dokumentationsfil som kontext.
+## Tips och Felsökning
 
-Ange sökväg relativt dokumentationsmappen (documentation), t.ex. 3_teknisk_dokumentation/api.md eller X_styrdokument/utveckling_master.md.
+### Allmänna Tips
 
-Du kan också ange bara filnamnet (t.ex. api.md). Scriptet söker då inom documentation-mappen. Om flera matchar får du välja.
+*   **Loggning:** Scriptet skriver loggar till terminalen (standardnivå är `INFO`). För mer detaljerad output (t.ex. för felsökning), kör scriptet och pipelinera `stderr` till `grep` för `DEBUG`:
+    ```bash
+    python documentation/AiAss.py --<läge> ... 2>&1 | grep DEBUG
+    ```
+*   **Kategorier:** Om du är osäker på vilken kategori ett dokument tillhör, använd det nummer eller namn som känns mest relevant. Du kan alltid flytta filen manuellt senare.
+*   **Filnamn:** Genererade filnamn baseras på ämnet (för `--create-doc`) eller textens början (för `--create-doc-from-text`). De konverteras automatiskt till ett "slug-format" (små bokstäver, bindestreck istället för mellanslag, t.ex. `api-design.md`).
 
-Kontext: Endast innehållet från de filer du explicit anger (och som hittas/väljs) skickas med frågan. Styrdokumenten inkluderas inte automatiskt här (men du kan ange dem med --doc-file X_styrdokument/... om de är relevanta för frågan).
+### Vanliga Problem
 
-Flöde:
+*   **"API-nyckel saknas eller är ogiltig"**:
+    *   Kontrollera att ett secret med namnet `gemini-api-key` existerar i ditt Google Cloud-projekts Secret Manager.
+    *   Verifiera att det servicekonto eller den användare som kör scriptet har rollen `Secret Manager Secret Accessor`.
+    *   Se till att du är korrekt autentiserad mot Google Cloud (`gcloud auth login` eller motsvarande).
+*   **"Modellen hittades inte"**:
+    *   Scriptet kan vara konfigurerat att använda en specifik Gemini-modell (t.ex. en experimentell version). Kontrollera modellnamnet i `AiAss.py`-koden och byt eventuellt till en stabil version som `gemini-1.5-pro-latest` om problem uppstår.
+*   **"Ingen fil hittades" (för `--reformat-doc` eller `--ask`)**:
+    *   Kontrollera att sökvägen till filen (`--source-file`, `--code-file`, `--doc-file`) är korrekt angiven relativt till projektets rotmapp eller `documentation/`-mappen.
+    *   Använd den interaktiva väljaren (`--reformat-doc` utan `--source-file`, eller `--ask` med `--pick-doc`) för att säkerställa att du väljer en existerande fil.
+*   **"Permission denied"**:
+    *   Se till att du har skrivrättigheter i den mapp där scriptet försöker skapa eller modifiera filer (vanligtvis under `documentation/`).
+    *   Undvik att köra scriptet med `sudo` om det inte är absolut nödvändigt.
 
-Scriptet letar upp de angivna filerna (ber om val vid behov).
+## Tekniska Detaljer
 
-Läser innehållet i de valda filerna.
+*   **Gemini API:** Interaktion med AI:n sker via `google-generativeai`-biblioteket.
+*   **Master Context:** Scriptet läser automatiskt innehållet i filer under `documentation/X_styrdokument/` för att ge AI:n en övergripande kontext om projektets riktlinjer och terminologi, vilket säkerställer mer konsekventa resultat.
+*   **Ignorerade Filer/Mappar:** Vid filsökning (t.ex. för interaktiva val) ignorerar scriptet automatiskt vanliga mappar och filer som `.git`, `venv`, `node_modules`, `__pycache__`, `.DS_Store`, etc.
 
-Anropar Gemini med frågan och filinnehållet.
+För en djupare förståelse av scriptets implementation, se källkoden direkt i `documentation/AiAss.py`.
 
-Skriver ut svaret direkt i terminalen.
+## Kontakt och Support
 
-Exempel:
+Om du har frågor, stöter på problem eller har förslag på förbättringar för `AiAss.py`, vänligen skapa ett ärende (Issue) i projektets GitHub-repository: [https://github.com/joelkvarnsmyr/InnerJourney/issues](https://github.com/joelkvarnsmyr/InnerJourney/issues).
 
-# Förklara en funktion, sök efter filnamn
-python documentation/AiAss.py --ask --question "Förklara 'save_to_firestore'" --code-file firebase_service.py
-
-# Fråga om koppling mellan backend och frontend, ange båda (sökning + val om tvetydigt)
-python documentation/AiAss.py --ask --question "Hur anropas /gemini/getActivation från frontend?" --code-file main.py --code-file ActivationService.ts
-
-# Fråga om innehåll i ett specifikt styrdokument
-python documentation/AiAss.py --ask --question "Vilken branch-strategi används enligt styrdokumentet?" --doc-file X_styrdokument/utveckling_master.md
-Use code with caution.
-Bash
-5. Generella Tips
-
-Kör från projektets rot (innerjourney) för enklast hantering av sökvägar i --ask-läget.
-
-Använd citattecken (") runt argument som innehåller mellanslag.
-
-Var specifik i dina --topic och --question för bästa resultat.
-
-För --ask, välj relevanta filer. Att skicka med för mycket irrelevant kontext kan förvirra AI:n och ökar risken att nå token-gränser.
-
-Läs igenom genererad text och svar. AI:n är ett verktyg, inte ofelbar. Komplettera och korrigera vid behov.
-
-6. Felsökning
-
-Fel om API-nyckel / Permission Denied: Kör gcloud auth application-default login igen. Kontrollera att din API-nyckel finns i Secret Manager under rätt namn (gemini-api-key) och att ditt Google-konto har rollen Secret Manager Secret Accessor.
-
-Fel om "Model not found": Den experimentella modellen (gemini-2.5-pro-exp-03-25) kanske inte är tillgänglig för din API-nyckel. Öppna AiAss.py och ändra MODEL_NAME tillbaka till "gemini-1.5-pro-latest".
-
-Fil hittades inte (i --ask): Kontrollera stavning och sökväg. Om du angav ett filnamn, se till att filen finns inom sökområdet (projektet för --code-file, documentation för --doc-file) och inte i en ignorerad mapp (som venv).
-
-Fel om Token Limits: Prompten (inklusive master-kontext eller Q&A-kontext) blev för lång. Försök med en kortare --topic/--question eller färre/mindre filer i --ask. För --create-doc*, kan du behöva korta ner styrdokumenten i X_styrdokument.
-
-7. Modellval
-
-Scriptet är just nu inställt på att använda den experimentella modellen "gemini-2.5-pro-exp-03-25". Om detta ger problem, kan du enkelt byta till den stabila gemini-1.5-pro-latest genom att redigera variabeln MODEL_NAME överst i AiAss.py-filen.
+---
+*Senast uppdaterad: 2025-03-30*

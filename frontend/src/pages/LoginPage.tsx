@@ -3,8 +3,8 @@ import LoginForm from '../components/LoginForm';
 
 const LoginPage: React.FC = () => {
     return (
-        <Box p={4}>
-            <Heading mb={4}>Logga in</Heading>
+        <Box p={5}>
+            <Heading as="h1" mb={5}>Logga in</Heading>
             <LoginForm />
         </Box>
     );

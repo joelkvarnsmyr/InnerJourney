@@ -15,6 +15,7 @@ const LoginForm: React.FC = () => {
         setError('');
         try {
             await login(email, password);
+            // Lägg till omdirigering här om du vill, t.ex. till en dashboard
         } catch (err: any) {
             setError(err.message);
         } finally {
@@ -44,7 +45,7 @@ const LoginForm: React.FC = () => {
                     />
                 </FormControl>
                 {error && <Text color="red.500">{error}</Text>}
-                <Button type="submit" colorScheme="brand" isLoading={loading}>
+                <Button type="submit" colorScheme="blue" isLoading={loading}>
                     Logga in
                 </Button>
             </VStack>
