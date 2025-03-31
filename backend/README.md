@@ -1,41 +1,44 @@
-# InnerJourney Backend: README
+# InnerJourney Backend: README 🚀
 
-## Översikt
+## Översikt 📜
 
-Detta är backend-delen av InnerJourney, en plattform för personlig utveckling. Backend är byggd med `FastAPI` (`Python`) och integrerar med `Firebase Firestore` för datalagring och `Google Gemini` för AI-genererade insikter. Applikationen är containeriserad med `Docker` och deployad på `Google Cloud Run` för skalbarhet och enkel hantering.
+Detta är backend-delen av InnerJourney, en plattform för personlig utveckling. Backend är byggd med `FastAPI` (Python 🐍) och integrerar med Firebase `Firestore` 🔥 för datalagring och Google `Gemini` 🤖 för AI-genererade insikter. Applikationen är containeriserad med `Docker` 🐳 och deployad på Google `Cloud Run` ☁️ för skalbarhet och enkel hantering. Vi använder `Cloud Build` 🔧 för att automatiskt bygga och distribuera backend vid ändringar i Git. 📦
 
-Denna README beskriver hur du sätter upp, kör, bygger och deployar backend lokalt och på `Google Cloud Run`.
+Denna README beskriver hur du sätter upp, kör och testar backend lokalt med `gcloud`-autentisering, samt hur du deployar till Google `Cloud Run`. Dessutom finns en detaljerad API-beskrivning för frontend-utvecklare.
 
-## Förutsättningar
+## Förutsättningar ✅
 
 Innan du börjar, se till att du har följande verktyg installerade:
 
-*   **Python 3.10:** För att köra backend lokalt utan Docker.
-*   **Git:** För att klona och hantera projektet.
-*   **Docker:** För att bygga och köra backend i en container.
-*   **Google Cloud SDK (`gcloud`):** För att deploya till Google Cloud Run.
-*   **Node.js och npm (valfritt):** Om du behöver köra frontend parallellt för att testa hela applikationen.
-*   **Firebase-projekt:** Konfigurera ett Firebase-projekt och aktivera `Firestore` och `Authentication`.
-*   **Google Cloud-projekt:** Skapa ett projekt (t.ex. `innerjourney-c007e`) och aktivera API:er för `Cloud Run` och `Secret Manager`.
+*   🐍 **Python 3.10:** För att köra backend lokalt utan Docker.
+*   🌐 **Git:** För att klona och hantera projektet.
+*   🐳 **Docker:** För att bygga och köra backend i en container.
+*   ☁️ **Google Cloud SDK (`gcloud`):** För autentisering, lokal testning och deployment till Google Cloud Run.
+*   📦 **Node.js och npm (valfritt):** Om du vill köra frontend parallellt för att testa hela applikationen.
+*   🔥 **Firebase-projekt:** Skapa ett projekt och aktivera `Firestore` och `Authentication`.
+*   🌍 **Google Cloud-projekt:** Skapa ett projekt (t.ex. `innerjourney-c007e`) och aktivera API:er för `Cloud Run`, `Cloud Build`, och `Secret Manager`.
 
-## Projektstruktur
+## Projektstruktur 🗂️
 
-Backend-koden ligger i `backend/`-mappen i projektets rot (`innerjourney/`). Här är en översikt över viktiga filer:
+Backend-koden finns i `backend/`-mappen i projektets rot (`InnerJourney/`). Här är en översikt över viktiga filer:
 
-```
+```text
 backend/
-├── models/              # Pydantic-modeller för datavalidering (t.ex. activation.py)
-├── routes/              # API-routes (t.ex. gemini.py)
-├── services/            # Tjänster för att hantera logik (t.ex. gemini_service.py, firebase_service.py)
-├── __init__.py          # Gör mappen till ett Python-paket
-├── main.py              # Huvudfil för FastAPI-applikationen
-├── requirements.txt     # Python-beroenden
-└── Dockerfile           # Instruktioner för att bygga Docker-containern
+├── models/              # Pydantic-modeller för datavalidering (t.ex. activation.py) 📋
+├── routes/              # API-routes (t.ex. gemini.py) 🛤️
+├── services/            # Tjänster för logik (t.ex. gemini_service.py, firebase_service.py) 🛠️
+├── __init__.py          # Gör mappen till ett Python-paket 📦
+├── main.py              # Huvudfil för FastAPI-applikationen 🏁
+├── requirements.txt     # Python-beroenden 📜
+├── Dockerfile           # Instruktioner för att bygga Docker-containern 🐳
+└── cloudbuild.yaml      # Konfiguration för Cloud Build 🔧
 ```
 
-## Sätta upp projektet lokalt
+## Sätta upp och testa lokalt med gcloud-autentisering 🖥️
 
-### 1. Klona repot
+Följ dessa steg för att köra och testa backend lokalt med autentisering mot Google Cloud-tjänster (t.ex. `Secret Manager`):
+
+### 1. Klona repot 📥
 
 Klona projektet från GitHub och navigera till `backend/`-mappen:
 
@@ -44,48 +47,39 @@ git clone git@github.com:joelkvarnsmyr/InnerJourney.git
 cd InnerJourney/backend
 ```
 
-### 2. Skapa en virtuell miljö (valfritt, om du kör utan Docker)
+### 2. Autentisera med `gcloud` 🔐
 
-Skapa och aktivera en virtuell miljö för att isolera beroenden:
-
-```bash
-python3.10 -m venv venv
-source venv/bin/activate  # På Windows: venv\Scripts\activate
-```
-
-### 3. Installera beroenden
-
-Installera Python-beroendena som anges i `requirements.txt`:
+Logga in med `gcloud` för att skapa Application Default Credentials (ADC) som containern kan använda:
 
 ```bash
-pip install -r requirements.txt
+gcloud auth application-default login
 ```
 
-### 4. Konfigurera miljövariabler (valfritt, för lokal körning)
+### 3. Bygg Docker-imagen 🛠️
 
-Om du kör lokalt utan att använda `Google Cloud Secret Manager` (t.ex. under utveckling), skapa en `.env`-fil i `backend/`-mappen med följande variabler:
-
-```text
-# Exempel på .env-fil
-GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/firebase-service-account.json"
-GEMINI_API_KEY="din-gemini-api-nyckel"
-```
-
-**Notera:** I produktion används `Google Cloud Secret Manager` för att hantera känsliga nycklar, så `.env` behövs inte vid deployment.
-
-### 5. Kör backend lokalt (utan Docker)
-
-Starta FastAPI-servern med `Uvicorn`:
+Bygg Docker-imagen från `backend/`-mappen:
 
 ```bash
-uvicorn main:app --host 0.0.0.0 --port 8080 --reload
+docker build -t innerjourney-backend .
 ```
 
-*   `--reload`: Gör att servern startar om automatiskt vid kodändringar (bra för utveckling).
+*   `-t innerjourney-backend`: Namnger imagen som `innerjourney-backend`.
 
-Servern körs på `http://localhost:8080`.
+### 4. Kör containern med `gcloud`-autentisering 🚀
 
-Testa en endpoint, t.ex. `/gemini/getActivation`:
+Kör containern och montera din lokala `gcloud`-konfiguration för autentisering:
+
+```bash
+docker run -p 8080:8080 -e PORT=8080 \
+-v $HOME/.config/gcloud:/root/.config/gcloud \
+innerjourney-backend
+```
+
+*   🌐 `-p 8080:8080`: Mappar port 8080 på din dator till containern.
+*   🔧 `-e PORT=8080`: Sätter miljövariabeln `PORT` som används av `main.py`.
+*   📂 `-v $HOME/.config/gcloud:/root/.config/gcloud`: Monterar din `gcloud`-konfiguration till containern för autentisering mot Google Cloud.
+
+API:et är nu tillgängligt på `http://localhost:8080`. Testa det med `curl`:
 
 ```bash
 curl -X POST "http://localhost:8080/gemini/getActivation" \
@@ -93,78 +87,46 @@ curl -X POST "http://localhost:8080/gemini/getActivation" \
 -d '{"mood": 2, "goal": "komma igång"}'
 ```
 
-## Bygga och köra med Docker
+## Deploya till Google Cloud Run med Git och Cloud Build 🌐
 
-### 1. Bygg Docker-imagen
+Vi använder `Cloud Build` för att automatisera deployment till Google `Cloud Run` vid varje push till `main`-grenen i GitHub.
 
-Navigera till `backend/`-mappen och bygg Docker-imagen:
+### 1. Committa och pusha ändringar till GitHub 📤
 
-```bash
-cd InnerJourney/backend
-docker build -t innerjourney-backend .
-```
-
-*   `-t innerjourney-backend`: Namnger imagen som `innerjourney-backend`.
-
-### 2. Kör containern lokalt
-
-Kör den byggda imagen i en container:
+Kontrollera ändringar:
 
 ```bash
-docker run -p 8080:8080 -e PORT=8080 innerjourney-backend
+git status
 ```
 
-*   `-p 8080:8080`: Mappar port 8080 på din dator till port 8080 i containern.
-*   `-e PORT=8080`: Sätter miljövariabeln `PORT` som används av `main.py`.
-
-API:et är nu tillgängligt på `http://localhost:8080`. Testa det med samma `curl`-kommando som i föregående steg.
-
-## Deploya till Google Cloud Run
-
-### 1. Autentisera med Google Cloud
-
-Se till att du har `gcloud` CLI installerat och autentisera dig:
+Lägg till ändringar:
 
 ```bash
-gcloud auth login
-gcloud config set project innerjourney-c007e
+git add .
 ```
 
-*   Ersätt `innerjourney-c007e` med ditt Google Cloud-projekt-ID.
-
-### 2. Bygg och pusha till Google Container Registry (GCR)
-
-Navigera till `backend/` och bygg/pusha Docker-imagen:
+Committa:
 
 ```bash
-cd InnerJourney/backend
-docker build -t gcr.io/innerjourney-c007e/innerjourney-backend .
-docker push gcr.io/innerjourney-c007e/innerjourney-backend
+git commit -m "Beskriv ändringarna här"
 ```
 
-*   Du kan behöva konfigurera Docker för att autentisera mot GCR:
-
-    ```bash
-    gcloud auth configure-docker
-    ```
-
-### 3. Deploya till Cloud Run
-
-Deploya den pushade imagen till `Cloud Run`:
+Pusha till GitHub:
 
 ```bash
-gcloud run deploy innerjourney-backend \
---image gcr.io/innerjourney-c007e/innerjourney-backend \
---platform managed \
---region europe-west1 \
---allow-unauthenticated
+git push origin main
 ```
 
-*   `--platform managed`: Använder den hanterade versionen av `Cloud Run`.
-*   `--region europe-west1`: Välj en region nära dina användare (t.ex. `europe-west1`).
-*   `--allow-unauthenticated`: Tillåter oautentiserade anrop (justera detta baserat på säkerhetskrav).
+Detta triggar `Cloud Build` att bygga en ny Docker-image och deploya den till `Cloud Run`.
 
-Efter deployment får du en publik URL, t.ex. `https://innerjourney-backend-xxxxxxxxxx.europe-west1.run.app`. Testa den:
+### 2. Följ byggprocessen i Cloud Build 🛠️
+
+*   Gå till `Cloud Build > Build history` i Google Cloud Console.
+*   Kontrollera att bygget slutförs utan fel via loggarna.
+
+### 3. Testa i produktion ✅
+
+När deploymenten är klar, testa endpointen på Cloud Run (ersätt URL med din faktiska URL):
 
 ```bash
 curl -X POST "https://innerjourney-backend-975065734812.europe-west1.run.app/gemini/getActivation" \
@@ -172,38 +134,112 @@ curl -X POST "https://innerjourney-backend-975065734812.europe-west1.run.app/gem
 -d '{"mood": 2, "goal": "komma igång"}'
 ```
 
-## Säkerhet och hemligheter
+## API-dokumentation för frontend-utvecklare 📚
 
-*   **API-nycklar:** API-nycklar (t.ex. för Gemini och Firebase) lagras i `Google Cloud Secret Manager` under följande namn:
-    *   `firebase-credentials`: Innehåller Firebase service account JSON.
+### Endpoint: `/gemini/getActivation`
+
+Denna endpoint genererar en personlig aktivering baserat på användarens humör och mål. Aktiveringen sparas i `Firestore` och returneras till frontend.
+
+*   **Metod:** `POST`
+*   **URL:** `/gemini/getActivation`
+
+#### Request Body
+
+```json
+{
+  "mood": integer (1-5),
+  "goal": string
+}
+```
+
+*   `mood`: Användarens humör på en skala från 1 (lågt) till 5 (högt).
+*   `goal`: Användarens mål (t.ex. "bli mer fokuserad", "komma igång").
+
+#### Response
+
+```json
+{
+  "title": string,
+  "description": string,
+  "duration": integer,
+  "activation_type": string,
+  "category_id": string,
+  "prompt": string,
+  "log_type": string,
+  "prerequisite": string,
+  "repetitions": integer,
+  "questions": list of strings,
+  "ai_assessment": boolean,
+  "coach_approval_required": boolean,
+  "net_enabled": boolean,
+  "introduction_message": string,
+  "preparation_message": string,
+  "activation_id": string,
+  "source": string
+}
+```
+
+#### Exempel på svar:
+
+```json
+{
+  "title": "Fokuserad Andning",
+  "description": "En kort andningsövning för att öka fokus och klarhet.",
+  "duration": 5,
+  "activation_type": "meditation",
+  "category_id": "brainsync",
+  "prompt": "Sitt bekvämt och fokusera på din andning.",
+  "log_type": "text",
+  "prerequisite": "",
+  "repetitions": 1,
+  "questions": ["Hur kändes det att fokusera på din andning?"],
+  "ai_assessment": false,
+  "coach_approval_required": false,
+  "net_enabled": false,
+  "introduction_message": "Välkommen till denna fokusövning!",
+  "preparation_message": "Hitta en lugn plats att sitta på.",
+  "activation_id": "gemini_1743422072",
+  "source": "AI"
+}
+```
+
+#### Felhantering
+
+*   `400 Bad Request`: Om `mood` eller `goal` saknas eller är ogiltiga.
+*   `500 Internal Server Error`: Om Gemini-svaret inte kan parsas eller om obligatoriska fält saknas.
+
+## Säkerhet och hemligheter 🔒
+
+*   🔑 **API-nycklar:** Lagras i Google Cloud `Secret Manager`:
+    *   `firebase-credentials`: Firebase service account JSON.
     *   `gemini-api-key`: Gemini API-nyckel.
-*   **Behörigheter:** Cloud Run-tjänstens servicekonto (`[PROJECT_NUMBER]-compute@developer.gserviceaccount.com`) måste ha rollen `Secret Manager Secret Accessor` för att kunna hämta hemligheter. Lägg till rollen via `Google Cloud Console` under `IAM`.
+*   🛡️ **Behörigheter:** Cloud Run-tjänstens servicekonto (`[PROJECT_NUMBER]-compute@developer.gserviceaccount.com`) måste ha rollen `Secret Manager Secret Accessor`. Lägg till detta i `IAM` i Google Cloud Console.
 
-## Felsökning
+## Felsökning 🐞
 
 ### 1. 404 Not Found
 
-*   **Orsak:** En endpoint hittas inte.
-*   **Lösning:** Kontrollera att routern är korrekt importerad i `main.py` (t.ex. `app.include_router(gemini.router)`).
+*   **Orsak:** Endpoint hittas inte.
+*   **Lösning:** Kontrollera att routern är importerad i `main.py` (t.ex. `app.include_router(gemini.router, prefix="/gemini")`).
 
-### 2. PermissionDenied vid åtkomst till Secret Manager
+### 2. PermissionDenied vid Secret Manager
 
-*   **Orsak:** Cloud Run-tjänsten saknar behörigheter.
+*   **Orsak:** Saknade behörigheter för Cloud Run-tjänstens servicekonto.
 *   **Lösning:** Ge servicekontot rollen `Secret Manager Secret Accessor` i `IAM`.
 
-### 3. Container failed to start
+### 3. Container kraschar vid start
 
-*   **Orsak:** Applikationen kraschar vid start (t.ex. syntaxfel, saknade beroenden, eller konfigurationsproblem).
+*   **Orsak:** Syntaxfel, saknade beroenden eller konfigurationsproblem.
 *   **Lösning:**
-    1.  Kontrollera `Cloud Run`-loggorna i `Google Cloud Console`.
-    2.  Bygg och kör containern lokalt (`docker build` och `docker run`) för att felsöka.
+    *   Kontrollera Cloud Run-loggar i Google Cloud Console.
+    *   Bygg och kör lokalt med `docker build` och `docker run` för att felsöka.
 
-## Nästa steg
+## Nästa steg 🌟
 
-*   Implementera fler API-endpoints för ytterligare funktionalitet (t.ex. telefonverifiering, hämta sparade reflektioner).
-*   Lägg till enhetstester med `pytest` för att säkerställa kodkvalitet.
-*   Förbättra säkerheten genom att begränsa `--allow-unauthenticated` och implementera API-nyckelvalidering.
+*   📈 Lägg till fler endpoints (t.ex. för telefonverifiering eller reflektioner).
+*   🧪 Implementera enhetstester med `pytest`.
+*   🔐 Förbättra säkerheten genom att ta bort `--allow-unauthenticated` och lägga till API-nyckelvalidering eller annan autentisering.
 
-## Kontakt
+## Kontakt 📬
 
-För frågor eller bidrag, skapa ett issue i `GitHub`-repot: `joelkvarnsmyr/InnerJourney`.
+För frågor eller bidrag, skapa ett issue på GitHub: `joelkvarnsmyr/InnerJourney`.
