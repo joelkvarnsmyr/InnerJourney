@@ -41,13 +41,13 @@ async def get_activation(request: ActivationRequest):
 
         # Lägg till ett unikt ID och tagg som AI-genererat
         activation_id = f"gemini_{int(__import__('time').time())}"
-        activation["activationId"] = activation_id
+        activation["activation_id"] = activation_id  # Uppdaterat till "activation_id"
         activation["source"] = "AI"
 
         # Spara till Firestore
         save_to_firestore("exercises", activation_id, activation)
 
-        # Returnera hela aktiveringsobjektet till frontend
+        # Returnera svar till frontend
         return ActivationResponse(**activation)
 
     except json.JSONDecodeError as e:
