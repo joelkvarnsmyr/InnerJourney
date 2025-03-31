@@ -28,8 +28,8 @@ except Exception as e:
     logger.error(f"Failed to configure Gemini API: {e}")
     raise
 
-# Definiera modellen och generera aktivering
-model = GenerativeModel("gemini-1.5-pro-latest")  # Använder den senaste modellen
+# Definiera modellen
+model = GenerativeModel("gemini-1.5-pro-latest")
 
 def generate_activation(mood: int, goal: str):
     try:
@@ -60,5 +60,4 @@ Se till att svaret är ett giltigt JSON-objekt med alla dessa fält.
         return response.text
     except Exception as e:
         logger.error(f"Failed to generate activation: {e}")
-        # Returnera ett mockat svar som fallback
         return '{"title": "Mock Step", "description": "This is a mock step due to an error: ' + str(e) + '"}'

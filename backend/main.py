@@ -16,8 +16,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Inkludera routern från gemini.py
-app.include_router(gemini.router)
+# Inkludera routern från gemini.py med prefix /gemini
+app.include_router(gemini.router, prefix="/gemini")
 
 # En enkel rot-endpoint för att testa
 @app.get("/")
@@ -28,4 +28,6 @@ async def root():
 port = int(os.getenv("PORT", 8080))
 
 if __name__ == "__main__":
-    uvicorn.run("backend.main:app", host="0.0.0.0", port=port)
+    # Dynamiskt bestäm modulnamnet
+    module_name = __package__ or __name__
+    uvicorn.run(f"{module_name}:app", host="0.0.0.0", port=port)
