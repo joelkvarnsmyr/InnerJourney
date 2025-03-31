@@ -9,13 +9,10 @@ app = FastAPI()
 # Lägg till CORS-middleware för att tillåta förfrågningar från frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",  # Tillåt förfrågningar från localhost (för utveckling)
-        "https://innerjourney-c007e.web.app",  # Lägg till din deployade frontend-URL
-    ],
+    allow_origins=["*"],  # Tillåter alla domäner (endast för test!)
     allow_credentials=True,
-    allow_methods=["*"],  # Tillåter alla HTTP-metoder (GET, POST, etc.)
-    allow_headers=["*"],  # Tillåter alla headers
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Inkludera routern från gemini.py
