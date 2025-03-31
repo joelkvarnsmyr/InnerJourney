@@ -47,12 +47,9 @@ async def get_activation(request: ActivationRequest):
         # Spara till Firestore
         save_to_firestore("exercises", activation_id, activation)
 
-        # Returnera svar till frontend
-        return ActivationResponse(
-            title=activation["title"],
-            description=activation["description"],
-            activation_id=activation_id
-        )
+        # Returnera hela aktiveringsobjektet till frontend
+        return ActivationResponse(**activation)
+
     except json.JSONDecodeError as e:
         logger.error(f"Failed to parse activation JSON: {e}")
         raise ValueError("Invalid JSON response from Gemini")
