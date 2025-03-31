@@ -29,11 +29,31 @@ except Exception as e:
     raise
 
 # Definiera modellen och generera aktivering
-model = GenerativeModel("gemini-1.5-pro-latest")  # Ändrat till gemini-1.5-pro-latest
+model = GenerativeModel("gemini-1.5-pro-latest")  # Använder den senaste modellen
 
 def generate_activation(mood: int, goal: str):
     try:
-        prompt = f"Given mood {mood}/5 and goal '{goal}', suggest a small step for personal development in JSON format."
+        prompt = f"""
+Givet användarens humör {mood}/5 och mål '{goal}', generera en personlig aktivering för personlig utveckling. Aktiveringen ska följa InnerJourney-arkitekturen och inkludera följande fält i JSON-format:
+
+- "title": En kort, engagerande titel för aktiveringen.
+- "description": En kort beskrivning av vad användaren ska göra.
+- "duration": Uppskattad tid i minuter för aktiveringen.
+- "activation_type": Typ av aktivering (t.ex. "meditation", "physical", "social", "ai_assessment", "live_event").
+- "category_id": Kategori för aktiveringen (t.ex. "inner_child", "manifest", "shadows", "brainsync", "sleep").
+- "prompt": En kort instruktion eller uppmaning till användaren.
+- "log_type": Hur användaren ska logga sin upplevelse (t.ex. "text", "video", "audio").
+- "prerequisite": Eventuella förkrav för aktiveringen (lämna tomt om inga finns).
+- "repetitions": Hur många gånger användaren ska upprepa aktiveringen.
+- "questions": En lista med reflektionsfrågor för användaren efter aktiveringen.
+- "ai_assessment": Om aktiveringen involverar AI-bedömning (true eller false).
+- "coach_approval_required": Om coachgodkännande krävs (true eller false).
+- "net_enabled": Om aktiveringen kräver internet (true eller false).
+- "introduction_message": Ett meddelande för att introducera aktiveringen.
+- "preparation_message": Ett meddelande för att förbereda användaren.
+
+Se till att svaret är ett giltigt JSON-objekt med alla dessa fält.
+"""
         logger.info(f"Generating activation with prompt: {prompt}")
         response = model.generate_content(prompt)
         logger.info(f"Received response: {response.text}")

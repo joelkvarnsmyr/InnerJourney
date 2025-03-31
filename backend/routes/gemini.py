@@ -1,25 +1,24 @@
 from fastapi import APIRouter
-from services.gemini_service import generate_activation
-from services.firebase_service import save_to_firestore
-from models.activation import ActivationRequest, ActivationResponse
 import json
 import logging
+from .activation import ActivationRequest, ActivationResponse
+from .gemini_service import generate_activation
+from .firebase_service import save_to_firestore
 
-# Sätt upp loggning
-logging.basicConfig(level=logging.INFO)
+router = APIRouter()
 logger = logging.getLogger(__name__)
-
-router = APIRouter(prefix="/gemini", tags=["gemini"])
-
 
 @router.post("/getActivation", response_model=ActivationResponse)
 async def get_activation(request: ActivationRequest):
     try:
+        # Logga inkommande förfrågan
         logger.info(f"Received request: {request}")
+
+        # Generera aktiveringen från Gemini
         activation_json = generate_activation(request.mood, request.goal)
         logger.info(f"Generated activation JSON: {activation_json}")
 
-        # Rengör svaret från markdown-formatering
+        # Rensa svaret från eventuell markdown-formatering
         activation_json = activation_json.strip()
         if activation_json.startswith("```json"):
             activation_json = activation_json[7:]  # Ta bort ```json
@@ -27,32 +26,36 @@ async def get_activation(request: ActivationRequest):
             activation_json = activation_json[:-3]  # Ta bort avslutande ```
         activation_json = activation_json.strip()
 
-        # Försök att parsa JSON
+        # Parsa JSON-svaret
         activation = json.loads(activation_json)
         logger.info(f"Parsed activation: {activation}")
 
-        # Hämta title och description från suggestion
-        suggestion = activation.get("suggestion", {})
-        title = suggestion.get("title")
-        description = suggestion.get("description")
+        # Kontrollera att alla obligatoriska fält finns
+        required_fields = [
+            "title", "description", "duration", "activation_type", "category_id",
+            "prompt", "log_type", "prerequisite", "repetitions", "questions",
+            "ai_assessment", "coach_approval_required", "net_enabled",
+            "introduction_message", "preparation_message"
+        ]
+        for field in required_fields:
+            if field not in activation:
+                logger.error(f"Missing required field: {field}")
+                raise ValueError(f"Activation JSON must contain '{field}'")
 
-        # Kontrollera att fälten finns
-        if not title or not description:
-            logger.error("Missing required fields in activation JSON")
-            raise ValueError("Activation JSON must contain 'title' and 'description' in 'suggestion'")
+        # Generera ett unikt activationId
+        activation_id = f"gemini_{int(__import__('time').time())}"
 
-        activation_id = f"custom_{int(__import__('time').time())}"
-        save_to_firestore("activations", activation_id, {
-            "title": title,
-            "description": description,
-            "category_id": "custom",
-            "usageCount": 0,
-            "createdBy": "AI"
-        })
+        # Lägg till fält för att tagga som AI-genererat
+        activation["activationId"] = activation_id
+        activation["source"] = "AI"  # Tagg för att skilja från manuellt skapade
 
+        # Spara aktiveringen i Firestore
+        save_to_firestore("exercises", activation_id, activation)
+
+        # Returnera relevanta fält till frontend
         return ActivationResponse(
-            title=title,
-            description=description,
+            title=activation["title"],
+            description=activation["description"],
             activation_id=activation_id
         )
     except json.JSONDecodeError as e:

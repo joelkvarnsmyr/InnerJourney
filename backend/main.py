@@ -7,6 +7,7 @@ from routes import gemini  # Importera routern från gemini.py
 app = FastAPI()
 
 # Lägg till CORS-middleware för att tillåta förfrågningar från frontend
+# OBS: allow_origins=["*"] är okej för testning, men i produktion bör du begränsa till specifika domäner
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Tillåter alla domäner (endast för test!)
