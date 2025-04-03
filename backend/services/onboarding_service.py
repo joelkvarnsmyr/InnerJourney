@@ -8,8 +8,8 @@ logger = logging.getLogger(__name__)
 
 # Lista med frågor som assistenten ställer under onboardingen
 QUESTIONS = [
-    "Hej! När är du född? (ÅÅÅÅ-MM-DD)",
-    "Vad är ditt primära mål? Stresslindring, Fokus eller Självmedvetenhet?",
+    "När är du född? (ÅÅÅÅ-MM-DD)",
+    "Vad är ditt primära mål med din inre resa? Stresslindring, Fokus eller Självmedvetenhet?",
     "Är du introvert eller extrovert?",
     "Hur föredrar du att arbeta? En uppgift i taget eller flera samtidigt?",
     "Hur känner du dig inför framtiden? Hoppfull eller hopplös?"

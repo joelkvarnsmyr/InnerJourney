@@ -1,0 +1,57 @@
+# README för `/context/` 🔗
+
+## Syfte
+Mappen `/context/` innehåller **React-kontexter** som används för att dela global state och logik mellan komponenter utan att behöva skicka props manuellt genom hela komponentträdet. Här hanteras exempelvis autentisering, men mappen kan utökas med fler kontexter för andra ändamål (t.ex. temahantering eller användarinställningar).
+
+## Hur du använder den
+- **Skapa en ny kontext**: Lägg till en fil, t.ex. `ThemeContext.tsx`, för att hantera specifik logik eller state.
+- **Använd i komponenter**: Importera och använd kontexten med `useContext`, t.ex. `const { login } = useAuth();`.
+- **Provider**: Varje kontext måste ha en `<Provider>`-komponent som omsluter de delar av applikationen som ska ha tillgång till kontexten.
+
+## Befintliga kontexter
+### `AuthContext.tsx`
+- **Vad gör den?**: Hanterar autentisering med Firebase, inklusive inloggning och registrering.
+- **Exponerade funktioner**:
+  - `login(email: string, password: string)`: Loggar in en användare med e-post och lösenord.
+  - `register(email: string, password: string)`: Registrerar en ny användare med e-post och lösenord.
+- **Exempel på användning**:
+  ```typescript
+  import { useAuth } from './context/AuthContext';
+
+  const LoginComponent = () => {
+    const { login } = useAuth();
+
+    const handleLogin = async () => {
+      try {
+        await login('user@example.com', 'password123');
+        console.log('Inloggad!');
+      } catch (error) {
+        console.error('Fel vid inloggning:', error.message);
+      }
+    };
+
+    return <button onClick={handleLogin}>Logga in</button>;
+  };
+Provider:
+typescript
+
+Collapse
+
+Wrap
+
+Copy
+import { AuthProvider } from './context/AuthContext';
+
+const App = () => (
+  <AuthProvider>
+    <LoginComponent />
+  </AuthProvider>
+);
+Tips för att lyckas 🌟
+Använd kontext för state eller logik som delas av flera komponenter, som autentisering.
+Håll varje kontext fokuserad på ett specifikt ansvar.
+Testa att kontexten fungerar som förväntat genom att använda useAuth() i olika komponenter.
+Om du lägger till fler kontexter, uppdatera denna README med information om dem!
+Teknisk översikt
+Beroenden: Kontexten i AuthContext.tsx använder Firebase Authentication (firebase/auth) för att hantera inloggning och registrering.
+Felhantering: Funktionerna kastar felmeddelanden vid misslyckanden, så se till att fånga dem med try/catch.

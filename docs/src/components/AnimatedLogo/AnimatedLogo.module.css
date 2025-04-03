@@ -1,0 +1,64 @@
+/* docs/src/components/AnimatedLogo/AnimatedLogo.module.css */
+
+.logoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.logoWrapper {
+    position: relative; /* Viktigt för z-index och absoluta barn */
+    width: 112px;
+    height: 112px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoMotionWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center center;
+    /* === NYCKEL FÖR LAGERORDNING === */
+    position: relative; /* Etablerar stacking context */
+    z-index: 1;         /* Placerar denna *ovanför* z-index 0 */
+}
+
+.logo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* Flyttat filter till wrapper eller ta bort om det stör */
+}
+
+.effectsSvg {
+    /* === NYCKEL FÖR LAGERORDNING === */
+    position: absolute; /* Placeras relativt .logoWrapper */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    z-index: 0;         /* Placeras *under* z-index 1 */
+}
+
+.variantLabel {
+    font-size: 0.8rem;
+    color: #aaa; /* Lite ljusare grå */
+    margin-top: 0.5rem;
+}
+
+/* --- Variant-specifika stilar --- */
+
+/* Stil för Variant 4: Orbiting Dots med Blur */
+.orbitingDot {
+    filter: blur(1.5px); /* Justera blur-styrkan här */
+}
+
+/* Inga specifika klasser behövs för Variant 5:s shimmerRing just nu,
+   stilen (stroke-dasharray) sätts direkt i TSX och animeras. */

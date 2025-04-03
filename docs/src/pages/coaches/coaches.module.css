@@ -1,0 +1,339 @@
+/* docs/src/pages/coaches/coaches.module.css */
+
+/* --- Hero Section --- */
+.heroBanner {
+    padding: 7rem 1rem; /* Mer padding */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, #ff6f61 0%, #ff9f43 80%, #ffb36b 100%); /* Justerad gradient */
+    color: #ffffff;
+}
+
+.heroTitle {
+    color: #ffffff;
+    font-size: 3.2rem; /* Anpassad storlek */
+    font-weight: 700;
+    margin-bottom: 1.5rem; /* Mer luft */
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.heroSubtitle {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 2.5rem; /* Mer luft */
+    opacity: 0.95;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* CTA-knapp i header */
+.ctaButton {
+    background-color: #ffffff;
+    color: #ff6f61;
+    border: none;
+    padding: 0.9rem 2rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.ctaButton:hover {
+    background-color: #fff0e8; /* Ljusare ton vid hover */
+    color: #e15a4f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+/* --- Generella Sektionsstilar --- */
+.whySection, .howItWorksSection, .benefitsSection, .philosophySection, .futureSection, .formSection {
+    padding: 5rem 1rem;
+    overflow: hidden; /* Förhindra att animationer skapar scroll */
+}
+
+.whySection, .philosophySection, .formSection {
+    background-color: #ffffff;
+}
+
+.howItWorksSection, .benefitsSection, .futureSection {
+    background-color: #f9f9f9; /* Växla bakgrund */
+}
+
+.sectionContainer {
+    padding: 2rem 0;
+    max-width: 960px; /* Lite smalare container för textsektioner */
+    margin: 0 auto;
+}
+
+.sectionTitle {
+    color: #ff6f61;
+    font-size: 2.6rem;
+    margin-bottom: 2rem; /* Mer luft under rubrik */
+    text-align: center;
+}
+
+.sectionText {
+    color: #333;
+    font-size: 1.15rem;
+    line-height: 1.75; /* Ökad läsbarhet */
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 1.5rem auto;
+}
+
+.sectionText a { color: #ff6f61; text-decoration: none; font-weight: 500; }
+.sectionText a:hover { text-decoration: underline; }
+
+/* --- How It Works Section --- */
+.howItWorksList {
+    list-style: none; /* Ta bort prickar */
+    padding: 0;
+    margin: 3rem 0 0 0;
+    max-width: 700px; /* Centrera listan */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.howItWorksStep {
+    display: flex;
+    align-items: flex-start; /* Justera ikon och text */
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border-left: 4px solid #ff9f43; /* Accentkant */
+}
+
+.stepIcon {
+    font-size: 1.8rem;
+    padding-top: 0.2rem; /* Justera vertikalt */
+    color: #ff6f61;
+}
+
+.stepTitle {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.stepText {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+
+/* --- Benefits Section --- */
+.benefitsList { /* Använder nu grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem; /* Justerat gap */
+    margin: 3rem 0;
+}
+
+.benefitCard {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    padding: 2rem 1.5rem; /* Justerad padding */
+    transition: box-shadow 0.3s ease;
+    text-align: center;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.benefitCard:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.benefitIcon {
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+    display: inline-block;
+    color: #ff6f61;
+}
+
+.benefitCard h3 {
+    color: #333;
+    font-size: 1.3rem; /* Justerad */
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.benefitCard p {
+    color: #555;
+    font-size: 0.95rem; /* Justerad */
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+/* --- Philosophy Section --- */
+.philosophyContainer {
+    border-left: 5px solid #ff6f61; /* Accentkant */
+    padding-left: 2rem;
+}
+.philosophySection .sectionText {
+    font-style: italic; /* Betona citat */
+    color: #444;
+}
+.philosophySection .sectionText:first-of-type {
+    font-size: 1.25rem; /* Gör citatet lite större */
+    margin-bottom: 2rem;
+}
+
+
+/* --- Future Section --- */
+.futureList {
+    list-style: none;
+    padding: 0;
+    margin: 2.5rem auto 0 auto;
+    max-width: 700px;
+}
+.futureList li {
+    padding: 0.8rem 0 0.8rem 1.5rem; /* Lite padding */
+    margin-bottom: 1rem;
+    position: relative;
+    font-size: 1.05rem;
+    color: #444;
+    line-height: 1.6;
+}
+/* Skapa en liten "check"-liknande ikon med pseudo-element */
+.futureList li::before {
+    content: '✨'; /* Eller annan ikon */
+    position: absolute;
+    left: 0;
+    top: 0.9rem;
+    font-size: 0.9rem;
+    /* color: #ff9f43; */
+}
+
+/* --- Form Section --- */
+.formSection { /* Behåll som den är */
+    padding: 5rem 1rem;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+.formSection .sectionContainer { /* Behåll som den är */
+    padding: 2rem 0;
+    max-width: 960px;
+    margin: 0 auto;
+}
+.formSection .sectionTitle { /* Behåll som den är */
+    color: #ff6f61;
+    font-size: 2.6rem;
+    margin-bottom: 1.5rem; /* Justera vid behov */
+    text-align: center;
+}
+.formSection .sectionText { /* Behåll som den är */
+    color: #333;
+    font-size: 1.15rem;
+    line-height: 1.75;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 2rem auto; /* Öka marginalen ner till formuläret */
+}
+
+
+/* --- Formulär - Uppdaterade Stilar --- */
+.form {
+    max-width: 550px; /* Lite smalare? */
+    margin: 2rem auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem; /* Justerat gap */
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column; /* Behåll kolumnlayout */
+    position: relative; /* För eventuell framtida positionering av ikoner etc. */
+}
+
+.formGroup label {
+    font-size: 0.95rem; /* Lite mindre */
+    color: #555; /* Lite ljusare */
+    margin-bottom: 0.5rem; /* Ökat avstånd */
+    font-weight: 500;
+    padding-left: 0.25rem; /* Liten indragning för linjering */
+}
+
+.formGroup input, .formGroup textarea {
+    padding: 0.9rem 1.1rem; /* Lite mer padding */
+    border: 1px solid #d8dee4; /* Neutral grå kantlinje */
+    border-radius: 8px; /* Matchar knappar */
+    font-size: 1rem;
+    line-height: 1.5; /* Säkerställ bra radhöjd */
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background-color: #fdfdfd; /* Mycket ljust grå bakgrund */
+}
+
+.formGroup input::placeholder, .formGroup textarea::placeholder {
+    color: #aaa;
+    opacity: 1;
+}
+
+
+.formGroup input:focus, .formGroup textarea:focus {
+    border-color: #ff9f43;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 159, 67, 0.25); /* Tydligare focus-ring */
+    background-color: #fff; /* Vit bakgrund vid focus */
+}
+
+.formGroup textarea {
+    resize: vertical;
+    min-height: 120px; /* Lite högre */
+    font-family: inherit; /* Säkerställ samma font som input */
+}
+
+/* Specifikt för textarea-label om den behöver justeras */
+.formGroup label[for="message"] {
+    /* Ev. justeringar här om nödvändigt */
+}
+
+.submitButton {
+    background: #ff6f61;
+    color: #ffffff;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-weight: 600;
+    font-size: 1.15rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    align-self: center; /* Centrera knappen */
+    margin-top: 1.5rem; /* Mer luft ovanför knappen */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: auto; /* Låt innehållet styra bredden */
+    min-width: 200px; /* Men sätt en minsta bredd */
+}
+
+.submitButton:hover {
+    background: #ff9f43;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    /* Transform hanteras av Framer Motion */
+}
+
+/* --- Media Queries (Endast relevanta för formuläret) --- */
+@media screen and (max-width: 768px) {
+    .form {
+        max-width: 90%; /* Ta mer bredd på små skärmar */
+    }
+    .submitButton {
+        width: 100%; /* Full bredd på knappen på små skärmar */
+        max-width: none; /* Ta bort max-bredd */
+    }
+}

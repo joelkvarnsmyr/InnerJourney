@@ -1,0 +1,11 @@
+{
+  "extends": "@docusaurus/tsconfig",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "moduleResolution": "node",  // Säkerställ att vi använder Node.js-modulupplösning
+    "allowJs": true,  // Tillåt JavaScript-filer (kan vara användbart för Docusaurus)
+    "esModuleInterop": true  // Förbättra interoperabilitet med CommonJS-moduler
+  },
+  "include": ["src/**/*"],  // Inkludera alla filer i src/
+  "exclude": [".docusaurus", "build", "node_modules"]
+}

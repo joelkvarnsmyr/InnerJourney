@@ -1,0 +1,77 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* Override default Infima variables for Inner Journey */
+:root {
+  /* Primärfärger baserade på Inner Journeys #FF6F61 */
+  --ifm-color-primary: #ff6f61;
+  --ifm-color-primary-dark: #e65a4d;
+  --ifm-color-primary-darker: #d94f42;
+  --ifm-color-primary-darkest: #c43e32;
+  --ifm-color-primary-light: #ff8475;
+  --ifm-color-primary-lighter: #ff9083;
+  --ifm-color-primary-lightest: #ffaba2;
+
+  /* Bakgrunds- och textfärger */
+  --ifm-background-color: #ffffff;
+  --ifm-heading-color: #2d2d2d;
+  --ifm-link-color: #ff6f61;
+  --ifm-link-hover-color: #ff9f43;
+
+  /* Navbar och footer */
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-footer-background-color: #2d2d2d;
+
+  /* Kodstilar */
+  --ifm-code-font-size: 90%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Övriga stilar */
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Förbättra läsbarhet i mörkt läge */
+[data-theme='dark'] {
+  /* Primärfärger i mörkt läge (ljusare nyans för bättre kontrast) */
+  --ifm-color-primary: #ff9083;
+  --ifm-color-primary-dark: #ff8475;
+  --ifm-color-primary-darker: #ff6f61;
+  --ifm-color-primary-darkest: #e65a4d;
+  --ifm-color-primary-light: #ffaba2;
+  --ifm-color-primary-lighter: #ffb7b0;
+  --ifm-color-primary-lightest: #ffd1cc;
+
+  /* Bakgrunds- och textfärger */
+  --ifm-background-color: #1a1a1a;
+  --ifm-heading-color: #ffffff;
+  --ifm-link-color: #ff9083;
+  --ifm-link-hover-color: #ffaba2;
+
+  /* Navbar och footer */
+  --ifm-navbar-background-color: #2d2d2d;
+  --ifm-footer-background-color: #1a1a1a;
+
+  /* Kodstilar */
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+}
+
+/* Fixa layout för kort */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px; /* Standardmarginal för Docusaurus row */
+}
+
+.col {
+  padding: 0 15px; /* Standardpadding för Docusaurus col */
+  box-sizing: border-box;
+  position: relative;
+}
+
+a.featureCard {
+  position: relative;
+  z-index: 1; /* Förhindra att kort överlappas av andra element */
+}

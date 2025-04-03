@@ -1,0 +1,26 @@
+joelkvarnsmyr:
+  name: Joel Kvarnsmyr
+  title: Grundare av Inner Journey
+  url: https://github.com/joelkvarnsmyr
+  image_url: https://github.com/joelkvarnsmyr.png
+  page: true
+  socials:
+    github: https://github.com/joelkvarnsmyr
+
+team-inner-journey:
+  name: Inner Journey Team
+  title: Teamet bakom Inner Journey
+  url: https://innerjourney.kvarnsmyr.se
+  image_url: https://innerjourney.kvarnsmyr.se/team-image.jpg
+  page: true
+  socials:
+    github: https://github.com/innerjourney-team
+
+ulrikaafklint:
+  name: Ulrika af Klint
+  title: Visionär och Medskapare
+  url: https://example.com/ulrikaafklint
+  image_url: https://example.com/ulrikaafklint.png
+  page: true
+  socials:
+    linkedin: https://linkedin.com/in/ulrikaafklint  # Exempel-URL, byt ut om du har en riktig

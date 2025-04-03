@@ -1,0 +1,58 @@
+/* --- Grundläggande Sidlayout (Liknar Moscow) --- */
+.statusBoardTheme {
+    background-color: #f6f8fa;
+    color: #1f2328;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+.pageHeader {
+    text-align: center;
+    padding: 40px 24px 24px 24px;
+    margin-bottom: 16px;
+}
+.pageHeader h1 { font-size: 2rem; color: #1f2328; margin-bottom: 8px; }
+.pageHeader p { font-size: 1rem; color: #57606a; max-width: 700px; margin: 0 auto; }
+
+/* --- Grid för Kolumner --- */
+.statusBoardGrid {
+    display: grid;
+    /* Anpassa antal kolumner, kanske fler än 4? auto-fit är flexibelt */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; /* Lite mindre gap */
+    padding: 0 24px;
+}
+
+/* --- Kolumn --- */
+.statusColumn { background: transparent; border-radius: 8px; display: flex; flex-direction: column; }
+
+/* --- Kolumnrubrik --- */
+.categoryHeader {
+    font-size: 1rem; /* Något mindre för status? */
+    font-weight: 500; /* Lite tunnare? */
+    color: #1f2328;
+    margin: 0 0 16px 0;
+    padding: 8px 12px; /* Ta bort vänster-padding om ingen accentlinje */
+    border-radius: 4px; /* Lite rundning? */
+    background-color: #e1e4e8; /* Ljusgrå bakgrund för rubrik */
+    /* Eller använd accentlinje som Moscow? Behåll då border-left och padding-left */
+    /* border-left: 4px solid; */
+    /* padding-left: 12px; */
+}
+
+/* --- Färger för Status-rubriker (Exempel - välj dina färger) --- */
+/* Använd bakgrundsfärg eller border-color beroende på vald stil */
+.statusideas { background-color: #f0f0f0; color: #586069; /* border-color: #d1d5da; */}
+.statusbacklog { background-color: #f0f0f0; color: #586069; /* border-color: #d1d5da; */ }
+.statusready { background-color: #dbf4ff; color: #0550ae; /* border-color: #9dbff9; */ }
+.statusinprogress { background-color: #fff8c5; color: #825f00; /* border-color: #f6e05e; */ }
+.statusinreview { background-color: #eedcff; color: #5a32a3; /* border-color: #d3bcf0; */ }
+.statusdone { background-color: #dafbe1; color: #1a7f37; /* border-color: #85e89d; */ }
+
+.count { font-size: 0.9rem; font-weight: normal; margin-left: 8px; color: #586069; }
+
+/* --- Kortbehållare --- */
+.cardContainer { display: flex; flex-direction: column; gap: 10px; min-height: 100px; } /* Lite mindre gap */
+.noCards { font-size: 0.9rem; color: #57606a; padding: 16px; text-align: center; font-style: italic; }
+
+/* Ingen kortstyling här */

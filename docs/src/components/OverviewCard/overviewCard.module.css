@@ -1,0 +1,33 @@
+/* Grundläggande styling för kortets *skal* */
+.card {
+    background-color: var(--ifm-card-background-color); /* Använd tema */
+    border: 1px solid var(--ifm-toc-border-color); /* Använd tema */
+    border-radius: 8px; /* Mer rundning */
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    box-shadow: var(--ifm-global-shadow-xs); /* Tema-skugga */
+    display: flex;
+    flex-direction: column; /* Stapla slots */
+    gap: 8px; /* Mellanrum mellan slots */
+}
+
+.card:hover,
+.card:focus { /* Lägg till focus-state */
+    box-shadow: var(--ifm-global-shadow-lw);
+    border-color: var(--ifm-color-primary-light); /* Highlight-ram vid hover/focus */
+    outline: none; /* Ta bort ful standard-outline */
+}
+
+/* Grundläggande styling för slots (kan justeras) */
+.cardHeaderSlot {
+    /* t.ex. display: flex; justify-content: space-between; */
+}
+
+.cardBodySlot {
+    /* t.ex. font-size: 0.9rem; color: var(--ifm-font-color-secondary); */
+}
+
+.cardFooterSlot {
+    /* t.ex. display: flex; flex-wrap: wrap; gap: 6px; */
+}

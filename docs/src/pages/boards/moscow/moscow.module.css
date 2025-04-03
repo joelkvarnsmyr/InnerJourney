@@ -1,0 +1,49 @@
+/* --- Grundläggande Sidlayout --- */
+.moscowTheme {
+    background-color: #f6f8fa; /* Ljusgrå bakgrund */
+    color: #1f2328;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+.pageHeader {
+    text-align: center;
+    padding: 40px 24px 24px 24px;
+    margin-bottom: 16px;
+}
+.pageHeader h1 { font-size: 2rem; color: #1f2328; margin-bottom: 8px; }
+.pageHeader p { font-size: 1rem; color: #57606a; max-width: 700px; margin: 0 auto; }
+
+/* --- Grid för Kolumner --- */
+.moscowGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Försök med 4 kolumner */
+    /* För mer responsivitet: */
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+    gap: 24px;
+    padding: 0 24px;
+}
+@media (max-width: 1200px) { .moscowGrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) { .moscowGrid { grid-template-columns: 1fr; } }
+
+
+/* --- Kolumn --- */
+.moscowColumn { background: transparent; border-radius: 8px; display: flex; flex-direction: column; }
+
+/* --- Kolumnrubrik (Accentlinje-stil) --- */
+.categoryHeader {
+    font-size: 1.1rem; font-weight: 600; color: #1f2328;
+    margin: 0 0 16px 0; padding: 8px 0 8px 12px;
+    border-left: 4px solid; /* Accentlinje */
+}
+.mustHave { border-color: #d9363e; } /* Röd */
+.shouldHave { border-color: #f6a13a; } /* Orange/Gul */
+.couldHave { border-color: #1a7f37; } /* Grön */
+.wontHave { border-color: #adb5bd; } /* Ljusgrå */
+.count { font-size: 0.9rem; font-weight: normal; margin-left: 8px; color: #57606a; }
+
+/* --- Kortbehållare --- */
+.cardContainer { display: flex; flex-direction: column; gap: 12px; min-height: 100px; }
+.noCards { font-size: 0.9rem; color: #57606a; padding: 16px; text-align: center; font-style: italic; }
+
+/* INGEN specifik kortstyling här - det sköts av githubCard.module.css */

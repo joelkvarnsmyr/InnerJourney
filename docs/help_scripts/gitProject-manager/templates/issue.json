@@ -1,0 +1,32 @@
+{
+  "id": "TASK-001",
+  "title": "Insamling av födelsedata",
+  "body": "# Rapport: Insamling av födelsedata\n\n## Översikt\n\n**Beskrivning:** Utveckla en funktion för att samla in och lagra användarens födelsedata, inklusive datum, tid och plats, för att skapa en personlig startpunkt för deras resa i plattformen.\n\n**Koppling till InnerJourney:** Ger en grund för personlig anpassning och onboarding, i linje med plattformens fokus på självinsikt (*Projektbeskrivning*).\n\n**Mål:** Säkerställa att användare kan ange grunddata för en skräddarsydd upplevelse.\n\n## Analys\n\n### Fördelar\n- Skapar en unik startpunkt för varje användare.\n- Förbättrar personalisering av resan.\n\n### Utmaningar\n- Kräver validering för att undvika felaktiga data.\n- Integritetsaspekter kring lagring av personuppgifter.\n\n## Frågor\n- Hur hanteras ogiltiga eller saknade data?\n- Vilken nivå av platsdetalj behövs (t.ex. stad eller exakt adress)?\n\n## Rekommendationer\n- Implementera enkel validering (t.ex. datumformat, rimlig tid).\n- Använd fritext för plats initialt och utvärdera behov av platsförslag senare.",
+  "subissues": [
+    "Designa ett användargränssnitt för att mata in födelsedatum med en intuitiv datumväljare",
+    "Skapa ett gränssnitt för att ange födelsetid med validering för korrekt tidsformat",
+    "Bygg ett fält för att ange födelseplats med stöd för fritext eller platsförslag",
+    "Implementera valideringslogik för att säkerställa att insamlade data är korrekta och kompletta",
+    "Utveckla ett API-endpoint (/init-birthdata) för att ta emot och behandla födelsedata",
+    "Lagra födelsedatan säkert i Firestore för framtida användning"
+  ],
+  "status": "Backlog",
+  "priority": "P0",
+  "size": "M",
+  "estimate": 12,
+  "iteration": "Iteration 2",
+  "start_date": "2025-04-10",
+  "end_date": "2025-04-12",
+  "moscow": "Must have",
+  "user_value": "5",
+  "dependencies": ["Väntar på #Task3"],
+  "objective": "Säkerställa att användare kan ange grunddata för onboarding.",
+  "team": "Frontend",
+  "release_version": "R1",
+  "financial_impact": 1000,
+  "quarter": "Q2 2025",
+  "risk": "Hög",
+  "stakeholder": "Produktägare",
+  "funding_source": "Intern budget",
+  "deadline": "2025-04-12"
+}

@@ -31,10 +31,17 @@ except Exception as e:
 # Definiera modellen
 model = GenerativeModel("gemini-1.5-pro-latest")
 
-def generate_activation(mood: int, goal: str):
+def generate_activation(mood: int, goal: str, profile: dict = {}):
     try:
+        # Skapa en prompt som inkluderar profildata
         prompt = f"""
-Givet användarens humör {mood}/5 och mål '{goal}', generera en personlig aktivering för personlig utveckling. Aktiveringen ska följa InnerJourney-arkitekturen och inkludera följande fält i JSON-format:
+Givet användarens humör {mood}/5 och mål '{goal}', samt följande profilinformation:
+- Fokusområde: {profile.get('focusArea', 'unknown')}
+- Personlighet: {profile.get('personalityType', {}).get('traits', ['unknown'])[0]}
+- Neurologiska tendenser: ADHD-poäng {profile.get('neuroTendencies', {}).get('adhdScore', 0)}
+- Välmåendeflaggor: Självmordsrisk {'Ja' if profile.get('wellbeingFlags', {}).get('suicideRisk', False) else 'Nej'}
+
+Generera en personlig aktivering för personlig utveckling. Aktiveringen ska följa InnerJourney-arkitekturen och inkludera följande fält i JSON-format:
 
 - "title": En kort, engagerande titel för aktiveringen.
 - "description": En kort beskrivning av vad användaren ska göra.

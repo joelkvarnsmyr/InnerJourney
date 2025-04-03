@@ -1,0 +1,18 @@
+{
+  "id": "IDEA-001",
+  "title": "Inspelning av meditationer med AI-stöd",
+  "body": "# Rapport: InnerJourney – Inspelning av meditationer och röstguidningar med AI-stöd\n\n## Översikt\n\n**Idébeskrivning:** Coacher ska kunna spela in meditationer och röstguidningar direkt i InnerJourney-appen...\n\n## Analys\n\n### Fördelar\n1. **Användarvänlighet för coacher:** ...",
+  "subissues": [
+    "Designa ett UI för inspelning i appen",
+    "Implementera AI-ljudförbättring med Krisp",
+    "Integrera VST-plugins i backend",
+    "Testa funktionen med en pilotgrupp av coacher"
+  ],
+  "status": "Ideas",
+  "idea_status": "Nytt förslag",
+  "priority": "P1",
+  "dependencies": ["Coaching-strategi", "Projektbeskrivning"],
+  "team": "UX + Dev",
+  "deadline": "2025-04-30",
+  "labels": ["idea", "Funktion", "Teknik", "Coaching"]
+}
