@@ -7,13 +7,14 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import { motion } from 'framer-motion'; // Importera motion för animationer
 
-// Importera page-specifika stilar
+// Importera page-specifika stilar (behålls för sektionsbakgrunder etc.)
 import pageStyles from './index.module.css';
 
-// Importera den externa komponenterna
-import HomepageHeader from '../components/HomepageHeader'; // Använder den utbrutna headern
+// Importera de externa komponenterna
+import HomepageHeader from '../components/HomepageHeader'; // Den utbrutna headern
+import BlogHighlights from '../components/BlogHighlights/BlogHighlights'; // Den utbrutna bloggsektionen
 
-// --- Animationsvarianter (Återanvänd/justera) ---
+// --- Animationsvarianter (kan flyttas till en delad fil) ---
 const fadeInYProps = (delay = 0, y = 20, duration = 0.6) => ({
     initial: { opacity: 0, y },
     whileInView: { opacity: 1, y: 0 },
@@ -38,15 +39,14 @@ const staggerContainerProps = (staggerChildren = 0.1) => ({
     },
 });
 
-const itemFadeInProps = {
+const itemFadeInProps = { // För kort och listelement
     variants: {
-        hidden: { opacity: 0, y: 20, scale: 0.98 }, // Lite scale-effekt
+        hidden: { opacity: 0, y: 20, scale: 0.98 },
         visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: 'easeOut' } },
     },
 };
 
-
-// --- Nya Sektionskomponenter för Startsidan ---
+// --- Sektionskomponenter definierade lokalt för startsidan ---
 
 // 1. Kärnan / Filosofin
 function CorePhilosophySection() {
@@ -59,11 +59,9 @@ function CorePhilosophySection() {
                     </Heading>
                 </motion.div>
                 <motion.p className={pageStyles.sectionText} {...fadeInYProps(0.1)}>
-                    {/* === KORRIGERING HÄR: Använd <strong> === */}
                     Inner Journey är din partner för <strong>autentisk självinsikt och meningsfull utveckling</strong>. Vi tror att svaren finns inom dig. Vår plattform erbjuder forskningsbaserade, holistiska verktyg och en stödjande community för att hjälpa dig upptäcka dem – utan pekpinnar.
                 </motion.p>
                 <motion.p className={pageStyles.sectionText} {...fadeInYProps(0.2)}>
-                    {/* === KORRIGERING HÄR: Använd <strong> === */}
                     Vi ger dig verktygen, du styr resan. Utforska, reflektera och väx – <strong>utan pekpinnar</strong>.
                 </motion.p>
                 <motion.div {...fadeInYProps(0.3)} style={{textAlign: 'center', marginTop: '1.5rem'}}>
@@ -76,7 +74,7 @@ function CorePhilosophySection() {
 
 // 2. Konceptet / Hur det fungerar
 function ConceptSection() {
-    const concepts = [ // Bytte namn från tools för tydlighet
+    const concepts = [
         { icon: '✨', title: 'Personlig Vägledning', text: 'AI-drivna förslag på övningar och reflektioner som matchar dina mål.' },
         { icon: '✍️', title: 'Fördjupad Insikt', text: 'Dynamisk journalföring som hjälper dig se mönster och förstå dig själv bättre.' },
         { icon: '🤝', title: 'Gemenskap & Stöd', text: 'Möjlighet att växa tillsammans med andra och få stöd från erfarna coacher.' },
@@ -96,8 +94,9 @@ function ConceptSection() {
                         <motion.div key={index} className={pageStyles.conceptItem} variants={itemFadeInProps}>
                             <span className={pageStyles.conceptIcon}>{concept.icon}</span>
                             <div>
-                                <Heading as="h3" className={pageStyles.conceptItemTitle}>{concept.title}</Heading> {/* Ändrat klassnamn */}
-                                <p className={pageStyles.conceptItemText}>{concept.text}</p> {/* Ändrat klassnamn */}
+                                {/* Använd klasser från pageStyles */}
+                                <Heading as="h3" className={pageStyles.conceptItemTitle}>{concept.title}</Heading>
+                                <p className={pageStyles.conceptItemText}>{concept.text}</p>
                             </div>
                         </motion.div>
                     ))}
@@ -111,10 +110,10 @@ function ConceptSection() {
 // 3. Sektion för Olika Målgrupper/Vägar
 function PathwaysSection() {
     const pathways = [
-        { title: 'Utforska Din Potential', text: 'Starta din personliga resa med våra verktyg och insikter. Upptäck dig själv på ett nytt sätt.', link: '/docs/intro', buttonText: 'Kom Igång (Gratis)' , icon: '👤'},
-        { title: 'För Coacher', text: 'Förenkla ditt arbete, nå fler klienter och använd en plattform byggd för effektivt samarbete.', link: '/coaches', buttonText: 'Upptäck Fördelarna', icon: '🧑‍🏫' },
-        { title: 'För Investerare', text: 'Bli partner i en visionär healthtech-plattform med stark tillväxtpotential och global impact.', link: '/investeringsmojligheter', buttonText: 'Se Möjligheten', icon: '📈' },
-        { title: 'För Partners & Medarbetare', text: 'Bidra med din expertis eller utforska strategiska samarbeten. Bygg framtidens välmående med oss.', link: '/partners-och-medarbetare', buttonText: 'Delta i Resan', icon: '🤝' },
+        { title: 'Utforska Din Potential', text: 'Starta din personliga resa med våra verktyg och insikter...', link: '/docs/intro', buttonText: 'Kom Igång (Gratis)' , icon: '👤'},
+        { title: 'För Coacher', text: 'Förenkla ditt arbete, nå fler klienter och använd en plattform byggd för samarbete.', link: '/coaches', buttonText: 'Upptäck Fördelarna', icon: '🧑‍🏫' },
+        { title: 'För Investerare', text: 'Bli partner i en visionär healthtech-plattform med stark tillväxtpotential.', link: '/investeringsmojligheter', buttonText: 'Se Möjligheten', icon: '📈' },
+        { title: 'Jobba med Oss', text: 'Bidra med din expertis eller utforska strategiska samarbeten. Bygg framtidens välmående med oss.', link: '/partners-och-medarbetare', buttonText: 'Delta i Resan', icon: '🤝' },
     ];
     return (
         <motion.section className={pageStyles.pathwaysSection}>
@@ -163,7 +162,6 @@ function CommunityCtaSection() {
     );
 }
 
-
 // --- Huvudkomponenten ---
 export default function Home(): React.ReactNode {
     const { siteConfig } = useDocusaurusContext();
@@ -172,11 +170,15 @@ export default function Home(): React.ReactNode {
             title={`Inner Journey | Din Partner för Personlig Utveckling`}
             description="Utforska Inner Journey – en AI-förstärkt plattform med community och coaching för genuin självinsikt och transformation. Kom igång gratis!"
         >
+            {/* Använd den utbrutna header-komponenten */}
             <HomepageHeader />
             <main>
+                {/* De omarbetade sektionerna i önskad ordning */}
                 <CorePhilosophySection />
                 <ConceptSection />
                 <PathwaysSection />
+                {/* Använd den importerade blogg-komponenten */}
+                <BlogHighlights />
                 <CommunityCtaSection />
             </main>
         </Layout>

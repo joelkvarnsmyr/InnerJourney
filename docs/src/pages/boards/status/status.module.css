@@ -1,3 +1,5 @@
+/* docs/src/pages/boards/status/status.module.css */
+
 /* --- Grundläggande Sidlayout (Liknar Moscow) --- */
 .statusBoardTheme {
     background-color: #f6f8fa;
@@ -14,45 +16,74 @@
 .pageHeader h1 { font-size: 2rem; color: #1f2328; margin-bottom: 8px; }
 .pageHeader p { font-size: 1rem; color: #57606a; max-width: 700px; margin: 0 auto; }
 
-/* --- Grid för Kolumner --- */
+/* --- Grid för Kolumner (Kan behöva fler kolumner än Moscow) --- */
 .statusBoardGrid {
     display: grid;
-    /* Anpassa antal kolumner, kanske fler än 4? auto-fit är flexibelt */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px; /* Lite mindre gap */
+    /* auto-fit är bra här för att hantera 6+ kolumner */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Mindre min-bredd? */
+    gap: 16px; /* Lite mindre gap? */
     padding: 0 24px;
 }
 
 /* --- Kolumn --- */
-.statusColumn { background: transparent; border-radius: 8px; display: flex; flex-direction: column; }
-
-/* --- Kolumnrubrik --- */
-.categoryHeader {
-    font-size: 1rem; /* Något mindre för status? */
-    font-weight: 500; /* Lite tunnare? */
-    color: #1f2328;
-    margin: 0 0 16px 0;
-    padding: 8px 12px; /* Ta bort vänster-padding om ingen accentlinje */
-    border-radius: 4px; /* Lite rundning? */
-    background-color: #e1e4e8; /* Ljusgrå bakgrund för rubrik */
-    /* Eller använd accentlinje som Moscow? Behåll då border-left och padding-left */
-    /* border-left: 4px solid; */
-    /* padding-left: 12px; */
+.statusColumn {
+    background: #ffffff; /* Ge kolumnen en svag bakgrund? Eller behåll transparent? */
+    border-radius: 8px;
+    padding: 12px; /* Padding inuti kolumnen */
+    box-shadow: var(--ifm-global-shadow-xs); /* Lätt skugga på kolumnen */
+    display: flex;
+    flex-direction: column;
 }
 
-/* --- Färger för Status-rubriker (Exempel - välj dina färger) --- */
-/* Använd bakgrundsfärg eller border-color beroende på vald stil */
-.statusideas { background-color: #f0f0f0; color: #586069; /* border-color: #d1d5da; */}
-.statusbacklog { background-color: #f0f0f0; color: #586069; /* border-color: #d1d5da; */ }
-.statusready { background-color: #dbf4ff; color: #0550ae; /* border-color: #9dbff9; */ }
-.statusinprogress { background-color: #fff8c5; color: #825f00; /* border-color: #f6e05e; */ }
-.statusinreview { background-color: #eedcff; color: #5a32a3; /* border-color: #d3bcf0; */ }
-.statusdone { background-color: #dafbe1; color: #1a7f37; /* border-color: #85e89d; */ }
+/* --- Kolumnrubrik (Annan stil än Moscow) --- */
+.categoryHeader {
+    font-size: 0.95rem; /* Mindre */
+    font-weight: 500;
+    color: var(--ifm-font-color-secondary); /* Lite ljusare text */
+    margin: 0 0 12px 0;
+    padding: 6px 8px;
+    border-radius: 4px;
+    /* Ingen border-left här, använd bakgrund/textfärg för att skilja åt */
+    text-align: center; /* Centrera? */
+    background-color: var(--ifm-color-emphasis-100); /* Väldigt ljus bakgrund */
+}
 
-.count { font-size: 0.9rem; font-weight: normal; margin-left: 8px; color: #586069; }
+/* --- Färgkodning för Status-rubriker (Exempel) --- */
+/* Anpassa färger för att passa ditt tema */
+/* Använd t.ex. bakgrund, textfärg eller en liten prick */
+.statusideas { background-color: #f3f3f3; color: #6a737d; }
+.statusbacklog { background-color: #f3f3f3; color: #6a737d; }
+.statusready { background-color: #dbf4ff; color: #0366d6; }
+.statusinprogress { background-color: #fffbdd; color: #5d4a00; }
+.statusinreview { background-color: #eedcff; color: #5a32a3; }
+.statusdone { background-color: #dafbe1; color: #22863a; }
+.statusokategoriserad { background-color: #f6f8fa; color: #6a737d; }
+
+
+.count {
+    font-size: 0.85rem;
+    font-weight: normal;
+    margin-left: 6px;
+    color: var(--ifm-font-color-secondary);
+}
 
 /* --- Kortbehållare --- */
-.cardContainer { display: flex; flex-direction: column; gap: 10px; min-height: 100px; } /* Lite mindre gap */
-.noCards { font-size: 0.9rem; color: #57606a; padding: 16px; text-align: center; font-style: italic; }
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Mellanrum mellan kort */
+    min-height: 100px;
+    /* Om kolumnen ska scrolla (istället för sidan): */
+    /* overflow-y: auto; */
+    /* flex-grow: 1; */
+}
 
-/* Ingen kortstyling här */
+.noCards {
+    font-size: 0.9rem;
+    color: #6a737d;
+    padding: 16px;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Ingen specifik kortstyling här - det sköts av GitHubCard */

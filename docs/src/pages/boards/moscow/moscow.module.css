@@ -1,3 +1,5 @@
+/* docs/src/pages/boards/moscow/moscow.module.css */
+
 /* --- Grundläggande Sidlayout --- */
 .moscowTheme {
     background-color: #f6f8fa; /* Ljusgrå bakgrund */
@@ -17,8 +19,7 @@
 /* --- Grid för Kolumner --- */
 .moscowGrid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Försök med 4 kolumner */
-    /* För mer responsivitet: */
+    grid-template-columns: repeat(4, 1fr);
     /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
     gap: 24px;
     padding: 0 24px;
@@ -36,14 +37,19 @@
     margin: 0 0 16px 0; padding: 8px 0 8px 12px;
     border-left: 4px solid; /* Accentlinje */
 }
-.mustHave { border-color: #d9363e; } /* Röd */
-.shouldHave { border-color: #f6a13a; } /* Orange/Gul */
-.couldHave { border-color: #1a7f37; } /* Grön */
-.wontHave { border-color: #adb5bd; } /* Ljusgrå */
+
+/* --- Klassnamn med GEMENER för accentfärger --- */
+.musthave { border-color: #d9363e; }      /* Röd */
+.shouldhave { border-color: #f6a13a; }    /* Orange/Gul */
+.couldhave { border-color: #1a7f37; }     /* Grön */
+.wonthave { border-color: #adb5bd; }      /* Ljusgrå */
+/* Eventuell klass för okategoriserade om du lägger till den kolumnen */
+/* .okategoriserad { border-color: #e2e8f0; } */
+
 .count { font-size: 0.9rem; font-weight: normal; margin-left: 8px; color: #57606a; }
 
 /* --- Kortbehållare --- */
 .cardContainer { display: flex; flex-direction: column; gap: 12px; min-height: 100px; }
 .noCards { font-size: 0.9rem; color: #57606a; padding: 16px; text-align: center; font-style: italic; }
 
-/* INGEN specifik kortstyling här - det sköts av githubCard.module.css */
+/* Kortstyling hanteras av GitHubCard/githubCard.module.css */
