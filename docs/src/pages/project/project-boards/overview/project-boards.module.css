@@ -1,0 +1,78 @@
+/* Ljus tema-klass för /boards-sidan */
+.boardsTheme {
+    background-color: #f4f5f7; /* Ljusgrå bakgrund */
+    color: #172b4d; /* Mörk text för bättre läsbarhet */
+    min-height: 100vh;
+    padding: 24px;
+}
+
+/* Grid för att visa kort */
+.boardsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Kort för varje board */
+.boardCard {
+    background: #ffffff; /* Vit bakgrund */
+    border: 1px solid #dfe1e6; /* Ljusgrå kant */
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    text-decoration: none;
+    color: #172b4d;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.boardCard:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.boardIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0 auto;
+}
+
+.boardCard h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.boardCard p {
+    font-size: 1rem;
+    color: #5e6c84;
+    margin: 0;
+}
+
+/* Sidhuvud */
+.pageHeader {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.pageHeader h1 {
+    font-size: 2rem;
+    color: #172b4d;
+    margin-bottom: 8px;
+}
+
+.pageHeader p {
+    font-size: 1rem;
+    color: #5e6c84;
+}

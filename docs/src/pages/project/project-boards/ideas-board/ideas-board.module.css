@@ -1,0 +1,95 @@
+/* docs/src/pages/project/project-boards/ideas-board/ideas-board.module.css */
+.ideasBoardTheme {
+    background-color: #f9fafb;
+    color: #1f2328;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+.pageHeader {
+    text-align: center;
+    padding: 40px 24px 24px 24px;
+    margin-bottom: 16px;
+}
+.pageHeader h1 {
+    font-size: 2rem;
+    color: #1f2328;
+    margin-bottom: 8px;
+}
+.pageHeader p {
+    font-size: 1rem;
+    color: #57606a;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.ideasBoardGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 0 24px;
+}
+
+.ideasColumn {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.categoryHeader {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1f2328;
+    margin: 0 0 12px 0;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-align: center;
+    background-color: #f1f3f5;
+}
+
+/* Uppdaterade klasser för de nya ideaStatus-värdena */
+.ideaNewidea {
+    background-color: #e9f7ff; /* Ljusblå för "New Idea" */
+    color: #0366d6;
+}
+.ideaUnderdiscussion {
+    background-color: #fff7e6; /* Ljusgul för "Under Discussion" */
+    color: #d97706;
+}
+.ideaEvaluated {
+    background-color: #f3e8ff; /* Ljuslila för "Evaluated" */
+    color: #6b21a8;
+}
+.ideaAccepted {
+    background-color: #dcfce7; /* Ljusgrön för "Accepted" */
+    color: #15803d;
+}
+.ideaRejected {
+    background-color: #fee2e2; /* Ljusrosa för "Rejected" */
+    color: #b91c1c;
+}
+
+.count {
+    font-size: 0.85rem;
+    font-weight: normal;
+    margin-left: 6px;
+    color: #57606a;
+}
+
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 100px;
+}
+
+.noCards {
+    font-size: 0.9rem;
+    color: #6a737d;
+    padding: 16px;
+    text-align: center;
+    font-style: italic;
+}

@@ -1,0 +1,318 @@
+/* docs/src/pages/investeringsmojligheter/investeringsmojligheter.module.css */
+
+/* --- Hero Section --- */
+.heroBanner {
+    padding: 8rem 1rem 7rem 1rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    /* Behåll eller justera gradienten efter önskemål */
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Lila/Blå exempel */
+    /* background: linear-gradient(135deg, #e85a4f 0%, #ff9f43 100%); */ /* Original Orange */
+    color: #ffffff;
+}
+.heroContainer { /* Kan användas för att centrera innehåll om standard .container inte räcker */
+    position: relative;
+    z-index: 1;
+    max-width: 900px; /* Begränsa bredden för texten */
+    margin: 0 auto;
+}
+
+.heroTitle {
+    color: #ffffff;
+    font-size: 3.4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.heroSubtitle {
+    color: #f0f0ff; /* Ljusare vit */
+    font-size: 1.45rem; /* Lite större */
+    font-weight: 400;
+    margin-bottom: 3rem;
+    opacity: 0.95;
+    max-width: 720px; /* Begränsa bredden */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7; /* Ökad läsbarhet */
+}
+
+.ctaButton { /* Knappen i headern */
+    background-color: #ffffff;
+    color: #4e54c8; /* Matcha gradient/accent */
+    border: none;
+    padding: 1rem 2.2rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 50px; /* Pill-shape */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-decoration: none; /* För Link */
+    display: inline-block;
+}
+
+.ctaButton:hover {
+    background-color: #f0f0ff;
+    color: #3a3f9a;
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+/* --- Generella Sektionsstilar --- */
+.marketSection, .solutionSection, .whyInvestSection, .financialSection, .formSection {
+    padding: 6rem 1rem;
+    overflow: hidden; /* Förhindra scroll vid animation */
+}
+
+/* Växlande bakgrunder för sektionerna */
+.marketSection, .whyInvestSection, .formSection {
+    background-color: #ffffff;
+}
+.solutionSection, .financialSection {
+    background-color: #f8f9fc; /* Ljus blå/grå ton */
+}
+
+.sectionContainer { /* Standard container inom sektioner */
+    padding: 2rem 0;
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+.sectionTitle { /* Gemensam stil för H2 i sektioner */
+    color: #4e54c8; /* Primär accentfärg */
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.sectionText { /* Gemensam stil för P i sektioner */
+    color: #454f5b;
+    font-size: 1.2rem; /* Lite större text */
+    line-height: 1.8;
+    text-align: center;
+    max-width: 750px; /* Begränsad bredd */
+    margin: 0 auto 1.5rem auto; /* Centrera och lägg till marginal */
+}
+.sectionText strong { /* För fetstil i texten */
+    font-weight: 600;
+    color: #333d47;
+}
+.sectionText a { /* För länkar i texten */
+    color: #4e54c8;
+    text-decoration: none;
+    font-weight: 500;
+}
+.sectionText a:hover { text-decoration: underline; }
+
+
+/* --- Market Section - Stat Cards --- */
+.statRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem; /* Justerat gap */
+    margin: 3rem auto 0 auto;
+    max-width: 900px;
+}
+.statCard {
+    background-color: #f0f4ff;
+    padding: 1.5rem 1.8rem; /* Justerad padding */
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+    min-width: 200px; /* Justerad minsta bredd */
+    border: 1px solid #e0e6f5;
+    box-shadow: 0 3px 8px rgba(78, 84, 200, 0.07);
+}
+.statValue {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4e54c8;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+.statLabel {
+    font-size: 0.9rem;
+    color: #6a737d;
+    line-height: 1.4;
+}
+
+/* --- Solution & WhyInvest Section - Feature Cards --- */
+.featureGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0 0 0;
+}
+.featureCard {
+    background: #ffffff;
+    border-radius: 12px; /* Lite mjukare */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+    padding: 2.5rem 2rem; /* Mer padding */
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    text-align: center;
+    border: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.featureIcon {
+    font-size: 3rem; /* Större ikon */
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    color: #4e54c8;
+    line-height: 1;
+}
+.featureTitle {
+    color: #333d47;
+    font-size: 1.4rem; /* Tydligare rubrik */
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+.featureText {
+    color: #5a6673;
+    font-size: 1rem;
+    line-height: 1.7; /* Bättre läsbarhet */
+    flex-grow: 1;
+}
+
+/* --- Financial Section --- */
+.financialGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2.5rem;
+    max-width: 850px; /* Justerad maxbredd */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 768px) {
+    .financialGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.financialBox {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid #e8eaf6;
+    box-shadow: 0 5px 15px rgba(78, 84, 200, 0.08);
+}
+.financialBox h3 {
+    color: #4e54c8;
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e8eaf6;
+    font-weight: 600;
+}
+.financialBox p, .financialBox ul { /* Inkludera UL här */
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+    color: #454f5b;
+    line-height: 1.6;
+}
+.financialBox p:last-child, .financialBox ul:last-child {
+    margin-bottom: 0;
+}
+.financialBox strong {
+    font-weight: 600;
+    color: #333d47;
+}
+.financialBox ul { /* Stil för listan i kapitalanvändning */
+    list-style: none;
+    padding-left: 0;
+}
+.financialBox li {
+    padding-left: 1.5em;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+.financialBox li::before {
+    content: '✓'; /* Checkmark eller annan ikon */
+    position: absolute;
+    left: 0;
+    color: #4e54c8; /* Accentfärg */
+    font-weight: bold;
+}
+
+
+/* --- Form Section --- */
+.formContainer { /* Klass för att begränsa bredden på formulärsektionens innehåll */
+    max-width: 650px !important;
+}
+.form {
+    margin: 2.5rem auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+.formGroup label { font-size: 0.95rem; color: #555; margin-bottom: 0.5rem; font-weight: 500; padding-left: 0.25rem; }
+.formGroup input, .formGroup textarea { padding: 1rem 1.2rem; border: 1px solid #d8dee4; border-radius: 8px; font-size: 1rem; line-height: 1.5; width: 100%; box-sizing: border-box; transition: border-color 0.2s ease, box-shadow 0.2s ease; background-color: #fdfdfd; }
+.formGroup input::placeholder, .formGroup textarea::placeholder { color: #aaa; opacity: 1; }
+.formGroup input:focus, .formGroup textarea:focus { border-color: #8f94fb; outline: none; box-shadow: 0 0 0 3px rgba(143, 148, 251, 0.3); background-color: #fff; }
+.formGroup textarea { resize: vertical; min-height: 130px; font-family: inherit; }
+
+.submitButton {
+    background: #4e54c8;
+    color: #ffffff;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-weight: 600;
+    font-size: 1.15rem;
+    border-radius: 50px; /* Pill shape */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    align-self: center;
+    margin-top: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    min-width: 220px;
+}
+.submitButton:hover {
+    background: #3a3f9a;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    /* Transform hanteras av Framer Motion */
+}
+
+/* --- Media Queries --- */
+@media screen and (max-width: 996px) {
+    .heroTitle { font-size: 2.8rem; }
+    .heroSubtitle { font-size: 1.3rem; }
+    .sectionTitle { font-size: 2.4rem; }
+    .sectionText { font-size: 1.1rem; }
+    .statCard { min-width: 180px; flex-basis: 40%; } /* Låt stat cards ta mer plats */
+    .statValue { font-size: 2.2rem; }
+    .featureGrid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .financialGrid { grid-template-columns: 1fr; }
+}
+
+@media screen and (max-width: 768px) {
+    .heroBanner { padding: 6rem 1rem 5rem 1rem; }
+    .heroTitle { font-size: 2.2rem; } /* Minskad storlek */
+    .heroSubtitle { font-size: 1.15rem; /* Minskad storlek */ }
+    .sectionTitle { font-size: 2rem; }
+    .sectionText { font-size: 1.05rem; } /* Minskad storlek */
+    .statRow { gap: 1rem; }
+    .statCard { flex-basis: 100%; padding: 1.2rem; min-width: unset;} /* Stapla stat cards */
+    .statValue { font-size: 2rem; }
+    .featureGrid { grid-template-columns: 1fr; gap: 1.5rem;}
+    .featureTitle { font-size: 1.2rem; }
+    .featureText { font-size: 0.95rem; }
+    .financialGrid { gap: 1.5rem; }
+    .financialBox { padding: 1.5rem; }
+    .financialBox h3 { font-size: 1.2rem;}
+    .financialBox p, .financialBox ul { font-size: 0.95rem;}
+    .formContainer { max-width: 100% !important; } /* Låt formuläret ta full bredd */
+    .submitButton { width: 100%; }
+}

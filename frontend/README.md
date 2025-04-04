@@ -29,7 +29,7 @@ frontend/
 │   ├── services/        # Logik för API-anrop och andra tjänster (t.ex. api.ts, firebase.ts)
 │   ├── context/         # React Context för global state management (t.ex. AuthContext.tsx)
 │   ├── App.tsx          # Applikationens huvudkomponent, hanterar routing
-│   └── index.tsx        # Ingångspunkt som renderar App-komponenten i DOM
+│   └── index.ts        # Ingångspunkt som renderar App-komponenten i DOM
 ├── .env                 # Lokala miljövariabler (ignoreras av Git)
 ├── package.json         # Projektets beroenden och npm-skript
 ├── tsconfig.json        # Konfiguration för TypeScript-kompilatorn
@@ -197,7 +197,7 @@ Frontend använder `Firebase Authentication` för att hantera användarregistrer
     *   Efter lyckad inloggning skickar Firebase tillbaka ett `id_token` (JWT).
     *   Detta token bör sparas säkert (t.ex. via Firebase SDK:s inbyggda persistence eller i `sessionStorage`).
     *   För att komma åt skyddade backend-endpoints, måste detta `id_token` inkluderas i `Authorization`-headern för varje API-anrop: `Authorization: Bearer <id_token>`. Backend verifierar sedan detta token.
-*   **Globalt tillstånd:** Information om den inloggade användaren (eller om ingen är inloggad) hanteras globalt i applikationen, typiskt med `React Context` (t.ex. en `AuthContext` som wrappar hela appen i `src/App.tsx` eller `src/index.tsx`).
+*   **Globalt tillstånd:** Information om den inloggade användaren (eller om ingen är inloggad) hanteras globalt i applikationen, typiskt med `React Context` (t.ex. en `AuthContext` som wrappar hela appen i `src/App.tsx` eller `src/index.ts`).
 
 ## 🐞 Felsökning
 

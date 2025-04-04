@@ -1,0 +1,1148 @@
+{
+  "home.core.title": {
+    "message": "🧭 Navigate Your Inner World – With Heart First"
+  },
+  "home.core.text1": {
+    "message": "Inner Journey is your partner for <strong>authentic self-discovery and meaningful development</strong>. We believe the answers lie within you. Our platform offers research-based, holistic tools and a supportive community to help you uncover them – without directives."
+  },
+  "home.core.text2": {
+    "message": "We provide the tools, you steer the journey. Explore, reflect, and grow – <strong>without directives</strong>."
+  },
+  "home.core.link": {
+    "message": "Our Philosophy & Vision"
+  },
+  "home.concept.title": {
+    "message": "An Intelligent & Supportive Companion"
+  },
+  "home.concept.text": {
+    "message": "Imagine a platform that gets to know you and adapts to your unique journey. Inner Journey uses smart technology to offer:"
+  },
+  "home.concept.personalizedGuidance.title": {
+    "message": "Personalized Guidance"
+  },
+  "home.concept.personalizedGuidance.text": {
+    "message": "AI-driven suggestions for exercises and reflections that match your goals."
+  },
+  "home.concept.deepenedInsight.title": {
+    "message": "Deepened Insight"
+  },
+  "home.concept.deepenedInsight.text": {
+    "message": "Dynamic journaling that helps you see patterns and understand yourself better."
+  },
+  "home.concept.communitySupport.title": {
+    "message": "Community & Support"
+  },
+  "home.concept.communitySupport.text": {
+    "message": "Grow together with others and receive support from experienced coaches."
+  },
+  "home.concept.holisticTools.title": {
+    "message": "Holistic Tools"
+  },
+  "home.concept.holisticTools.text": {
+    "message": "A comprehensive toolkit with meditation, goal-setting, and more for your well-being."
+  },
+  "home.pathways.title": {
+    "message": "A Journey for Everyone – Find Your Path"
+  },
+  "home.pathways.text": {
+    "message": "Inner Journey is an ecosystem for growth. Whether you want to develop yourself, guide others, invest in change, or contribute your talent, there’s a place for you."
+  },
+  "home.pathways.explorePotential.title": {
+    "message": "Explore Your Potential"
+  },
+  "home.pathways.explorePotential.text": {
+    "message": "Start your personal journey with our tools and insights..."
+  },
+  "home.pathways.explorePotential.buttonText": {
+    "message": "Get Started (Free)"
+  },
+  "home.pathways.forCoaches.title": {
+    "message": "For Coaches"
+  },
+  "home.pathways.forCoaches.text": {
+    "message": "Simplify your work, reach more clients, and use a platform built for collaboration."
+  },
+  "home.pathways.forCoaches.buttonText": {
+    "message": "Discover the Benefits"
+  },
+  "home.pathways.forInvestors.title": {
+    "message": "For Investors"
+  },
+  "home.pathways.forInvestors.text": {
+    "message": "Become a partner in a visionary healthtech platform with strong growth potential."
+  },
+  "home.pathways.forInvestors.buttonText": {
+    "message": "See the Opportunity"
+  },
+  "home.pathways.workWithUs.title": {
+    "message": "Work with Us"
+  },
+  "home.pathways.workWithUs.text": {
+    "message": "Contribute your expertise or explore strategic partnerships. Build the future of well-being with us."
+  },
+  "home.pathways.workWithUs.buttonText": {
+    "message": "Join the Journey"
+  },
+  "home.communitycta.title": {
+    "message": "Join Our Community"
+  },
+  "home.communitycta.text": {
+    "message": "Development happens together! Join conversations, ask questions, and share your insights with other users, coaches, and the team behind Inner Journey."
+  },
+  "home.communitycta.button": {
+    "message": "Join on Discord"
+  },
+  "home.layout.title": {
+    "message": "Inner Journey | Your Partner for Personal Development"
+  },
+  "home.layout.description": {
+    "message": "Explore Inner Journey – an AI-enhanced platform with community and coaching for genuine self-discovery and transformation. Get started for free!"
+  },
+  "blogHighlights.title": {
+    "message": "From Our Blog: Featured Insights"
+  },
+  "blogHighlights.text": {
+    "message": "Explore some of our most-read articles and gain deeper insights into our methodology and vision."
+  },
+  "blogHighlights.readMore": {
+    "message": "Read More"
+  },
+  "blogHighlights.viewAll": {
+    "message": "Explore All Blog Posts"
+  },
+  "githubCard.untitled": {
+    "message": "Untitled Card"
+  },
+  "githubCard.viewOnGitHub": {
+    "message": "View on GitHub"
+  },
+  "githubCard.noObjective": {
+    "message": "No objective specified"
+  },
+  "githubCard.modal.label": {
+    "message": "Details for {title}",
+    "description": "Modal label for GitHub card"
+  },
+  "githubCard.viewEditOnGitHub": {
+    "message": "View/Edit on GitHub"
+  },
+  "githubCard.github": {
+    "message": "GitHub"
+  },
+  "githubCard.close": {
+    "message": "Close"
+  },
+  "githubCard.modal.objective": {
+    "message": "Objective"
+  },
+  "githubCard.modal.description": {
+    "message": "Description & Subtasks"
+  },
+  "githubCard.modal.noDescription": {
+    "message": "*No description*"
+  },
+  "githubCard.modal.viewDiscussion": {
+    "message": "View Discussion Thread"
+  },
+  "githubCard.modal.statusDetails": {
+    "message": "Status & Details"
+  },
+  "githubCard.modal.status": {
+    "message": "Status"
+  },
+  "githubCard.modal.priority": {
+    "message": "Priority"
+  },
+  "githubCard.modal.size": {
+    "message": "Size"
+  },
+  "githubCard.modal.estimate": {
+    "message": "Estimate"
+  },
+  "githubCard.modal.labels": {
+    "message": "Labels"
+  },
+  "githubCard.modal.timeline": {
+    "message": "Timeline & Context"
+  },
+  "githubCard.modal.startDate": {
+    "message": "Start Date"
+  },
+  "githubCard.modal.endDate": {
+    "message": "End Date"
+  },
+  "githubCard.modal.deadline": {
+    "message": "Deadline"
+  },
+  "githubCard.modal.iteration": {
+    "message": "Iteration"
+  },
+  "githubCard.modal.milestone": {
+    "message": "Milestone"
+  },
+  "githubCard.modal.release": {
+    "message": "Release"
+  },
+  "githubCard.modal.repository": {
+    "message": "Repository"
+  },
+  "githubCard.modal.parent": {
+    "message": "Parent"
+  },
+  "githubCard.modal.dependencies": {
+    "message": "Dependencies"
+  },
+  "githubCard.modal.pullRequests": {
+    "message": "Pull Requests"
+  },
+  "githubCard.modal.noPullRequests": {
+    "message": "None"
+  },
+  "githubCard.modal.people": {
+    "message": "People & Team"
+  },
+  "githubCard.modal.team": {
+    "message": "Team"
+  },
+  "githubCard.modal.assignees": {
+    "message": "Assignees"
+  },
+  "githubCard.modal.reviewers": {
+    "message": "Reviewers"
+  },
+  "githubCard.modal.stakeholder": {
+    "message": "Stakeholder"
+  },
+  "githubCard.modal.valueImpact": {
+    "message": "Value & Impact"
+  },
+  "githubCard.modal.userValue": {
+    "message": "User Value"
+  },
+  "githubCard.modal.financialImpact": {
+    "message": "Impact (SEK)"
+  },
+  "githubCard.modal.fundingSource": {
+    "message": "Funding Source"
+  },
+  "githubCard.modal.risk": {
+    "message": "Risk"
+  },
+  "githubCard.modal.quarter": {
+    "message": "Quarter"
+  },
+  "githubCard.modal.ideaStatus": {
+    "message": "Idea Status"
+  },
+  "githubCard.modal.ideaStatusLabel": {
+    "message": "Status (Idea)"
+  },
+  "languageSwitcher.switchToSwedish": {
+    "message": "Switch to Swedish"
+  },
+  "languageSwitcher.switchToEnglish": {
+    "message": "Switch to English"
+  },
+  "schools.header.title": {
+    "message": "Empower Your Students with Inner Journey"
+  },
+  "schools.header.subtitle": {
+    "message": "Build resilience, prevent bullying, and nurture self-awareness in a safe, engaging way – all with AI-tailored tools designed for young minds."
+  },
+  "schools.header.cta": {
+    "message": "Bring Inner Journey to Your School"
+  },
+  "schools.why.title": {
+    "message": "A Healthier School Starts Within"
+  },
+  "schools.why.text": {
+    "message": "Today’s students face stress, peer pressure, and emotional challenges. Inner Journey offers a safe space to explore their inner world, build empathy, and grow stronger – without judgment or pressure. Equip your school with tools that make a real difference."
+  },
+  "schools.howitworks.title": {
+    "message": "Simple Steps to Stronger Students"
+  },
+  "schools.howitworks.startExploring.title": {
+    "message": "Start Exploring"
+  },
+  "schools.howitworks.startExploring.text": {
+    "message": "Students begin with fun, AI-guided activities like meditations or eye-contact exercises to spark self-discovery."
+  },
+  "schools.howitworks.reflect.title": {
+    "message": "Reflect & Grow"
+  },
+  "schools.howitworks.reflect.text": {
+    "message": "Using the Dynamic Journal, they reflect on their feelings and experiences at their own pace."
+  },
+  "schools.howitworks.connect.title": {
+    "message": "Connect & Share"
+  },
+  "schools.howitworks.connect.text": {
+    "message": "Safe community features let students share insights and build empathy with peers."
+  },
+  "schools.howitworks.support.title": {
+    "message": "Support from Coaches"
+  },
+  "schools.howitworks.support.text": {
+    "message": "Teachers or trained coaches can guide students with tailored feedback and activities."
+  },
+  "schools.benefits.title": {
+    "message": "Benefits for Your School & Students"
+  },
+  "schools.benefits.selfDiscovery.title": {
+    "message": "Self-Discovery"
+  },
+  "schools.benefits.selfDiscovery.text": {
+    "message": "AI-tailored tools help students explore their emotions and strengths safely."
+  },
+  "schools.benefits.empathy.title": {
+    "message": "Build Empathy"
+  },
+  "schools.benefits.empathy.text": {
+    "message": "Activities like eye-contact exercises foster understanding and reduce bullying."
+  },
+  "schools.benefits.resilience.title": {
+    "message": "Boost Resilience"
+  },
+  "schools.benefits.resilience.text": {
+    "message": "Simple meditations and reflections help students manage stress and grow stronger."
+  },
+  "schools.benefits.schoolSupport.title": {
+    "message": "Support for Schools"
+  },
+  "schools.benefits.schoolSupport.text": {
+    "message": "Free to start, with premium options – a cost-effective way to enhance student well-being."
+  },
+  "schools.philosophy.title": {
+    "message": "Our Philosophy: Growth Without Judgment"
+  },
+  "schools.philosophy.text1": {
+    "message": "\"A platform that, through research-based, holistic tools, guides you to self-discovery and personal development – <strong>without telling you what to do.</strong>\""
+  },
+  "schools.philosophy.text2": {
+    "message": "We empower students to find their own path with gentle, AI-supported guidance. It’s about building a foundation for life, not dictating their choices."
+  },
+  "schools.future.title": {
+    "message": "Shape the Future of Learning"
+  },
+  "schools.future.text": {
+    "message": "Join us as an early adopter and help us tailor Inner Journey for schools. Here’s what’s coming to support your students even more:"
+  },
+  "schools.future.groupActivities.title": {
+    "message": "Group Activities"
+  },
+  "schools.future.groupActivities.text": {
+    "message": "Classroom-friendly sessions to build teamwork and empathy."
+  },
+  "schools.future.teacherTools.title": {
+    "message": "Teacher Tools"
+  },
+  "schools.future.teacherTools.text": {
+    "message": "Dashboards for teachers to track progress and assign activities."
+  },
+  "schools.future.aiInsights.title": {
+    "message": "AI Insights"
+  },
+  "schools.future.aiInsights.text": {
+    "message": "Deeper analysis to spot emotional trends and support students proactively."
+  },
+  "schools.form.title": {
+    "message": "Ready to Support Your Students?"
+  },
+  "schools.form.text": {
+    "message": "Sign up today to bring Inner Journey to your school! Get early access, special offers, and help shape a tool that empowers your students."
+  },
+  "schools.form.schoolName": {
+    "message": "School Name"
+  },
+  "schools.form.contactName": {
+    "message": "Contact Name"
+  },
+  "schools.form.email": {
+    "message": "Email"
+  },
+  "schools.form.message": {
+    "message": "Why Inner Journey for Your School? (Optional)"
+  },
+  "schools.form.message.placeholder": {
+    "message": "Tell us about your school’s needs or what you hope to achieve..."
+  },
+  "schools.form.submit": {
+    "message": "Yes, I’m Interested!"
+  },
+  "schools.layout.title": {
+    "message": "Schools | Inner Journey for Students"
+  },
+  "schools.layout.description": {
+    "message": "Bring Inner Journey to your school! Help students build resilience, empathy, and self-awareness with AI-tailored tools. Sign up now!"
+  },
+  "coaches.header.title": {
+    "message": "Shape the Future of Coaching – With Inner Journey"
+  },
+  "coaches.header.subtitle": {
+    "message": "Tired of scattered tools? Get a unified platform, reach more clients, and focus on what you do best: guiding real change."
+  },
+  "coaches.header.cta": {
+    "message": "Sign Up as an Early Adopter"
+  },
+  "coaches.why.title": {
+    "message": "From Chaos to Clarity: Your New Coaching Hub"
+  },
+  "coaches.why.text": {
+    "message": "Sound familiar? Notes in one document, exercises via email, feedback on SMS or Messenger... It’s time for a change. Inner Journey brings all your client work into <strong>one place</strong>. Deliver a professional experience to your clients and free up your time for what truly matters."
+  },
+  "coaches.howitworks.title": {
+    "message": "A Smoother Collaboration – Step by Step"
+  },
+  "coaches.howitworks.setCourse.title": {
+    "message": "Set the Course"
+  },
+  "coaches.howitworks.setCourse.text": {
+    "message": "Create tailored \"Personal Journeys\" or assign specific \"Activations\" directly to your client in the app."
+  },
+  "coaches.howitworks.clientEngages.title": {
+    "message": "Client Engages"
+  },
+  "coaches.howitworks.clientEngages.text": {
+    "message": "The client completes exercises and reflects in their \"Dynamic Journal\" – at their own pace."
+  },
+  "coaches.howitworks.centralizedFeedback.title": {
+    "message": "Centralized Feedback"
+  },
+  "coaches.howitworks.centralizedFeedback.text": {
+    "message": "You receive notifications, review progress, and provide valuable feedback – all within the same platform. No more scattered threads!"
+  },
+  "coaches.howitworks.nextSteps.title": {
+    "message": "Next Steps Together"
+  },
+  "coaches.howitworks.nextSteps.text": {
+    "message": "Track progress, identify patterns, and set the next steps for the client’s journey based on real data and dialogue."
+  },
+  "coaches.benefits.title": {
+    "message": "Your Benefits as an Inner Journey Coach"
+  },
+  "coaches.benefits.structureJourney.title": {
+    "message": "Structure the Client Journey"
+  },
+  "coaches.benefits.structureJourney.text": {
+    "message": "Use Activations and Personal Journeys to create clear, effective development plans."
+  },
+  "coaches.benefits.centralizedCommunication.title": {
+    "message": "Centralized Communication"
+  },
+  "coaches.benefits.centralizedCommunication.text": {
+    "message": "All dialogue and feedback are gathered in the journal – professional and easy to follow up."
+  },
+  "coaches.benefits.easyPayments.title": {
+    "message": "Easy Payments (Coming Soon!)"
+  },
+  "coaches.benefits.easyPayments.text": {
+    "message": "Focus on coaching, we’ll handle the rest. Soon, we’ll launch a seamless solution for card payments from clients and easy payouts to you."
+  },
+  "coaches.benefits.communitySupport.title": {
+    "message": "Community & Support"
+  },
+  "coaches.benefits.communitySupport.text": {
+    "message": "Join a supportive community. Share experiences and get support through our Discord channel."
+  },
+  "coaches.philosophy.title": {
+    "message": "Our Philosophy: Guidance, Not Directives"
+  },
+  "coaches.philosophy.text1": {
+    "message": "\"A platform that, through research-based, holistic tools, guides you to self-discovery and personal development – <strong>without telling you what to do.</strong>\""
+  },
+  "coaches.philosophy.text2": {
+    "message": "We believe in empowering both the client’s and coach’s autonomy. Our tools are designed to support genuine discovery and authentic partnership on the development journey. Does this align with your coaching approach?"
+  },
+  "coaches.future.title": {
+    "message": "Help Shape the Future"
+  },
+  "coaches.future.text": {
+    "message": "As an early adopter, you’ll not only get first access to the platform but also a unique chance to influence its development. Here are some of the exciting features we’re working on:"
+  },
+  "coaches.future.integratedPayment.title": {
+    "message": "Integrated Payment Solution"
+  },
+  "coaches.future.integratedPayment.text": {
+    "message": "Seamless card payments for clients and easy payouts to you, directly in the app."
+  },
+  "coaches.future.aiRecording.title": {
+    "message": "AI-Supported Recording (Beta)"
+  },
+  "coaches.future.aiRecording.text": {
+    "message": "Record your own meditations and guided sessions directly in the app, with automatic audio enhancement and the option to add background sounds."
+  },
+  "coaches.future.advancedMatching.title": {
+    "message": "Advanced Matching"
+  },
+  "coaches.future.advancedMatching.text": {
+    "message": "Even smarter matching based on deeper profiling to connect you with ideal clients."
+  },
+  "coaches.future.groupSessions.title": {
+    "message": "Group Sessions & Events"
+  },
+  "coaches.future.groupSessions.text": {
+    "message": "Tools to lead workshops and community events directly on the platform."
+  },
+  "coaches.form.title": {
+    "message": "Ready to Transform Your Coaching Flow?"
+  },
+  "coaches.form.text": {
+    "message": "Sign up as an Early Adopter today! Get early access, special offers, and the chance to shape the future of coaching tools with us."
+  },
+  "coaches.form.name": {
+    "message": "Name"
+  },
+  "coaches.form.email": {
+    "message": "Email"
+  },
+  "coaches.form.message": {
+    "message": "Why Do You Want to Be an Early Adopter? (Optional)"
+  },
+  "coaches.form.message.placeholder": {
+    "message": "Tell us briefly about your current process or what you hope to gain from Inner Journey..."
+  },
+  "coaches.form.submit": {
+    "message": "Yes, I’m Interested!"
+  },
+  "coaches.layout.title": {
+    "message": "Coaches | Simplify Your Workflow with Inner Journey"
+  },
+  "coaches.layout.description": {
+    "message": "Become an Early Adopter coach on Inner Journey. Get tools for client management, collaboration, and payments – all in one place. Sign up now!"
+  },
+  "investment.header.title": {
+    "message": "Scale Up Consciousness: Invest in Inner Journey"
+  },
+  "investment.header.subtitle": {
+    "message": "A unique opportunity to support a platform where technology and heart intelligence meet to enable deep personal transformation – globally."
+  },
+  "investment.header.cta": {
+    "message": "Explore Partnership"
+  },
+  "investment.market.title": {
+    "message": "A Growing Need for Deeper Meaning"
+  },
+  "investment.market.text1": {
+    "message": "In an increasingly connected yet fragmented world, the longing for genuine self-awareness, inner peace, and meaningful tools for personal development is growing. The market for digital well-being is expanding rapidly, but many lack the depth and authenticity required for true transformation."
+  },
+  "investment.market.stat1.unit": {
+    "message": "Billion USD"
+  },
+  "investment.market.stat1.label": {
+    "message": "Mental Health Apps Market Forecast 2030"
+  },
+  "investment.market.stat2.label": {
+    "message": "Annual Growth Rate (CAGR) Personal Development"
+  },
+  "investment.market.stat3.label": {
+    "message": "Of Millennials Prioritize Personal Development (Sample Data)"
+  },
+  "investment.market.text2": {
+    "message": "Inner Journey meets this need by offering a platform rooted in <strong>authenticity, heart intelligence, and community</strong>, enhanced by modern technology."
+  },
+  "investment.solution.title": {
+    "message": "Inner Journey: Where Humanity and Technology Meet"
+  },
+  "investment.solution.text1": {
+    "message": "We’re not just building an app, but an <strong>ecosystem for conscious development</strong>. At its core is our community and our philosophy of guiding toward <em>personal</em> insights. Technology, including AI and voice interaction, serves as <strong>powerful tools</strong> to enhance this process:"
+  },
+  "investment.solution.vibrantCommunity.title": {
+    "message": "Vibrant Community & Coaching"
+  },
+  "investment.solution.vibrantCommunity.text": {
+    "message": "An opportunity to grow together with others and receive support from certified coaches who share our philosophy."
+  },
+  "investment.solution.intelligentGuidance.title": {
+    "message": "Intelligent Guidance"
+  },
+  "investment.solution.intelligentGuidance.text": {
+    "message": "AI helps to suggest relevant exercises and insights based on your unique journey, without being prescriptive."
+  },
+  "investment.solution.dynamicReflection.title": {
+    "message": "Dynamic Reflection"
+  },
+  "investment.solution.dynamicReflection.text": {
+    "message": "A smart journal that supports deeper self-awareness through tailored questions and themes."
+  },
+  "investment.solution.holisticTools.title": {
+    "message": "Holistic Tools"
+  },
+  "investment.solution.holisticTools.text": {
+    "message": "Integrated exercises like meditation, goal-setting, and reflection for body, mind, and soul."
+  },
+  "investment.solution.text2": {
+    "message": "Our unique combination of <strong>heart and technology</strong> creates an authentic and deeply transformative experience."
+  },
+  "investment.whyinvest.title": {
+    "message": "Why Partner with Inner Journey?"
+  },
+  "investment.whyinvest.timingCulturalShift.title": {
+    "message": "Timing & Cultural Shift"
+  },
+  "investment.whyinvest.timingCulturalShift.text": {
+    "message": "Invest in alignment with the global movement toward increased consciousness, well-being, and authenticity."
+  },
+  "investment.whyinvest.uniqueSynergy.title": {
+    "message": "Unique Synergy"
+  },
+  "investment.whyinvest.uniqueSynergy.text": {
+    "message": "A differentiated platform that meaningfully integrates community, human guidance, and intelligent technology."
+  },
+  "investment.whyinvest.scalableImpact.title": {
+    "message": "Scalable Impact & Business Model"
+  },
+  "investment.whyinvest.scalableImpact.text": {
+    "message": "The freemium model enables broad access and global reach, with clear potential for sustainable profitability."
+  },
+  "investment.whyinvest.visionaryTeam.title": {
+    "message": "Visionary Team & Values"
+  },
+  "investment.whyinvest.visionaryTeam.text": {
+    "message": "Support a team rooted in a deep vision (from Rising Beyond) and strong ethical values."
+  },
+  "investment.financials.title": {
+    "message": "Resources to Realize the Vision"
+  },
+  "investment.financials.capital.title": {
+    "message": "Capital Needs & Usage"
+  },
+  "investment.financials.capital.total": {
+    "message": "Total Capital Sought:"
+  },
+  "investment.financials.capital.private": {
+    "message": "Of Which Private Capital:"
+  },
+  "investment.financials.capital.enables": {
+    "message": "Enables:"
+  },
+  "investment.financials.capital.enable1": {
+    "message": "MVP Launch (Sep 2025)"
+  },
+  "investment.financials.capital.enable2": {
+    "message": "First Year Operations & Development"
+  },
+  "investment.financials.capital.enable3": {
+    "message": "Core Team & Community Building"
+  },
+  "investment.financials.capital.enable4": {
+    "message": "Necessary Buffer"
+  },
+  "investment.financials.model.title": {
+    "message": "Sustainable Business Model"
+  },
+  "investment.financials.model.model": {
+    "message": "Model:"
+  },
+  "investment.financials.model.revenue": {
+    "message": "Revenue Forecast Year 1:"
+  },
+  "investment.financials.model.breakeven": {
+    "message": "Break-Even:"
+  },
+  "investment.financials.model.focus": {
+    "message": "Focus on building a loyal user base and exploring future revenue streams (e.g., coaching platform)."
+  },
+  "investment.financials.text": {
+    "message": "The investment is the fuel that allows us to scale our impact and create a sustainable platform for global transformation. Detailed budget available."
+  },
+  "investment.contact.title": {
+    "message": "Become a Partner in Our Vision"
+  },
+  "investment.contact.text": {
+    "message": "Do you share our passion for consciousness, technology, and human potential? We are looking for value-driven partners and investors who want to help build the future. Contact us for a deeper conversation."
+  },
+  "investment.contact.form.name": {
+    "message": "Name"
+  },
+  "investment.contact.form.email": {
+    "message": "Email"
+  },
+  "investment.contact.form.company": {
+    "message": "Company/Organization (Optional)"
+  },
+  "investment.contact.form.message": {
+    "message": "Your Thoughts or Questions"
+  },
+  "investment.contact.form.message.placeholder": {
+    "message": "Why does Inner Journey's vision resonate with you?"
+  },
+  "investment.contact.form.submit": {
+    "message": "Contact Us"
+  },
+  "investment.layout.title": {
+    "message": "Invest in Conscious Development | Inner Journey"
+  },
+  "investment.layout.description": {
+    "message": "Become a partner in Inner Journey – an AI-enhanced platform and community for personal transformation. Invest in purpose and scalable impact."
+  },
+  "partners.header.title": {
+    "message": "Join Us in Building the Future of Personal Development"
+  },
+  "partners.header.subtitle": {
+    "message": "Inner Journey is looking for passionate team members and strategic partners to revolutionize how people grow and reach their potential – through a unique platform where heart meets technology."
+  },
+  "partners.header.cta": {
+    "message": "Express Interest & Explore Opportunities"
+  },
+  "partners.whyjoin.title": {
+    "message": "Are You Driven by Purpose and Innovation?"
+  },
+  "partners.whyjoin.text1": {
+    "message": "Inner Journey is rooted in a vision of a world built on <strong>unity, heart intelligence, and sustainable change</strong>. We believe in the power of technology to amplify human potential, not replace it."
+  },
+  "partners.whyjoin.text2": {
+    "message": "With us, you’ll work in a <strong>flexible, distributed team</strong> where <strong>authenticity and well-being</strong> are valued as much as results. We’re looking for individuals who want to contribute to something meaningful and join an exciting growth journey."
+  },
+  "partners.whyjoin.link": {
+    "message": "Learn More About Our Visionary Foundation"
+  },
+  "partners.whatwebuild.title": {
+    "message": "An Intelligent Platform for Inner Journeys"
+  },
+  "partners.whatwebuild.text1": {
+    "message": "We’re developing a modern PWA that acts as a companion for self-discovery. Through AI, smart journaling, and integrated tools, we create a personalized and adaptive experience. Our tech stack includes:"
+  },
+  "partners.whatwebuild.text2": {
+    "message": "You’ll have the chance to work with exciting technology and contribute directly to a product that makes a difference. Our methodology is agile, user-centered, and focused on continuous improvement."
+  },
+  "partners.roles.title": {
+    "message": "How Do You Want to Contribute?"
+  },
+  "partners.roles.text": {
+    "message": "We’re currently looking for passionate individuals and partners to help shape Inner Journey from the ground up. Whether you’re an expert in a specific field or have a broader profile, there are opportunities to make an impact:"
+  },
+  "partners.roles.strategicDirection.title": {
+    "message": "Strategic Direction (Project Management)"
+  },
+  "partners.roles.strategicDirection.text": {
+    "message": "Lead project initiatives, ensure deliveries according to the roadmap, and help shape our overall strategy."
+  },
+  "partners.roles.createExperience.title": {
+    "message": "Create the Experience (Development)"
+  },
+  "partners.roles.createExperience.text": {
+    "message": "Build robust backend logic (Python/Firebase) or intuitive frontend interfaces (React) and implement AI features."
+  },
+  "partners.roles.driveInsights.title": {
+    "message": "Drive Insights (Analysis)"
+  },
+  "partners.roles.driveInsights.text": {
+    "message": "Dive into user data and market trends to identify insights that drive product development and growth strategies."
+  },
+  "partners.roles.buildBridges.title": {
+    "message": "Build Bridges (Partnerships)"
+  },
+  "partners.roles.buildBridges.text": {
+    "message": "Develop and manage strategic partnerships with organizations, influencers, or other stakeholders in well-being."
+  },
+  "partners.roles.yourExpertise.title": {
+    "message": "Your Expertise (Other)"
+  },
+  "partners.roles.yourExpertise.text": {
+    "message": "Do you have skills in content creation, community management, UX/UI design, or marketing? We’re open to talent!"
+  },
+  "partners.culture.title": {
+    "message": "Our Work Culture: Flexibility & Trust"
+  },
+  "partners.culture.text": {
+    "message": "We are a <strong>distributed team</strong> that believes in freedom with responsibility. With us, you get:"
+  },
+  "partners.culture.flexibility.title": {
+    "message": "Flexibility"
+  },
+  "partners.culture.flexibility.text": {
+    "message": "Work where and when you’re most productive (with a recommended core time of 10-14 CET)."
+  },
+  "partners.culture.openCommunication.title": {
+    "message": "Open Communication"
+  },
+  "partners.culture.openCommunication.text": {
+    "message": "We use Slack for quick dialogue and value transparency."
+  },
+  "partners.culture.development.title": {
+    "message": "Development"
+  },
+  "partners.culture.development.text": {
+    "message": "Opportunities for learning through internal resources and an external training budget (5k SEK/year)."
+  },
+  "partners.culture.wellBeing.title": {
+    "message": "Well-Being"
+  },
+  "partners.culture.wellBeing.text": {
+    "message": "Focus on balance, no expectation of constant availability, and extra recovery days."
+  },
+  "partners.culture.collaboration.title": {
+    "message": "Collaboration"
+  },
+  "partners.culture.collaboration.text": {
+    "message": "A flat organization where everyone’s input is valued, and we support each other."
+  },
+  "partners.culture.link": {
+    "message": "Read Our Full Remote Work Policy"
+  },
+  "partners.form.title": {
+    "message": "Does This Sound Like You?"
+  },
+  "partners.form.text": {
+    "message": "Want to contribute to our vision? Fill out the form, and we’ll reach out to discuss how we can work together."
+  },
+  "partners.form.name": {
+    "message": "Name"
+  },
+  "partners.form.email": {
+    "message": "Email"
+  },
+  "partners.form.role": {
+    "message": "Primary Area of Interest"
+  },
+  "partners.form.role.option0": {
+    "message": "Select area..."
+  },
+  "partners.form.role.option1": {
+    "message": "Project Management"
+  },
+  "partners.form.role.option2": {
+    "message": "Development (Frontend/Backend/AI)"
+  },
+  "partners.form.role.option3": {
+    "message": "Data Analysis/Market Research"
+  },
+  "partners.form.role.option4": {
+    "message": "Strategic Partnership"
+  },
+  "partners.form.role.option5": {
+    "message": "Coaching/Content Creation"
+  },
+  "partners.form.role.option6": {
+    "message": "Other"
+  },
+  "partners.form.message": {
+    "message": "Your Thoughts & Ideas (Optional)"
+  },
+  "partners.form.message.placeholder": {
+    "message": "How do you see yourself or your organization contributing to Inner Journey?"
+  },
+  "partners.form.submit": {
+    "message": "Submit Interest"
+  },
+  "partners.form.discord.text": {
+    "message": "Prefer an informal chat? <Link to=\"https://discord.gg/2j5a2Gze8W\">Find us on Discord!</Link>"
+  },
+  "partners.layout.title": {
+    "message": "Join Inner Journey | Partners & Team Opportunities"
+  },
+  "partners.layout.description": {
+    "message": "Join Inner Journey as a partner or team member to help build a platform for personal development, combining heart and technology."
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "This page crashed.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Scroll back to top",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.archive.title": {
+    "message": "Archive",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "Archive",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "Blog list page navigation",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "Newer entries",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "Older entries",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "Blog post page navigation",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "Newer post",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "Older post",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "View all tags",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "Switch between dark and light mode (currently {mode})",
+    "description": "The ARIA label for the navbar color mode toggle"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "dark mode",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "light mode",
+    "description": "The name for the light color mode"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Breadcrumbs",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 item|{count} items",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "Docs pages",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "Previous",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "Next",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "One doc tagged|{count} docs tagged",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged} with \"{tagName}\"",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "Version: {versionLabel}"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "This is unreleased documentation for {siteTitle} {versionLabel} version.",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "This is documentation for {siteTitle} {versionLabel}, which is no longer actively maintained.",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "For up-to-date documentation, see the {latestVersionLink} ({versionLabel}).",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "latest version",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "Edit this page",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "Direct link to {heading}",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " on {date}",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " by {user}",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "Last updated{atDate}{byUser}",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "Versions",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.NotFound.title": {
+    "message": "Page Not Found",
+    "description": "The title of the 404 page"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "Tags:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.admonition.caution": {
+    "message": "caution",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.admonition.danger": {
+    "message": "danger",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "info",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.note": {
+    "message": "note",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "tip",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.warning": {
+    "message": "warning",
+    "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Close",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "Blog recent posts navigation",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Copied",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Copy code to clipboard",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Copy",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Toggle word wrap",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Expand sidebar category '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Collapse sidebar category '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Main",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Languages",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.NotFound.p1": {
+    "message": "We could not find what you were looking for.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "On this page",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.blog.post.readMore": {
+    "message": "Read more",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "Read more about {title}",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "One min read|{readingTime} min read",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Home page",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "Collapse sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "Collapse sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "Docs sidebar",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Close navigation bar",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← Back to main menu",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Toggle navigation bar",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.blog.post.plurals": {
+    "message": "One post|{count} posts",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} tagged with \"{tagName}\"",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.blog.author.pageTitle": {
+    "message": "{authorName} - {nPosts}",
+    "description": "The title of the page for a blog author"
+  },
+  "theme.blog.authorsList.pageTitle": {
+    "message": "Authors",
+    "description": "The title of the authors page"
+  },
+  "theme.blog.authorsList.viewAll": {
+    "message": "View all authors",
+    "description": "The label of the link targeting the blog authors page"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "This author has not written any posts yet.",
+    "description": "The text for authors with 0 blog post"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "Unlisted page",
+    "description": "The unlisted content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
+    "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "Draft page",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
+    "description": "The draft content banner message"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Try again",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "Skip to main content",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "Tags",
+    "description": "The title of the tag list page"
+  }
+}

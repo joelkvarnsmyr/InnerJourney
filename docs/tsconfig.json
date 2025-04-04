@@ -2,10 +2,22 @@
   "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
     "baseUrl": ".",
-    "moduleResolution": "node",  // Säkerställ att vi använder Node.js-modulupplösning
-    "allowJs": true,  // Tillåt JavaScript-filer (kan vara användbart för Docusaurus)
-    "esModuleInterop": true  // Förbättra interoperabilitet med CommonJS-moduler
+    "moduleResolution": "node",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "jsx": "react-jsx", // För att hantera JSX/TSX och lösa "Cannot find namespace 'JSX'"
+    "noEmit": true, // Vi vill inte generera JS-filer, Docusaurus hanterar det
+    "strict": true, // För att säkerställa strikt typkontroll
+    "skipLibCheck": true, // För att undvika problem med tredjepartsbibliotek
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@site/*": ["./*"] // För att lösa importer som '@site/static/img/SymbolDark.svg'
+    },
+    "types": [
+      "node", // För Node.js-typer (t.ex. för 'node:fs')
+      "@docusaurus/module-type-aliases" // För Docusaurus-moduler som '@theme/*'
+    ]
   },
-  "include": ["src/**/*"],  // Inkludera alla filer i src/
-  "exclude": [".docusaurus", "build", "node_modules"]
+  "include": ["src/**/*", "docusaurus.config.js", "declarations.d.ts"],
+  "exclude": [".docusaurus", "build", "node_modules", "plugins/boards-data/**/*"]
 }

@@ -1,95 +1,103 @@
-// docusaurus.config.js
+// docusaurus.config.ts
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import * as path from 'node:path';
+import * as fs from 'node:fs';
 
 // --- Dynamisk Navbar Logik Start ---
-import * as fs from 'node:fs'; // Använd node:fs för modern Node.js
-import * as path from 'node:path';
-
 /**
  * Genererar ett läsbart namn från ett katalognamn.
- * Exempel: 'moscow' -> 'Moscow', 'prioritized-backlog' -> 'Prioritized Backlog'
+ * Exempel: 'moscow-board' -> 'MoSCoW Overview', 'status-board' -> 'Status Board'
  */
 function generateLabel(dirName: string): string {
-  // Specialfall för MoSCoW för korrekt versalisering
-  if (dirName.toLowerCase() === 'moscow') {
-    return 'MoSCoW Översikt'; // Återanvänd din befintliga label
+  if (dirName.toLowerCase() === 'moscow-board') {
+    return 'MoSCoW Overview';
   }
-
+  if (dirName.toLowerCase() === 'status-board') {
+    return 'Status Board';
+  }
+  if (dirName.toLowerCase() === 'ideas-board') {
+    return 'Ideas Board';
+  }
   return dirName
-      .split('-') // Dela vid bindestreck
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Gör första bokstaven stor
-      .join(' '); // Sammanfoga med mellanslag
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
 }
 
 /**
- * Hämtar dynamiskt board-länkar från filsystemet.
+ * Hämtar dynamiskt board-länkar från filsystemet för navbar.
+ * @returns En array av objekt med `to` och `label` för varje board.
  */
-function getBoardNavbarItems(): { to: string; label: string }[] {
-  const boardsDirPath = path.join(__dirname, 'src/pages/boards');
-  let boardItems = [];
+function getBoardNavbarItems(): Array<{ to: string; label: string }> {
+  const boardsDirPath = path.join(__dirname, 'src/pages/project/project-boards');
+  const boardItems: Array<{ to: string; label: string }> = [];
 
   try {
-    const entries = fs.readdirSync(boardsDirPath, { withFileTypes: true });
-    boardItems = entries
-        .filter(entry =>
-            entry.isDirectory() && // Måste vara en katalog
-            !entry.name.startsWith('.') && // Ignorera dolda filer/mappar
-            !entry.name.startsWith('_') // Ignorera mappar som börjar med _ (konvention för partiella/interna)
-        )
-        .map(dir => {
-          const dirName = dir.name;
-          return {
-            label: generateLabel(dirName),
-            // Skapar länken baserat på mappnamnet.
-            // Förväntar sig /src/pages/boards/dirname/index.tsx (eller .mdx)
-            to: `/boards/${dirName}/`,
-          };
-        })
-        .sort((a, b) => a.label.localeCompare(b.label)); // Sortera alfabetiskt för konsekvens
+    if (!fs.existsSync(boardsDirPath)) {
+      console.warn(`[Navbar] Directory does not exist: ${boardsDirPath}`);
+      return boardItems;
+    }
 
+    const entries = fs.readdirSync(boardsDirPath, { withFileTypes: true });
+    console.log(`[Navbar] Found ${entries.length} entries in ${boardsDirPath}`);
+
+    for (const entry of entries) {
+      if (entry.isDirectory() && !entry.name.startsWith('.') && !entry.name.startsWith('_') && entry.name !== 'overview') {
+        const dirName = entry.name;
+        const indexFilePathMDX = path.join(boardsDirPath, dirName, 'index.mdx');
+        let label = generateLabel(dirName);
+
+        if (fs.existsSync(indexFilePathMDX)) {
+          try {
+            const fileContent = fs.readFileSync(indexFilePathMDX, 'utf8');
+            const titleMatch = fileContent.match(/^title:\s*['"]?([^'"\n]+)['"]?/m);
+            if (titleMatch && titleMatch[1]) {
+              label = titleMatch[1];
+            }
+          } catch (e) {
+            console.warn(`[Navbar] Error reading front matter from ${indexFilePathMDX}: ${e instanceof Error ? e.message : e}`);
+          }
+        }
+
+        boardItems.push({
+          label,
+          to: `/project/project-boards/${dirName}/`,
+        });
+      }
+    }
+
+    boardItems.sort((a, b) => a.label.localeCompare(b.label));
   } catch (error) {
-    // Logga ett varnande meddelande om mappen inte kan läsas
     console.warn(`
       -----------------------------------------------------
-      WARN: Kunde inte läsa board-katalogen på: ${boardsDirPath}
-      Den dynamiska 'Boards'-dropdownen kommer vara tom eller ofullständig.
-      Fel: ${error.message}
+      WARN: Kunde inte läsa board-katalogen för Navbar på: ${boardsDirPath}
+      Fel: ${error instanceof Error ? error.message : error}
       -----------------------------------------------------
     `);
-    // Returnera en tom array eller en fallback om du vill
     return [];
   }
 
-  // Lägg eventuellt till en statisk länk till en översiktssida för alla boards
-  // Om du har en sida /src/pages/boards/index.tsx eller /src/pages/boards.tsx
-  boardItems.push({ label: 'Alla Boards Översikt', to: '/boards' });
-
+  boardItems.push({ label: 'All Boards Overview', to: '/project/project-boards/overview' });
   return boardItems;
 }
 // --- Dynamisk Navbar Logik Slut ---
 
-
 const config: Config = {
-  title: 'Inner Journey Dokumentation',
-  tagline: 'Din guide till att använda och utveckla Inner Journey',
+  title: 'Inner Journey Documentation',
+  tagline: 'Your guide to using and developing Inner Journey',
   favicon: 'img/SymbolDark.svg',
   url: 'https://innerdoc.kvarnsmyr.se',
   baseUrl: '/',
-  // ... (resten av dina grundinställningar: onBrokenLinks, i18n, etc.) ...
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   i18n: {
-    defaultLocale: 'sv',
-    locales: ['sv'],
+    defaultLocale: 'en',
+    locales: ['en', 'sv'],
     localeConfigs: {
-      sv: {
-        label: 'Svenska',
-        direction: 'ltr',
-        htmlLang: 'sv-SE',
-        calendar: 'gregory',
-      },
+      en: { label: 'English', direction: 'ltr' },
+      sv: { label: 'Svenska', direction: 'ltr' },
     },
   },
   stylesheets: [
@@ -98,6 +106,8 @@ const config: Config = {
       type: 'text/css',
     },
   ],
+
+  plugins: [], // Tog bort boardsDataPlugin
 
   presets: [
     [
@@ -109,15 +119,12 @@ const config: Config = {
         },
         blog: {
           showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
+          feedOptions: { type: ['rss', 'atom'], xslt: true },
           editUrl: 'https://github.com/joelkvarnsmyr/InnerJourney/edit/main/blog/',
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'ignore',
-          blogSidebarTitle: 'Senaste blogginlägg',
+          blogSidebarTitle: 'Recent Blog Posts',
           blogSidebarCount: 'ALL',
         },
         theme: {
@@ -130,7 +137,6 @@ const config: Config = {
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      // ... (logo, andra items) ...
       logo: {
         alt: 'Inner Journey Logo',
         src: 'img/DarkInnerJourneyLogo.svg',
@@ -139,85 +145,55 @@ const config: Config = {
       },
       items: [
         {
-          type: 'doc',
-          docId: 'intro',
+          type: 'docSidebar',
+          sidebarId: 'docsSidebar',
           position: 'left',
-          label: 'Dokumentation',
+          label: 'Documentation',
         },
-        { to: '/blog', label: 'Blogg', position: 'left' },
-        // --- Dynamisk Dropdown ---
+        { to: '/blog', label: 'Blog', position: 'left' },
         {
           type: 'dropdown',
           label: 'Boards',
           position: 'right',
-          // Anropa funktionen här för att få de dynamiska objekten
           items: getBoardNavbarItems(),
         },
-        // --- Slut Dynamisk Dropdown ---
+        { href: 'https://github.com/joelkvarnsmyr/InnerJourney', label: 'GitHub', position: 'right' },
         {
-          href: 'https://github.com/joelkvarnsmyr/InnerJourney',
-          label: 'GitHub',
+          type: 'localeDropdown',
           position: 'right',
         },
       ],
     },
-    // ... (resten av din themeConfig: footer, prism, colorMode) ...
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Dokumentation',
+          title: 'Documentation',
           items: [
-            {
-              label: 'Introduktion',
-              to: '/docs/intro',
-            },
-            {
-              label: 'Användarupplevelse',
-              to: '/docs/category/user-experience',
-            },
-            {
-              label: 'Teknisk Dokumentation',
-              to: '/docs/category/development',
-            },
+            { label: 'Introduction', to: '/docs/intro' },
+            { label: 'User Experience', to: '/docs/category/user-experience' },
+            { label: 'Technical Documentation', to: '/docs/category/technical-specifications' },
           ],
         },
         {
           title: 'Community',
           items: [
-            {
-              label: 'GitHub',
-              href: 'https://github.com/joelkvarnsmyr/InnerJourney',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discord.gg/2j5a2Gze8W',
-            },
+            { label: 'GitHub', href: 'https://github.com/joelkvarnsmyr/InnerJourney' },
+            { label: 'Discord', href: 'https://discord.gg/2j5a2Gze8W' },
           ],
         },
         {
-          title: 'Mer',
+          title: 'More',
           items: [
-            {
-              label: 'Blogg',
-              to: '/blog',
-            },
-            {
-              label: 'Inner Journey App',
-              href: 'https://innerjourney.kvarnsmyr.se',
-            },
-            {
-              label: 'Bli en del av Inner Journey',
-              to: '/coaches',
-            },
-            {
-              label: 'Investeringsmöjligheter',
-              to: '/investeringsmojligheter',
-            },
+            { label: 'Blog', to: '/blog' },
+            { label: 'Inner Journey App', href: 'https://innerjourney.kvarnsmyr.se' },
+            { label: 'Become a Coach', to: '/about/coaches' },
+            { label: 'Investment Opportunities', to: '/about/investment-opportunities' },
+            { label: 'Work with Us', to: '/about/partners-and-team' },
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} Inner Journey. Byggd med Docusaurus.`,
+      copyright: `© ${new Date().getFullYear()} Inner Journey.`,
     },
     prism: {
       theme: prismThemes.github,
@@ -231,5 +207,4 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
 };
 
-// Exportera konfigurationen
-export default config; // Eller module.exports = config; om du inte använder ESM syntax här.
+export default config;

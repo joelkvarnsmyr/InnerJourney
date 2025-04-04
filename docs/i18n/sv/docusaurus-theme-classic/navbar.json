@@ -1,0 +1,34 @@
+{
+  "logo.alt": {
+    "message": "Inner Journey Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Documentation": {
+    "message": "Documentation",
+    "description": "Navbar item with label Documentation"
+  },
+  "item.label.Blog": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.Boards": {
+    "message": "Boards",
+    "description": "Navbar item with label Boards"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  },
+  "item.label.MoSCoW Overview": {
+    "message": "MoSCoW Overview",
+    "description": "Navbar item with label MoSCoW Overview"
+  },
+  "item.label.Status Board": {
+    "message": "Status Board",
+    "description": "Navbar item with label Status Board"
+  },
+  "item.label.All Boards Overview": {
+    "message": "All Boards Overview",
+    "description": "Navbar item with label All Boards Overview"
+  }
+}

@@ -1,108 +1,141 @@
 vision:
   label: "Vision"
-  description: "Inlägg om visioner och framtidsplaner."
-hjärtintelligens:
-  label: "Hjärtintelligens"
-  description: "Inlägg om att använda hjärtintelligens för personlig utveckling."
-gemenskap:
-  label: "Gemenskap"
-  description: "Inlägg om att bygga och stärka gemenskaper."
-inner-journey:
-  label: "Inner Journey"
-  description: "Inlägg relaterade till Inner Journey-projektet."
-teknik:
-  label: "Teknik"
-  description: "Inlägg om tekniska lösningar och utveckling."
-utveckling:
-  label: "Utveckling"
-  description: "Inlägg om personlig och teknisk utveckling."
-ai:
-  label: "AI"
-  description: "Inlägg om artificiell intelligens."
-lärdomar:
-  label: "Lärdomar"
-  description: "Inlägg om insikter och lärdomar."
-backend:
-  label: "Backend"
-  description: "Inlägg om backend-utveckling."
-gemini:
-  label: "Gemini"
-  description: "Inlägg relaterade till Gemini-teknologi."
-finansiering:
-  label: "Finansiering"
-  description: "Inlägg om finansiering och ekonomiska strategier."
-frontend:
-  label: "Frontend"
-  description: "Inlägg om frontend-utveckling."
-självutveckling:
-  label: "Självutveckling"
-  description: "Inlägg om personlig utveckling och självförbättring."
-autenticitet:
-  label: "Autenticitet"
-  description: "Inlägg om att leva autentiskt."
-integritet:
-  label: "Integritet"
-  description: "Inlägg om att upprätthålla integritet."
-värderingar:
-  label: "Värderingar"
-  description: "Inlägg om personliga och organisatoriska värderingar."
-marknad:
-  label: "Marknad"
-  description: "Inlägg om marknadstrender och analys."
-trender:
-  label: "Trender"
-  description: "Inlägg om aktuella trender."
-mental-hälsa:
-  label: "Mental Hälsa"
-  description: "Inlägg om mental hälsa och välmående."
-personlig-utveckling:
-  label: "Personlig Utveckling"
-  description: "Inlägg om personlig utveckling och självförbättring."
-drömmar:
-  label: "Drömmar"
-  description: "Inlägg om att förverkliga drömmar och mål."
-reflektion:
-  label: "Reflektion"
-  description: "Inlägg om att reflektera över framsteg och lärdomar."
-framsteg:
-  label: "Framsteg"
-  description: "Inlägg om att göra framsteg i projekt eller liv."
-MVP:
-  label: "MVP"
-  description: "Inlägg om att bygga en minimal viable product."
-startup:
-  label: "Startup"
-  description: "Inlägg om att starta och driva ett företag."
-strategi:
-  label: "Strategi"
-  description: "Inlägg om strategisk planering."
+  description: "Posts about visions and future plans."
+heart-intelligence:
+  label: "Heart Intelligence"
+  description: "Posts about using heart intelligence for personal development."
 community:
   label: "Community"
-  description: "Inlägg om att bygga och engagera en gemenskap."
-prototyp:
-  label: "Prototyp"
-  description: "Inlägg om att utveckla prototyper."
+  description: "Posts about building and strengthening communities."
+technology:
+  label: "Technology"
+  description: "Posts about technical solutions and development."
+development:
+  label: "Development"
+  description: "Posts about personal and technical development."
+ai:
+  label: "AI"
+  description: "Posts about artificial intelligence and its applications."
+lessons:
+  label: "Lessons"
+  description: "Posts about insights and lessons learned."
+backend:
+  label: "Backend"
+  description: "Posts about backend development."
+gemini:
+  label: "Gemini"
+  description: "Posts related to Google Gemini integration."
+financing:
+  label: "Financing"
+  description: "Posts about financing strategies and economic plans."
+frontend:
+  label: "Frontend"
+  description: "Posts about frontend development."
+self-development:
+  label: "Self-Development"
+  description: "Posts about personal development and self-improvement."
+authenticity:
+  label: "Authenticity"
+  description: "Posts about living authentically."
+integrity:
+  label: "Integrity"
+  description: "Posts about maintaining integrity."
+values:
+  label: "Values"
+  description: "Posts about personal and organizational values."
+market:
+  label: "Market"
+  description: "Posts about market trends and analysis."
+trends:
+  label: "Trends"
+  description: "Posts about current trends."
+mental-health:
+  label: "Mental Health"
+  description: "Posts about mental health and well-being."
+personal-development:
+  label: "Personal Development"
+  description: "Posts about personal development and self-improvement."
+dreams:
+  label: "Dreams"
+  description: "Posts about realizing dreams and goals."
+reflection:
+  label: "Reflection"
+  description: "Posts about reflecting on progress and lessons."
+progress:
+  label: "Progress"
+  description: "Posts about making progress in projects or life."
+mvp:
+  label: "MVP"
+  description: "Posts about building a minimum viable product."
+startup:
+  label: "Startup"
+  description: "Posts about starting and running a business."
+strategy:
+  label: "Strategy"
+  description: "Posts about strategic planning and business strategies."
+prototype:
+  label: "Prototype"
+  description: "Posts about developing and reflecting on prototypes."
 fastapi:
   label: "FastAPI"
-  description: "Inlägg om användning av FastAPI-ramverket."
-konkurrensanalys:
-  label: "Konkurrensanalys"
-  description: "Inlägg om att analysera marknaden och konkurrenter."
+  description: "Posts about using the FastAPI framework."
+competitive-analysis:
+  label: "Competitive Analysis"
+  description: "Posts about analyzing markets and competitors."
 github-projects:
   label: "GitHub Projects"
-  description: "Inlägg om projekt hanterade via GitHub Projects."
-projektledning:
-  label: "Projektledning"
-  description: "Inlägg om metoder och strategier för projektledning."
+  description: "Posts about projects managed via GitHub Projects."
+project-management:
+  label: "Project Management"
+  description: "Posts about methods and strategies for project management."
 agile:
   label: "Agile"
-  description: "Inlägg om agila arbetsmetoder och principer."
+  description: "Posts about agile methodologies and principles."
 moscow:
   label: "MoSCoW"
-  description: "Inlägg om MoSCoW-prioriteringsmetoden."
-samarbete:
-  label: "Samarbete"
-  description: "Inlägg om teamwork och samarbete i projekt."
-psykologisk-trygghet:
-  label: "Psykologisk Trygghet"
-  description: "Inlägg om att skapa en trygg miljö för team och individer."
+  description: "Posts about the MoSCoW prioritization method."
+collaboration:
+  label: "Collaboration"
+  description: "Posts about teamwork and collaboration in projects."
+psychological-safety:
+  label: "Psychological Safety"
+  description: "Posts about creating a safe environment for teams and individuals."
+project:
+  label: "Project"
+  description: "General project descriptions and plans."
+roadmap:
+  label: "Roadmap"
+  description: "Posts about future plans and development strategies."
+overview:
+  label: "Overview"
+  description: "Overview documents or posts providing a comprehensive view."
+deployment:
+  label: "Deployment"
+  description: "Posts about deployment processes and techniques."
+coaching:
+  label: "Coaching"
+  description: "Posts about coaching and related features."
+roi:
+  label: "ROI"
+  description: "Posts about return on investment and financial forecasts."
+freemium:
+  label: "Freemium"
+  description: "Posts about the freemium model and its application."
+research:
+  label: "Research"
+  description: "Posts about research-related content."
+data:
+  label: "Data"
+  description: "Posts about data management and usage."
+privacy:
+  label: "Privacy"
+  description: "Posts about privacy and data protection."
+ethics:
+  label: "Ethics"
+  description: "Posts about ethical considerations."
+gdpr:
+  label: "GDPR"
+  description: "Posts about GDPR compliance."
+highlights:
+  label: "Highlights"
+  description: "Featured or particularly important posts and documents."

@@ -1,0 +1,1148 @@
+{
+"home.core.title": {
+"message": "🧭 Navigera Din Inre Värld – Med Hjärtat Först"
+},
+"home.core.text1": {
+"message": "Inner Journey är din partner för <strong>autentisk självupptäckt och meningsfull utveckling</strong>. Vi tror att svaren finns inom dig. Vår plattform erbjuder forskningsbaserade, holistiska verktyg och en stöttande gemenskap för att hjälpa dig att utforska dem – utan direktiv."
+},
+"home.core.text2": {
+"message": "Vi tillhandahåller verktygen, du styr resan. Utforska, reflektera och väx – <strong>utan direktiv</strong>."
+},
+"home.core.link": {
+"message": "Vår Filosofi & Vision"
+},
+"home.concept.title": {
+"message": "En Intelligent & Stöttande Följeslagare"
+},
+"home.concept.text": {
+"message": "Föreställ dig en plattform som lär känna dig och anpassar sig till din unika resa. Inner Journey använder smart teknologi för att erbjuda:"
+},
+"home.concept.personalizedGuidance.title": {
+"message": "Personlig Vägledning"
+},
+"home.concept.personalizedGuidance.text": {
+"message": "AI-drivna förslag på övningar och reflektioner som matchar dina mål."
+},
+"home.concept.deepenedInsight.title": {
+"message": "Fördjupad Insikt"
+},
+"home.concept.deepenedInsight.text": {
+"message": "Dynamisk journalföring som hjälper dig att se mönster och förstå dig själv bättre."
+},
+"home.concept.communitySupport.title": {
+"message": "Gemenskap & Stöd"
+},
+"home.concept.communitySupport.text": {
+"message": "Väx tillsammans med andra och få stöd från erfarna coacher."
+},
+"home.concept.holisticTools.title": {
+"message": "Holistiska Verktyg"
+},
+"home.concept.holisticTools.text": {
+"message": "En omfattande verktygslåda med meditation, målsättning och mer för ditt välbefinnande."
+},
+"home.pathways.title": {
+"message": "En Resa för Alla – Hitta Din Väg"
+},
+"home.pathways.text": {
+"message": "Inner Journey är ett ekosystem för tillväxt. Oavsett om du vill utveckla dig själv, vägleda andra, investera i förändring eller bidra med din talang, finns det en plats för dig."
+},
+"home.pathways.explorePotential.title": {
+"message": "Utforska Din Potential"
+},
+"home.pathways.explorePotential.text": {
+"message": "Börja din personliga resa med våra verktyg och insikter..."
+},
+"home.pathways.explorePotential.buttonText": {
+"message": "Kom Igång (Gratis)"
+},
+"home.pathways.forCoaches.title": {
+"message": "För Coacher"
+},
+"home.pathways.forCoaches.text": {
+"message": "Förenkla ditt arbete, nå fler klienter och använd en plattform byggd för samarbete."
+},
+"home.pathways.forCoaches.buttonText": {
+"message": "Upptäck Fördelarna"
+},
+"home.pathways.forInvestors.title": {
+"message": "För Investerare"
+},
+"home.pathways.forInvestors.text": {
+"message": "Bli en partner i en visionär healthtech-plattform med stark tillväxtpotential."
+},
+"home.pathways.forInvestors.buttonText": {
+"message": "Se Möjligheten"
+},
+"home.pathways.workWithUs.title": {
+"message": "Arbeta med Oss"
+},
+"home.pathways.workWithUs.text": {
+"message": "Bidra med din expertis eller utforska strategiska partnerskap. Bygg framtidens välbefinnande med oss."
+},
+"home.pathways.workWithUs.buttonText": {
+"message": "Gå med på Resan"
+},
+"home.communitycta.title": {
+"message": "Gå med i Vår Gemenskap"
+},
+"home.communitycta.text": {
+"message": "Utveckling sker tillsammans! Delta i samtal, ställ frågor och dela dina insikter med andra användare, coacher och teamet bakom Inner Journey."
+},
+"home.communitycta.button": {
+"message": "Gå med på Discord"
+},
+"home.layout.title": {
+"message": "Inner Journey | Din Partner för Personlig Utveckling"
+},
+"home.layout.description": {
+"message": "Utforska Inner Journey – en AI-förstärkt plattform med gemenskap och coaching för genuin självupptäckt och transformation. Kom igång gratis!"
+},
+"blogHighlights.title": {
+"message": "Från Vår Blogg: Utvalda Insikter"
+},
+"blogHighlights.text": {
+"message": "Utforska några av våra mest lästa artiklar och få djupare insikter i vår metodik och vision."
+},
+"blogHighlights.readMore": {
+"message": "Läs Mer"
+},
+"blogHighlights.viewAll": {
+"message": "Utforska Alla Blogginlägg"
+},
+"githubCard.untitled": {
+"message": "Kort Utan Titel"
+},
+"githubCard.viewOnGitHub": {
+"message": "Visa på GitHub"
+},
+"githubCard.noObjective": {
+"message": "Inget mål specificerat"
+},
+"githubCard.modal.label": {
+"message": "Detaljer för {title}",
+"description": "Modal label for GitHub card"
+},
+"githubCard.viewEditOnGitHub": {
+"message": "Visa/Redigera på GitHub"
+},
+"githubCard.github": {
+"message": "GitHub"
+},
+"githubCard.close": {
+"message": "Stäng"
+},
+"githubCard.modal.objective": {
+"message": "Mål"
+},
+"githubCard.modal.description": {
+"message": "Beskrivning & Deluppgifter"
+},
+"githubCard.modal.noDescription": {
+"message": "*Ingen beskrivning*"
+},
+"githubCard.modal.viewDiscussion": {
+"message": "Visa Diskussionstråd"
+},
+"githubCard.modal.statusDetails": {
+"message": "Status & Detaljer"
+},
+"githubCard.modal.status": {
+"message": "Status"
+},
+"githubCard.modal.priority": {
+"message": "Prioritet"
+},
+"githubCard.modal.size": {
+"message": "Storlek"
+},
+"githubCard.modal.estimate": {
+"message": "Uppskattning"
+},
+"githubCard.modal.labels": {
+"message": "Etiketter"
+},
+"githubCard.modal.timeline": {
+"message": "Tidslinje & Kontext"
+},
+"githubCard.modal.startDate": {
+"message": "Startdatum"
+},
+"githubCard.modal.endDate": {
+"message": "Slutdatum"
+},
+"githubCard.modal.deadline": {
+"message": "Sista Datum"
+},
+"githubCard.modal.iteration": {
+"message": "Iteration"
+},
+"githubCard.modal.milestone": {
+"message": "Milstolpe"
+},
+"githubCard.modal.release": {
+"message": "Utgivning"
+},
+"githubCard.modal.repository": {
+"message": "Repository"
+},
+"githubCard.modal.parent": {
+"message": "Förälder"
+},
+"githubCard.modal.dependencies": {
+"message": "Beroenden"
+},
+"githubCard.modal.pullRequests": {
+"message": "Pull Requests"
+},
+"githubCard.modal.noPullRequests": {
+"message": "Inga"
+},
+"githubCard.modal.people": {
+"message": "Personer & Team"
+},
+"githubCard.modal.team": {
+"message": "Team"
+},
+"githubCard.modal.assignees": {
+"message": "Tilldelade"
+},
+"githubCard.modal.reviewers": {
+"message": "Granskare"
+},
+"githubCard.modal.stakeholder": {
+"message": "Intressent"
+},
+"githubCard.modal.valueImpact": {
+"message": "Värde & Påverkan"
+},
+"githubCard.modal.userValue": {
+"message": "Användarvärde"
+},
+"githubCard.modal.financialImpact": {
+"message": "Påverkan (SEK)"
+},
+"githubCard.modal.fundingSource": {
+"message": "Finansieringskälla"
+},
+"githubCard.modal.risk": {
+"message": "Risk"
+},
+"githubCard.modal.quarter": {
+"message": "Kvartal"
+},
+"githubCard.modal.ideaStatus": {
+"message": "Idéstatus"
+},
+"githubCard.modal.ideaStatusLabel": {
+"message": "Status (Idé)"
+},
+"languageSwitcher.switchToSwedish": {
+"message": "Byt till Svenska"
+},
+"languageSwitcher.switchToEnglish": {
+"message": "Byt till Engelska"
+},
+"coaches.header.title": {
+"message": "Forma Framtiden för Coaching – Med Inner Journey"
+},
+"coaches.header.subtitle": {
+"message": "Trött på utspridda verktyg? Få en enhetlig plattform, nå fler klienter och fokusera på det du gör bäst: att vägleda verklig förändring."
+},
+"coaches.header.cta": {
+"message": "Anmäl Dig som Tidig Användare"
+},
+"coaches.why.title": {
+"message": "Från Kaos till Klarhet: Din Nya Coachinghubb"
+},
+"coaches.why.text": {
+"message": "Känns det bekant? Anteckningar i ett dokument, övningar via e-post, feedback på SMS eller Messenger... Det är dags för en förändring. Inner Journey samlar allt ditt klientarbete på <strong>en plats</strong>. Leverera en professionell upplevelse till dina klienter och frigör tid för det som verkligen betyder något."
+},
+"coaches.howitworks.title": {
+"message": "Ett Smidigare Samarbete – Steg för Steg"
+},
+"coaches.howitworks.setCourse.title": {
+"message": "Sätt Kursen"
+},
+"coaches.howitworks.setCourse.text": {
+"message": "Skapa skräddarsydda \"Personliga Resor\" eller tilldela specifika \"Aktiveringar\" direkt till din klient i appen."
+},
+"coaches.howitworks.clientEngages.title": {
+"message": "Klienten Engagerar Sig"
+},
+"coaches.howitworks.clientEngages.text": {
+"message": "Klienten slutför övningar och reflekterar i sin \"Dynamiska Journal\" – i sin egen takt."
+},
+"coaches.howitworks.centralizedFeedback.title": {
+"message": "Centraliserad Feedback"
+},
+"coaches.howitworks.centralizedFeedback.text": {
+"message": "Du får notifikationer, granskar framsteg och ger värdefull feedback – allt inom samma plattform. Inga fler utspridda trådar!"
+},
+"coaches.howitworks.nextSteps.title": {
+"message": "Nästa Steg Tillsammans"
+},
+"coaches.howitworks.nextSteps.text": {
+"message": "Följ framsteg, identifiera mönster och sätt nästa steg för klientens resa baserat på verklig data och dialog."
+},
+"coaches.benefits.title": {
+"message": "Dina Fördelar som Inner Journey-Coach"
+},
+"coaches.benefits.structureJourney.title": {
+"message": "Strukturera Klientresan"
+},
+"coaches.benefits.structureJourney.text": {
+"message": "Använd Aktiveringar och Personliga Resor för att skapa tydliga, effektiva utvecklingsplaner."
+},
+"coaches.benefits.centralizedCommunication.title": {
+"message": "Centraliserad Kommunikation"
+},
+"coaches.benefits.centralizedCommunication.text": {
+"message": "All dialog och feedback samlas i journalen – professionellt och enkelt att följa upp."
+},
+"coaches.benefits.easyPayments.title": {
+"message": "Enkla Betalningar (Kommer Snart!)"
+},
+"coaches.benefits.easyPayments.text": {
+"message": "Fokusera på coaching, vi hanterar resten. Snart lanserar vi en smidig lösning för kortbetalningar från klienter och enkla utbetalningar till dig."
+},
+"coaches.benefits.communitySupport.title": {
+"message": "Gemenskap & Stöd"
+},
+"coaches.benefits.communitySupport.text": {
+"message": "Gå med i en stöttande gemenskap. Dela erfarenheter och få stöd genom vår Discord-kanal."
+},
+"coaches.philosophy.title": {
+"message": "Vår Filosofi: Vägledning, Inte Direktiv"
+},
+"coaches.philosophy.text1": {
+"message": "\"En plattform som, genom forskningsbaserade, holistiska verktyg, vägleder dig till självupptäckt och personlig utveckling – <strong>utan att tala om för dig vad du ska göra.</strong>\""
+},
+"coaches.philosophy.text2": {
+"message": "Vi tror på att stärka både klientens och coachens autonomi. Våra verktyg är utformade för att stödja genuin upptäckt och autentiskt partnerskap på utvecklingsresan. Stämmer detta överens med din coachingmetod?"
+},
+"coaches.future.title": {
+"message": "Hjälp Forma Framtiden"
+},
+"coaches.future.text": {
+"message": "Som tidig användare får du inte bara första tillgång till plattformen utan också en unik chans att påverka dess utveckling. Här är några av de spännande funktioner vi arbetar på:"
+},
+"coaches.future.integratedPayment.title": {
+"message": "Integrerad Betalningslösning"
+},
+"coaches.future.integratedPayment.text": {
+"message": "Smidiga kortbetalningar för klienter och enkla utbetalningar till dig, direkt i appen."
+},
+"coaches.future.aiRecording.title": {
+"message": "AI-Stödd Inspelning (Beta)"
+},
+"coaches.future.aiRecording.text": {
+"message": "Spela in dina egna meditationer och guidade sessioner direkt i appen, med automatisk ljudförbättring och möjlighet att lägga till bakgrundsljud."
+},
+"coaches.future.advancedMatching.title": {
+"message": "Avancerad Matchning"
+},
+"coaches.future.advancedMatching.text": {
+"message": "Ännu smartare matchning baserat på djupare profilering för att koppla dig med idealiska klienter."
+},
+"coaches.future.groupSessions.title": {
+"message": "Gruppsessioner & Evenemang"
+},
+"coaches.future.groupSessions.text": {
+"message": "Verktyg för att leda workshops och gemenskapsevenemang direkt på plattformen."
+},
+"coaches.form.title": {
+"message": "Redo att Förändra Ditt Coachingflöde?"
+},
+"coaches.form.text": {
+"message": "Anmäl dig som tidig användare idag! Få tidig tillgång, specialerbjudanden och chansen att forma framtidens coachingverktyg med oss."
+},
+"coaches.form.name": {
+"message": "Namn"
+},
+"coaches.form.email": {
+"message": "E-post"
+},
+"coaches.form.message": {
+"message": "Varför Vill Du Vara en Tidig Användare? (Valfritt)"
+},
+"coaches.form.message.placeholder": {
+"message": "Berätta kort om din nuvarande process eller vad du hoppas få ut av Inner Journey..."
+},
+"coaches.form.submit": {
+"message": "Ja, Jag Är Intresserad!"
+},
+"coaches.layout.title": {
+"message": "Coacher | Förenkla Ditt Arbetsflöde med Inner Journey"
+},
+"coaches.layout.description": {
+"message": "Bli en tidig användare av Inner Journey som coach. Få verktyg för klienthantering, samarbete och betalningar – allt på en plats. Anmäl dig nu!"
+},
+"schools.header.title": {
+"message": "Stärk Dina Elever med Inner Journey"
+},
+"schools.header.subtitle": {
+"message": "Bygg motståndskraft, förebygg mobbning och främja självmedvetenhet på ett säkert, engagerande sätt – allt med AI-anpassade verktyg designade för unga sinnen."
+},
+"schools.header.cta": {
+"message": "Ta Inner Journey till Din Skola"
+},
+"schools.why.title": {
+"message": "En Hälsosammare Skola Börjar Inifrån"
+},
+"schools.why.text": {
+"message": "Dagens elever möter stress, grupptryck och emotionella utmaningar. Inner Journey erbjuder en säker plats att utforska sin inre värld, bygga empati och växa starkare – utan dömande eller press. Utrusta din skola med verktyg som gör verklig skillnad."
+},
+"schools.howitworks.title": {
+"message": "Enkla Steg till Starkare Elever"
+},
+"schools.howitworks.startExploring.title": {
+"message": "Börja Utforska"
+},
+"schools.howitworks.startExploring.text": {
+"message": "Eleverna börjar med roliga, AI-vägledda aktiviteter som meditationer eller ögonkontaktövningar för att väcka självupptäckt."
+},
+"schools.howitworks.reflect.title": {
+"message": "Reflektera & Väx"
+},
+"schools.howitworks.reflect.text": {
+"message": "Med hjälp av den Dynamiska Journalen reflekterar de över sina känslor och upplevelser i sin egen takt."
+},
+"schools.howitworks.connect.title": {
+"message": "Koppla Samman & Dela"
+},
+"schools.howitworks.connect.text": {
+"message": "Säkra gemenskapsfunktioner låter elever dela insikter och bygga empati med sina kamrater."
+},
+"schools.howitworks.support.title": {
+"message": "Stöd från Coacher"
+},
+"schools.howitworks.support.text": {
+"message": "Lärare eller utbildade coacher kan vägleda elever med skräddarsydd feedback och aktiviteter."
+},
+"schools.benefits.title": {
+"message": "Fördelar för Din Skola & Elever"
+},
+"schools.benefits.selfDiscovery.title": {
+"message": "Självupptäckt"
+},
+"schools.benefits.selfDiscovery.text": {
+"message": "AI-anpassade verktyg hjälper elever att utforska sina känslor och styrkor på ett säkert sätt."
+},
+"schools.benefits.empathy.title": {
+"message": "Bygg Empati"
+},
+"schools.benefits.empathy.text": {
+"message": "Aktiviteter som ögonkontaktövningar främjar förståelse och minskar mobbning."
+},
+"schools.benefits.resilience.title": {
+"message": "Öka Motståndskraften"
+},
+"schools.benefits.resilience.text": {
+"message": "Enkla meditationer och reflektioner hjälper elever att hantera stress och växa starkare."
+},
+"schools.benefits.schoolSupport.title": {
+"message": "Stöd för Skolor"
+},
+"schools.benefits.schoolSupport.text": {
+"message": "Gratis att börja, med premiumalternativ – ett kostnadseffektivt sätt att förbättra elevernas välbefinnande."
+},
+"schools.philosophy.title": {
+"message": "Vår Filosofi: Tillväxt Utan Dömande"
+},
+"schools.philosophy.text1": {
+"message": "\"En plattform som, genom forskningsbaserade, holistiska verktyg, vägleder dig till självupptäckt och personlig utveckling – <strong>utan att tala om för dig vad du ska göra.</strong>\""
+},
+"schools.philosophy.text2": {
+"message": "Vi ger elever möjlighet att hitta sin egen väg med varsam, AI-stödd vägledning. Det handlar om att bygga en grund för livet, inte att diktera deras val."
+},
+"schools.future.title": {
+"message": "Forma Framtidens Lärande"
+},
+"schools.future.text": {
+"message": "Gå med oss som tidig användare och hjälp oss att skräddarsy Inner Journey för skolor. Här är vad som kommer för att stödja dina elever ännu mer:"
+},
+"schools.future.groupActivities.title": {
+"message": "Gruppaktiviteter"
+},
+"schools.future.groupActivities.text": {
+"message": "Klassrumsvänliga sessioner för att bygga teamwork och empati."
+},
+"schools.future.teacherTools.title": {
+"message": "Lärarverktyg"
+},
+"schools.future.teacherTools.text": {
+"message": "Instrumentpaneler för lärare att följa framsteg och tilldela aktiviteter."
+},
+"schools.future.aiInsights.title": {
+"message": "AI-Insikter"
+},
+"schools.future.aiInsights.text": {
+"message": "Djupare analys för att upptäcka emotionella trender och stödja elever proaktivt."
+},
+"schools.form.title": {
+"message": "Redo att Stödja Dina Elever?"
+},
+"schools.form.text": {
+"message": "Anmäl dig idag för att ta Inner Journey till din skola! Få tidig tillgång, specialerbjudanden och hjälp till att forma ett verktyg som stärker dina elever."
+},
+"schools.form.schoolName": {
+"message": "Skolans Namn"
+},
+"schools.form.contactName": {
+"message": "Kontaktpersonens Namn"
+},
+"schools.form.email": {
+"message": "E-post"
+},
+"schools.form.message": {
+"message": "Varför Inner Journey för Din Skola? (Valfritt)"
+},
+"schools.form.message.placeholder": {
+"message": "Berätta om din skolas behov eller vad du hoppas uppnå..."
+},
+"schools.form.submit": {
+"message": "Ja, Jag Är Intresserad!"
+},
+"schools.layout.title": {
+"message": "Skolor | Inner Journey för Elever"
+},
+"schools.layout.description": {
+"message": "Ta Inner Journey till din skola! Hjälp elever att bygga motståndskraft, empati och självmedvetenhet med AI-anpassade verktyg. Anmäl dig nu!"
+},
+"investment.header.title": {
+"message": "Skala Upp Medvetenhet: Investera i Inner Journey"
+},
+"investment.header.subtitle": {
+"message": "En unik möjlighet att stödja en plattform där teknologi och hjärtintelligens möts för att möjliggöra djup personlig transformation – globalt."
+},
+"investment.header.cta": {
+"message": "Utforska Partnerskap"
+},
+"investment.market.title": {
+"message": "Ett Växande Behov av Djupare Mening"
+},
+"investment.market.text1": {
+"message": "I en alltmer uppkopplad men fragmenterad värld växer längtan efter genuin självmedvetenhet, inre frid och meningsfulla verktyg för personlig utveckling. Marknaden för digitalt välbefinnande expanderar snabbt, men många saknar den djup och autenticitet som krävs för verklig transformation."
+},
+"investment.market.stat1.unit": {
+"message": "Miljarder USD"
+},
+"investment.market.stat1.label": {
+"message": "Prognos för Marknaden för Mental Hälsa-Appar 2030"
+},
+"investment.market.stat2.label": {
+"message": "Årlig Tillväxttakt (CAGR) för Personlig Utveckling"
+},
+"investment.market.stat3.label": {
+"message": "Av Millennials Prioriterar Personlig Utveckling (Urvalsdata)"
+},
+"investment.market.text2": {
+"message": "Inner Journey möter detta behov genom att erbjuda en plattform rotad i <strong>autenticitet, hjärtintelligens och gemenskap</strong>, förstärkt av modern teknologi."
+},
+"investment.solution.title": {
+"message": "Inner Journey: Där Mänsklighet och Teknologi Möts"
+},
+"investment.solution.text1": {
+"message": "Vi bygger inte bara en app, utan ett <strong>ekosystem för medveten utveckling</strong>. I centrum står vår gemenskap och vår filosofi att vägleda mot <em>personliga</em> insikter. Teknologi, inklusive AI och röstinteraktion, fungerar som <strong>kraftfulla verktyg</strong> för att förstärka denna process:"
+},
+"investment.solution.vibrantCommunity.title": {
+"message": "Livlig Gemenskap & Coaching"
+},
+"investment.solution.vibrantCommunity.text": {
+"message": "En möjlighet att växa tillsammans med andra och få stöd från certifierade coacher som delar vår filosofi."
+},
+"investment.solution.intelligentGuidance.title": {
+"message": "Intelligent Vägledning"
+},
+"investment.solution.intelligentGuidance.text": {
+"message": "AI hjälper till att föreslå relevanta övningar och insikter baserat på din unika resa, utan att vara styrande."
+},
+"investment.solution.dynamicReflection.title": {
+"message": "Dynamisk Reflektion"
+},
+"investment.solution.dynamicReflection.text": {
+"message": "En smart journal som stödjer djupare självmedvetenhet genom skräddarsydda frågor och teman."
+},
+"investment.solution.holisticTools.title": {
+"message": "Holistiska Verktyg"
+},
+"investment.solution.holisticTools.text": {
+"message": "Integrerade övningar som meditation, målsättning och reflektion för kropp, sinne och själ."
+},
+"investment.solution.text2": {
+"message": "Vår unika kombination av <strong>hjärtat och teknologi</strong> skapar en autentisk och djupt transformerande upplevelse."
+},
+"investment.whyinvest.title": {
+"message": "Varför Bli Partner med Inner Journey?"
+},
+"investment.whyinvest.timingCulturalShift.title": {
+"message": "Timing & Kulturell Förändring"
+},
+"investment.whyinvest.timingCulturalShift.text": {
+"message": "Investera i linje med den globala rörelsen mot ökad medvetenhet, välbefinnande och autenticitet."
+},
+"investment.whyinvest.uniqueSynergy.title": {
+"message": "Unik Synergi"
+},
+"investment.whyinvest.uniqueSynergy.text": {
+"message": "En differentierad plattform som meningsfullt integrerar gemenskap, mänsklig vägledning och intelligent teknologi."
+},
+"investment.whyinvest.scalableImpact.title": {
+"message": "Skalbar Påverkan & Affärsmodell"
+},
+"investment.whyinvest.scalableImpact.text": {
+"message": "Freemium-modellen möjliggör bred tillgång och global räckvidd, med tydlig potential för hållbar lönsamhet."
+},
+"investment.whyinvest.visionaryTeam.title": {
+"message": "Visionärt Team & Värderingar"
+},
+"investment.whyinvest.visionaryTeam.text": {
+"message": "Stöd ett team rotat i en djup vision (från Rising Beyond) och starka etiska värderingar."
+},
+"investment.financials.title": {
+"message": "Resurser för att Förverkliga Visionen"
+},
+"investment.financials.capital.title": {
+"message": "Kapitalbehov & Användning"
+},
+"investment.financials.capital.total": {
+"message": "Totalt Sökt Kapital:"
+},
+"investment.financials.capital.private": {
+"message": "Varav Privat Kapital:"
+},
+"investment.financials.capital.enables": {
+"message": "Möjliggör:"
+},
+"investment.financials.capital.enable1": {
+"message": "MVP-Lansering (Sep 2025)"
+},
+"investment.financials.capital.enable2": {
+"message": "Första Årets Verksamhet & Utveckling"
+},
+"investment.financials.capital.enable3": {
+"message": "Kärnteam & Gemenskapsbyggande"
+},
+"investment.financials.capital.enable4": {
+"message": "Nödvändig Buffert"
+},
+"investment.financials.model.title": {
+"message": "Hållbar Affärsmodell"
+},
+"investment.financials.model.model": {
+"message": "Modell:"
+},
+"investment.financials.model.revenue": {
+"message": "Intäktsprognos År 1:"
+},
+"investment.financials.model.breakeven": {
+"message": "Break-Even:"
+},
+"investment.financials.model.focus": {
+"message": "Fokus på att bygga en lojal användarbas och utforska framtida intäktsströmmar (t.ex. coachingplattform)."
+},
+"investment.financials.text": {
+"message": "Investeringen är bränslet som gör att vi kan skala vår påverkan och skapa en hållbar plattform för global transformation. Detaljerad budget finns tillgänglig."
+},
+"investment.contact.title": {
+"message": "Bli en Partner i Vår Vision"
+},
+"investment.contact.text": {
+"message": "Delar du vår passion för medvetenhet, teknologi och mänsklig potential? Vi söker värdedrivna partners och investerare som vill hjälpa till att bygga framtiden. Kontakta oss för ett djupare samtal."
+},
+"investment.contact.form.name": {
+"message": "Namn"
+},
+"investment.contact.form.email": {
+"message": "E-post"
+},
+"investment.contact.form.company": {
+"message": "Företag/Organisation (Valfritt)"
+},
+"investment.contact.form.message": {
+"message": "Dina Tankar eller Frågor"
+},
+"investment.contact.form.message.placeholder": {
+"message": "Varför resonerar Inner Journeys vision med dig?"
+},
+"investment.contact.form.submit": {
+"message": "Kontakta Oss"
+},
+"investment.layout.title": {
+"message": "Investera i Medveten Utveckling | Inner Journey"
+},
+"investment.layout.description": {
+"message": "Bli en partner i Inner Journey – en AI-förstärkt plattform och gemenskap för personlig transformation. Investera i syfte och skalbar påverkan."
+},
+"partners.header.title": {
+"message": "Gå med Oss i att Bygga Framtiden för Personlig Utveckling"
+},
+"partners.header.subtitle": {
+"message": "Inner Journey söker passionerade teammedlemmar och strategiska partners för att revolutionera hur människor växer och når sin potential – genom en unik plattform där hjärtat möter teknologi."
+},
+"partners.header.cta": {
+"message": "Uttryck Intresse & Utforska Möjligheter"
+},
+"partners.whyjoin.title": {
+"message": "Drivs Du av Syfte och Innovation?"
+},
+"partners.whyjoin.text1": {
+"message": "Inner Journey är rotad i en vision om en värld byggd på <strong>enhet, hjärtintelligens och hållbar förändring</strong>. Vi tror på teknologins kraft att förstärka mänsklig potential, inte ersätta den."
+},
+"partners.whyjoin.text2": {
+"message": "Hos oss arbetar du i ett <strong>flexibelt, distribuerat team</strong> där <strong>autenticitet och välbefinnande</strong> värderas lika högt som resultat. Vi söker individer som vill bidra till något meningsfullt och gå med på en spännande tillväxtresa."
+},
+"partners.whyjoin.link": {
+"message": "Läs Mer Om Vår Visionära Grund"
+},
+"partners.whatwebuild.title": {
+"message": "En Intelligent Plattform för Inre Resor"
+},
+"partners.whatwebuild.text1": {
+"message": "Vi utvecklar en modern PWA som fungerar som en följeslagare för självupptäckt. Genom AI, smart journalföring och integrerade verktyg skapar vi en personlig och anpassningsbar upplevelse. Vår tech-stack inkluderar:"
+},
+"partners.whatwebuild.text2": {
+"message": "Du får chansen att arbeta med spännande teknologi och bidra direkt till en produkt som gör skillnad. Vår metodik är agil, användarcentrerad och fokuserad på kontinuerlig förbättring."
+},
+"partners.roles.title": {
+"message": "Hur Vill Du Bidra?"
+},
+"partners.roles.text": {
+"message": "Vi söker för närvarande passionerade individer och partners för att forma Inner Journey från grunden. Oavsett om du är expert inom ett specifikt område eller har en bredare profil, finns det möjligheter att göra skillnad:"
+},
+"partners.roles.strategicDirection.title": {
+"message": "Strategisk Riktning (Projektledning)"
+},
+"partners.roles.strategicDirection.text": {
+"message": "Led projektinitiativ, säkerställ leveranser enligt roadmap och hjälp till att forma vår övergripande strategi."
+},
+"partners.roles.createExperience.title": {
+"message": "Skapa Upplevelsen (Utveckling)"
+},
+"partners.roles.createExperience.text": {
+"message": "Bygg robust backend-logik (Python/Firebase) eller intuitiva frontend-gränssnitt (React) och implementera AI-funktioner."
+},
+"partners.roles.driveInsights.title": {
+"message": "Driv Insikter (Analys)"
+},
+"partners.roles.driveInsights.text": {
+"message": "Dyk ner i användardata och marknadstrender för att identifiera insikter som driver produktutveckling och tillväxtstrategier."
+},
+"partners.roles.buildBridges.title": {
+"message": "Bygg Broar (Partnerskap)"
+},
+"partners.roles.buildBridges.text": {
+"message": "Utveckla och hantera strategiska partnerskap med organisationer, influencers eller andra intressenter inom välbefinnande."
+},
+"partners.roles.yourExpertise.title": {
+"message": "Din Expertis (Annat)"
+},
+"partners.roles.yourExpertise.text": {
+"message": "Har du färdigheter inom innehållsskapande, gemenskapsledning, UX/UI-design eller marknadsföring? Vi är öppna för talang!"
+},
+"partners.culture.title": {
+"message": "Vår Arbetskultur: Flexibilitet & Tillit"
+},
+"partners.culture.text": {
+"message": "Vi är ett <strong>distribuerat team</strong> som tror på frihet med ansvar. Hos oss får du:"
+},
+"partners.culture.flexibility.title": {
+"message": "Flexibilitet"
+},
+"partners.culture.flexibility.text": {
+"message": "Arbeta var och när du är mest produktiv (med en rekommenderad kärntid på 10-14 CET)."
+},
+"partners.culture.openCommunication.title": {
+"message": "Öppen Kommunikation"
+},
+"partners.culture.openCommunication.text": {
+"message": "Vi använder Slack för snabb dialog och värdesätter transparens."
+},
+"partners.culture.development.title": {
+"message": "Utveckling"
+},
+"partners.culture.development.text": {
+"message": "Möjligheter till lärande genom interna resurser och en extern utbildningsbudget (5k SEK/år)."
+},
+"partners.culture.wellBeing.title": {
+"message": "Välbefinnande"
+},
+"partners.culture.wellBeing.text": {
+"message": "Fokus på balans, ingen förväntan på ständig tillgänglighet och extra återhämtningsdagar."
+},
+"partners.culture.collaboration.title": {
+"message": "Samarbete"
+},
+"partners.culture.collaboration.text": {
+"message": "En platt organisation där allas input värderas, och vi stöttar varandra."
+},
+"partners.culture.link": {
+"message": "Läs Vår Fullständiga Policy för Distansarbete"
+},
+"partners.form.title": {
+"message": "Låter Detta Som Du?"
+},
+"partners.form.text": {
+"message": "Vill du bidra till vår vision? Fyll i formuläret, så kontaktar vi dig för att diskutera hur vi kan arbeta tillsammans."
+},
+"partners.form.name": {
+"message": "Namn"
+},
+"partners.form.email": {
+"message": "E-post"
+},
+"partners.form.role": {
+"message": "Primärt Intresseområde"
+},
+"partners.form.role.option0": {
+"message": "Välj område..."
+},
+"partners.form.role.option1": {
+"message": "Projektledning"
+},
+"partners.form.role.option2": {
+"message": "Utveckling (Frontend/Backend/AI)"
+},
+"partners.form.role.option3": {
+"message": "Dataanalys/Marknadsundersökning"
+},
+"partners.form.role.option4": {
+"message": "Strategiskt Partnerskap"
+},
+"partners.form.role.option5": {
+"message": "Coaching/Innehållsskapande"
+},
+"partners.form.role.option6": {
+"message": "Annat"
+},
+"partners.form.message": {
+"message": "Dina Tankar & Idéer (Valfritt)"
+},
+"partners.form.message.placeholder": {
+"message": "Hur ser du dig själv eller din organisation bidra till Inner Journey?"
+},
+"partners.form.submit": {
+"message": "Skicka Intresse"
+},
+"partners.form.discord.text": {
+"message": "Föredrar du ett informellt samtal? <Link to=\"https://discord.gg/2j5a2Gze8W\">Hitta oss på Discord!</Link>"
+},
+"partners.layout.title": {
+"message": "Gå med i Inner Journey | Möjligheter för Partners & Team"
+},
+"partners.layout.description": {
+"message": "Gå med i Inner Journey som partner eller teammedlem för att hjälpa till att bygga en plattform för personlig utveckling, som kombinerar hjärta och teknologi."
+},
+"theme.ErrorPageContent.title": {
+"message": "Denna sida har kraschat.",
+"description": "The title of the fallback page when the page crashed"
+},
+"theme.BackToTopButton.buttonAriaLabel": {
+"message": "Scrolla till toppen",
+"description": "The ARIA label for the back to top button"
+},
+"theme.blog.archive.title": {
+"message": "Arkiv",
+"description": "The page & hero title of the blog archive page"
+},
+"theme.blog.archive.description": {
+"message": "Arkiv",
+"description": "The page & hero description of the blog archive page"
+},
+"theme.blog.paginator.navAriaLabel": {
+"message": "Navigation av Blogglista",
+"description": "The ARIA label for the blog pagination"
+},
+"theme.blog.paginator.newerEntries": {
+"message": "Nyare Inlägg",
+"description": "The label used to navigate to the newer blog posts page (previous page)"
+},
+"theme.blog.paginator.olderEntries": {
+"message": "Äldre Inlägg",
+"description": "The label used to navigate to the older blog posts page (next page)"
+},
+"theme.blog.post.paginator.navAriaLabel": {
+"message": "Navigation av Blogginlägg",
+"description": "The ARIA label for the blog posts pagination"
+},
+"theme.blog.post.paginator.newerPost": {
+"message": "Nyare Inlägg",
+"description": "The blog post button label to navigate to the newer/previous post"
+},
+"theme.blog.post.paginator.olderPost": {
+"message": "Äldre Inlägg",
+"description": "The blog post button label to navigate to the older/next post"
+},
+"theme.tags.tagsPageLink": {
+"message": "Visa Alla Taggar",
+"description": "The label of the link targeting the tag list page"
+},
+"theme.colorToggle.ariaLabel": {
+"message": "Växla mellan mörkt och ljust utseende (för närvarande {mode})",
+"description": "The ARIA label for the navbar color mode toggle"
+},
+"theme.colorToggle.ariaLabel.mode.dark": {
+"message": "mörkt utseende",
+"description": "The name for the dark color mode"
+},
+"theme.colorToggle.ariaLabel.mode.light": {
+"message": "ljust utseende",
+"description": "The name for the light color mode"
+},
+"theme.docs.breadcrumbs.navAriaLabel": {
+"message": "Sökväg",
+"description": "The ARIA label for the breadcrumbs"
+},
+"theme.docs.DocCard.categoryDescription.plurals": {
+"message": "1 artikel|{count} artiklar",
+"description": "The default description for a category card in the generated index about how many items this category includes"
+},
+"theme.docs.paginator.navAriaLabel": {
+"message": "Dokumentsidor",
+"description": "The ARIA label for the docs pagination"
+},
+"theme.docs.paginator.previous": {
+"message": "Föregående",
+"description": "The label used to navigate to the previous doc"
+},
+"theme.docs.paginator.next": {
+"message": "Nästa",
+"description": "The label used to navigate to the next doc"
+},
+"theme.docs.tagDocListPageTitle.nDocsTagged": {
+"message": "Ett dokument taggat|{count} dokument taggade",
+"description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+},
+"theme.docs.tagDocListPageTitle": {
+"message": "{nDocsTagged} med \"{tagName}\"",
+"description": "The title of the page for a docs tag"
+},
+"theme.docs.versionBadge.label": {
+"message": "Version: {versionLabel}"
+},
+"theme.docs.versions.unreleasedVersionLabel": {
+"message": "Detta är ej utgiven dokumentation för {siteTitle} {versionLabel} version.",
+"description": "The label used to tell the user that he's browsing an unreleased doc version"
+},
+"theme.docs.versions.unmaintainedVersionLabel": {
+"message": "Detta är dokumentationen för {siteTitle} {versionLabel}, som inte längre aktivt underhålls.",
+"description": "The label used to tell the user that he's browsing an unmaintained doc version"
+},
+"theme.docs.versions.latestVersionSuggestionLabel": {
+"message": "För senaste dokumentationen, se {latestVersionLink} ({versionLabel}).",
+"description": "The label used to tell the user to check the latest version"
+},
+"theme.docs.versions.latestVersionLinkLabel": {
+"message": "senaste versionen",
+"description": "The label used for the latest version suggestion link label"
+},
+"theme.common.editThisPage": {
+"message": "Redigera denna sida",
+"description": "The link label to edit the current page"
+},
+"theme.common.headingLinkTitle": {
+"message": "Direktlänk till {heading}",
+"description": "Title for link to heading"
+},
+"theme.lastUpdated.atDate": {
+"message": " den {date}",
+"description": "The words used to describe on which date a page has been last updated"
+},
+"theme.lastUpdated.byUser": {
+"message": " av {user}",
+"description": "The words used to describe by who the page has been last updated"
+},
+"theme.lastUpdated.lastUpdatedAtBy": {
+"message": "Senast uppdaterad{atDate}{byUser}",
+"description": "The sentence used to display when a page has been last updated, and by who"
+},
+"theme.navbar.mobileVersionsDropdown.label": {
+"message": "Versioner",
+"description": "The label for the navbar versions dropdown on mobile view"
+},
+"theme.NotFound.title": {
+"message": "Sidan Hittades Inte",
+"description": "The title of the 404 page"
+},
+"theme.tags.tagsListLabel": {
+"message": "Taggar:",
+"description": "The label alongside a tag list"
+},
+"theme.admonition.caution": {
+"message": "varning",
+"description": "The default label used for the Caution admonition (:::caution)"
+},
+"theme.admonition.danger": {
+"message": "risk",
+"description": "The default label used for the Danger admonition (:::danger)"
+},
+"theme.admonition.info": {
+"message": "info",
+"description": "The default label used for the Info admonition (:::info)"
+},
+"theme.admonition.note": {
+"message": "anteckning",
+"description": "The default label used for the Note admonition (:::note)"
+},
+"theme.admonition.tip": {
+"message": "tips",
+"description": "The default label used for the Tip admonition (:::tip)"
+},
+"theme.admonition.warning": {
+"message": "varning",
+"description": "The default label used for the Warning admonition (:::warning)"
+{
+"theme.AnnouncementBar.closeButtonAriaLabel": {
+"message": "Stäng",
+"description": "The ARIA label for close button of announcement bar"
+},
+"theme.blog.sidebar.navAriaLabel": {
+"message": "Navigation av senaste blogginläggen",
+"description": "The ARIA label for recent posts in the blog sidebar"
+},
+"theme.CodeBlock.copied": {
+"message": "Kopierad",
+"description": "The copied button label on code blocks"
+},
+"theme.CodeBlock.copyButtonAriaLabel": {
+"message": "Kopiera kod till urklipp",
+"description": "The ARIA label for copy code blocks button"
+},
+"theme.CodeBlock.copy": {
+"message": "Kopiera",
+"description": "The copy button label on code blocks"
+},
+"theme.CodeBlock.wordWrapToggle": {
+"message": "Växla radbrytning",
+"description": "The title attribute for toggle word wrapping button of code block lines"
+},
+"theme.DocSidebarItem.expandCategoryAriaLabel": {
+"message": "Expandera sidofältskategori '{label}'",
+"description": "The ARIA label to expand the sidebar category"
+},
+"theme.DocSidebarItem.collapseCategoryAriaLabel": {
+"message": "Kollapsa sidofältskategori '{label}'",
+"description": "The ARIA label to collapse the sidebar category"
+},
+"theme.NavBar.navAriaLabel": {
+"message": "Huvudmeny",
+"description": "The ARIA label for the main navigation"
+},
+"theme.navbar.mobileLanguageDropdown.label": {
+"message": "Språk",
+"description": "The label for the mobile language switcher dropdown"
+},
+"theme.NotFound.p1": {
+"message": "Vi kunde inte hitta det du letade efter.",
+"description": "The first paragraph of the 404 page"
+},
+"theme.NotFound.p2": {
+"message": "Vänligen kontakta ägaren av webbplatsen som länkade dig till den ursprungliga webbadressen och låt dem veta att denna länk är trasig.",
+"description": "The 2nd paragraph of the 404 page"
+},
+"theme.TOCCollapsible.toggleButtonLabel": {
+"message": "Under denna sida",
+"description": "The label used by the button on the collapsible TOC component"
+},
+"theme.blog.post.readMore": {
+"message": "Läs Mer",
+"description": "The label used in blog post item excerpts to link to full blog posts"
+},
+"theme.blog.post.readMoreLabel": {
+"message": "Läs mer om {title}",
+"description": "The ARIA label for the link to full blog posts from excerpts"
+},
+"theme.blog.post.readingTime.plurals": {
+"message": "En minut att läsa|{readingTime} min att läsa",
+"description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+},
+"theme.docs.breadcrumbs.home": {
+"message": "Hemsida",
+"description": "The ARIA label for the home page in the breadcrumbs"
+},
+"theme.docs.sidebar.collapseButtonTitle": {
+"message": "Stäng sidofältet",
+"description": "The title attribute for collapse button of doc sidebar"
+},
+"theme.docs.sidebar.collapseButtonAriaLabel": {
+"message": "Stäng sidofältet",
+"description": "The title attribute for collapse button of doc sidebar"
+},
+"theme.docs.sidebar.navAriaLabel": {
+"message": "Dokumentationssidofält",
+"description": "The ARIA label for the sidebar navigation"
+},
+"theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+"message": "Stäng navigeringsfältet",
+"description": "The ARIA label for close button of mobile sidebar"
+},
+"theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+"message": "← Tillbaka till huvudmeny",
+"description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+},
+"theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+"message": "Visa/göm navigationen",
+"description": "The ARIA label for hamburger menu button of mobile navigation"
+},
+"theme.docs.sidebar.expandButtonTitle": {
+"message": "Expandera sidofältet",
+"description": "The ARIA label and title attribute for expand button of doc sidebar"
+},
+"theme.docs.sidebar.expandButtonAriaLabel": {
+"message": "Expandera sidofältet",
+"description": "The ARIA label and title attribute for expand button of doc sidebar"
+},
+"theme.blog.post.plurals": {
+"message": "Ett inlägg|{count} inlägg",
+"description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+},
+"theme.blog.tagTitle": {
+"message": "{nPosts} taggade med \"{tagName}\"",
+"description": "The title of the page for a blog tag"
+},
+"theme.blog.author.pageTitle": {
+"message": "{authorName} - {nPosts}",
+"description": "The title of the page for a blog author"
+},
+"theme.blog.authorsList.pageTitle": {
+"message": "Författare",
+"description": "The title of the authors page"
+},
+"theme.blog.authorsList.viewAll": {
+"message": "Visa Alla Författare",
+"description": "The label of the link targeting the blog authors page"
+},
+"theme.blog.author.noPosts": {
+"message": "Denna författare har inte skrivit några inlägg ännu.",
+"description": "The text for authors with 0 blog post"
+},
+"theme.contentVisibility.unlistedBanner.title": {
+"message": "Olistad sida",
+"description": "The unlisted content banner title"
+},
+"theme.contentVisibility.unlistedBanner.message": {
+"message": "Denna sida är olistad. Sökmotorer kommer inte att indexera den, och endast användare med en direkt länk kan komma åt den.",
+"description": "The unlisted content banner message"
+},
+"theme.contentVisibility.draftBanner.title": {
+"message": "Utkastsida",
+"description": "The draft content banner title"
+},
+"theme.contentVisibility.draftBanner.message": {
+"message": "Denna sida är ett utkast. Den kommer endast att vara synlig i utvecklingsläge och exkluderas från produktionsbyggen.",
+"description": "The draft content banner message"
+},
+"theme.ErrorPageContent.tryAgain": {
+"message": "Försök igen",
+"description": "The label of the button to try again rendering when the React error boundary captures an error"
+},
+"theme.common.skipToMainContent": {
+"message": "Hoppa till huvudinnehåll",
+"description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+},
+"theme.tags.tagsPageTitle": {
+"message": "Taggar",
+"description": "The title of the tag list page"
+}
+}

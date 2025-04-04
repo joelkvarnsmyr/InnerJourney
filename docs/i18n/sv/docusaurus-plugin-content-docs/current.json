@@ -1,0 +1,70 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.en": {
+    "message": "en",
+    "description": "The label for category en in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Project Overview": {
+    "message": "Project Overview",
+    "description": "The label for category Project Overview in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Project Overview.link.generated-index.description": {
+    "message": "Get an overview of the Inner Journey project, including development strategies, coaching approaches, research initiatives, and visionary foundations.",
+    "description": "The generated-index page description for category Project Overview in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.User Experience": {
+    "message": "User Experience",
+    "description": "The label for category User Experience in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.User Experience.link.generated-index.description": {
+    "message": "Explore user experience documentation for Inner Journey, including user flows, interface design, activations, and onboarding processes.",
+    "description": "The generated-index page description for category User Experience in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Finance and Administration": {
+    "message": "Finance and Administration",
+    "description": "The label for category Finance and Administration in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Finance and Administration.link.generated-index.description": {
+    "message": "Explore financial and administrative documentation for Inner Journey, including budgets, financing strategies, revenue models, and investor reports.",
+    "description": "The generated-index page description for category Finance and Administration in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Human Resources": {
+    "message": "Human Resources",
+    "description": "The label for category Human Resources in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Human Resources.link.generated-index.description": {
+    "message": "Discover human resources documentation for Inner Journey, covering employee development, onboarding processes, remote work policies, and coaching certification.",
+    "description": "The generated-index page description for category Human Resources in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Marketing Strategy": {
+    "message": "Marketing Strategy",
+    "description": "The label for category Marketing Strategy in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Marketing Strategy.link.generated-index.description": {
+    "message": "Learn about Inner Journey's marketing strategies, including competitive analysis, market positioning, elevator pitches, and unique value propositions.",
+    "description": "The generated-index page description for category Marketing Strategy in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Security Testing": {
+    "message": "Security Testing",
+    "description": "The label for category Security Testing in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Security Testing.link.generated-index.description": {
+    "message": "Review security testing documentation for Inner Journey, including security protocols and detailed test plans.",
+    "description": "The generated-index page description for category Security Testing in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Technical Specifications": {
+    "message": "Technical Specifications",
+    "description": "The label for category Technical Specifications in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Technical Specifications.link.generated-index.description": {
+    "message": "Dive into Inner Journey's technical documentation, covering backend and frontend setup, database structure, and onboarding guides for developers.",
+    "description": "The generated-index page description for category Technical Specifications in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.sv": {
+    "message": "sv",
+    "description": "The label for category sv in sidebar tutorialSidebar"
+  }
+}

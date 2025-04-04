@@ -1,0 +1,128 @@
+/* docs/src/components/BlogHighlights/BlogHighlights.module.css */
+
+.blogHighlightsSection {
+    padding: 5.5rem 1rem;
+    background-color: #ffffff; /* Vit bakgrund som standard för denna komponent */
+    overflow: hidden;
+}
+
+/* Basstilar för rubrik och text inom denna komponent */
+.sectionTitle {
+    color: #ff6f61;
+    font-size: 2.6rem; /* Anpassa efter behov */
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.sectionText {
+    color: #444;
+    font-size: 1.15rem; /* Anpassa efter behov */
+    line-height: 1.8;
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 1.5rem auto;
+}
+
+
+/* Specifika stilar för blogg-highlights */
+.blogPostPreviewGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1140px; /* Matchar standard container */
+    margin: 3rem auto 0 auto; /* Centrera grid */
+}
+@media screen and (min-width: 768px) {
+    .blogPostPreviewGrid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+}
+
+.blogPostPreviewCard {
+    background-color: #fffaf7; /* Ljus orange bakgrund för korten */
+    border-radius: 10px;
+    padding: 1.8rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #fff0e8;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; /* För CSS fallback/komplement */
+}
+/* Framer Motion hanterar hover-transform */
+.blogPostPreviewCard:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Subtil förstärkt skugga */
+}
+
+
+.blogPostPreviewTitle {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+.blogPostPreviewTitle a { color: inherit; text-decoration: none; transition: color 0.2s ease; }
+.blogPostPreviewTitle a:hover { color: #ff6f61; text-decoration: underline; }
+
+.blogPostPreviewExcerpt {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Max 4 rader */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.blogPostReadMore {
+    color: #ff6f61;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-decoration: none;
+    margin-top: auto;
+    align-self: flex-start;
+    transition: color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+}
+.blogPostReadMore:hover { color: #e15a4f; text-decoration: underline; }
+.arrowIcon {
+    margin-left: 0.4em;
+    transition: transform 0.2s ease-out;
+}
+.blogPostReadMore:hover .arrowIcon {
+    transform: translateX(3px);
+}
+
+.viewAllPostsButton { /* Knappen längst ner */
+    background: #ff6f61;
+    color: #ffffff;
+    border: none;
+    padding: 0.9rem 2rem;
+    font-weight: 500;
+    font-size: 1.05rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.viewAllPostsButton:hover { background: #e15a4f; transform: scale(1.03); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); }
+
+
+/* --- Media Queries för Blog Highlights --- */
+@media screen and (max-width: 996px) {
+    .sectionTitle { font-size: 2.2rem; } /* Anpassa rubrikstorlek inom komponenten */
+}
+
+@media screen and (max-width: 768px) {
+    .sectionTitle { font-size: 2rem; }
+    .blogPostPreviewGrid { grid-template-columns: 1fr; } /* Stapla alltid på små skärmar */
+    .blogPostPreviewTitle { font-size: 1.1rem; }
+    .blogPostPreviewExcerpt { -webkit-line-clamp: 3; }
+}

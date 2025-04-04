@@ -1,15 +1,15 @@
+// src/components/OverviewCard/overviewCard.tsx
 import React from 'react';
-import styles from './overviewCard.module.css'; // Ny CSS-fil
-import { ProjectItem } from '../../api/api'; // Importera typen
+import styles from './overviewCard.module.css';
+import { ProjectItem } from '../../api/api';
 
 interface OverviewCardProps {
     card: ProjectItem;
-    onClick: (card: ProjectItem) => void; // Funktion för att öppna modalen
-    // "Slots" för anpassat innehåll från föräldern
+    onClick: (card: ProjectItem) => void;
     headerContent?: React.ReactNode;
     bodyContent?: React.ReactNode;
     footerContent?: React.ReactNode;
-    className?: string; // För extra klasser om det behövs
+    className?: string;
 }
 
 const OverviewCard: React.FC<OverviewCardProps> = ({
@@ -28,13 +28,12 @@ const OverviewCard: React.FC<OverviewCardProps> = ({
 
     return (
         <div
-            className={`${styles.card} ${className}`} // Grundstil + ev. extra klass
+            className={`${styles.card} ${className}`}
             onClick={() => onClick(card)}
             role="button"
             tabIndex={0}
             onKeyPress={handleKeyPress}
         >
-            {/* Rendera innehållet för varje slot om det finns */}
             {headerContent && <div className={styles.cardHeaderSlot}>{headerContent}</div>}
             {bodyContent && <div className={styles.cardBodySlot}>{bodyContent}</div>}
             {footerContent && <div className={styles.cardFooterSlot}>{footerContent}</div>}

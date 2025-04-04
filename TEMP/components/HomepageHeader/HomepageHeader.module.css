@@ -1,0 +1,145 @@
+/* docs/src/components/HomepageHeader/HomepageHeader.module.css */
+
+.heroBanner {
+    padding: 5rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff6f61 0%, #ff9f43 100%);
+    color: #2d2d2d;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Huvudcontainer för hero: Staplar logo, text, knappar vertikalt */
+.heroContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0 1rem;
+    /* Ta bort container-stilar som hör till sektioner (vit bakgrund etc.) */
+    /* Dessa appliceras via pageStyles.container i index.tsx */
+    /* background: none; */ /* Tas bort om inte absolut nödvändigt */
+    /* box-shadow: none; */ /* Tas bort om inte absolut nödvändigt */
+    /* border-radius: 0; */ /* Tas bort om inte absolut nödvändigt */
+    max-width: 1140px; /* Behåll max-bredd om önskvärt */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Hero Text Styling (används via headerStyles.title/subtitle) */
+/* Observera: Docusaurus standardklasser .hero__title/.hero_subtitle finns kvar i TSX för grundläggande struktur */
+.title {
+    color: #2d2d2d;
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: none;
+}
+
+.subtitle {
+    color: #2d2d2d;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin: 0;
+    text-shadow: none;
+    max-width: 700px;
+}
+
+/* Knappar inom headern */
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.heroButton {
+    background: #ffffff;
+    color: #ff6f61;
+    border: none;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.heroButton:hover {
+    background: #ff9f43;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.secondaryButton {
+    background: transparent;
+    color: #2d2d2d;
+    border: 2px solid #2d2d2d;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.secondaryButton:hover {
+    background: #ffffff;
+    color: #ff6f61;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* --- Media Queries för Header --- */
+@media screen and (max-width: 996px) {
+    .heroBanner {
+        padding: 3rem 1rem;
+    }
+
+    .title {
+        font-size: 2.8rem;
+    }
+
+    .subtitle {
+        font-size: 1.4rem;
+    }
+
+    .heroContainer {
+        gap: 1rem;
+    }
+
+    /* Om du vill att loggans storlek *bara* ska ändras i headern */
+    /* :global(.logoWrapper) kan behövas om .logoWrapper är i AnimatedLogo.module.css */
+    /* .heroContainer :global(.logoWrapper) {
+       width: 90px;
+       height: 90px;
+     } */
+    /* Alternativt, låt AnimatedLogo.module.css hantera detta globalt */
+}
+
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 2.2rem;
+    }
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+        width: 100%;
+        align-items: center;
+    }
+    .heroButton, .secondaryButton {
+        width: 80%;
+        max-width: 300px;
+        text-align: center;
+    }
+}

@@ -1,0 +1,103 @@
+/* docs/src/components/GitHubCard/githubCard.module.css */
+
+/* --- Kortstyling (Uppdaterad för mockup) --- */
+.card {
+    background-color: #fff; /* Vit bakgrund */
+    border: 1px solid #e1e4e8; /* Subtil ram */
+    border-radius: 6px; /* Lite mindre rundning än förr */
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    box-shadow: 0 1px 3px rgba(27, 31, 36, 0.06); /* Lite mer skugga */
+    display: flex; /* För att kunna använda flex-gap */
+    flex-direction: column;
+    gap: 8px; /* Mellanrum mellan header, objective, data */
+}
+.card:hover, .card:focus {
+    box-shadow: 0 4px 8px rgba(27, 31, 36, 0.08);
+    border-color: #c8d1d9; /* Lite mörkare ram vid hover */
+    outline: none;
+}
+
+/* Header inom kortet */
+.cardHeader { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+.cardTitleWrap { display: flex; align-items: center; gap: 6px; min-width: 0; /* Förhindra overflow */ }
+.statusIndicator { color: #57606a; flex-shrink: 0; margin-top: 1px; /* Justera */ font-size: 0.9em; }
+.cardTitle { margin: 0; font-size: 0.9rem; font-weight: 500; line-height: 1.4; color: #1f2328; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.editIconLink { color: #57606a; flex-shrink: 0; padding: 2px; margin-top: -1px; font-size: 0.85em; transition: color 0.2s ease; }
+.editIconLink:hover { color: #0969da; }
+
+/* Objective inom kortet */
+.cardObjective {
+    font-size: 0.85rem; color: #57606a; margin: 0; line-height: 1.5;
+    /* Behåll begränsning av rader */
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* Container för pills längst ner på kortet */
+.cardData { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+
+/* --- Metadata Pill Styling (Generell + Specifik för Mockup) --- */
+.metadataPill {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 3px 8px; /* Lite mer padding vertikalt */
+    border-radius: 4px; /* Mindre rundning */
+    font-size: 0.75rem; font-weight: 500; line-height: 1.3;
+    white-space: nowrap; border: 1px solid transparent; /* Förbered för ev. ram */
+}
+.pillIcon { margin-right: 2px; font-size: 0.9em; } /* Lite mindre ikon */
+
+/* Specifika färger/stilar för Mockup-pills */
+.priorityPillP0 { background-color: #FFEBE9; color: #DB2828; border-color: #FFCBC6;} /* Rödaktig */
+.priorityPillP1 { background-color: #FFF3D9; color: #B47300; border-color: #FFE5A6;} /* Gul/Orange */
+.priorityPillP2 { background-color: #E7F5E8; color: #218540; border-color: #C0EBC2;} /* Grön */
+.priorityOther { background-color: #f1f1f1; color: #586069; border-color: #e1e4e8;} /* Grå */
+
+.sizePill { background-color: #FFF3D9; color: #B47300; border-color: #FFE5A6;} /* Samma som P1 enligt mockup */
+.sizePillXL { background-color: #FFEBE9; color: #DB2828; border-color: #FFCBC6;} /* L/XL annan färg? Röd */
+
+.estimatePill { background-color: #f1f1f1; color: #586069; border-color: #e1e4e8;} /* Grå */
+.teamPill { background-color: #f1f1f1; color: #586069; border-color: #e1e4e8;} /* Grå */
+
+
+/* --- Modal Styling (V2 - Behåll ALLT från förra korrekta svaret) --- */
+.modalOverlayV2 { /* ... */ }
+.modalV2 { /* ... */ }
+.modalHeaderV2 { /* ... */ }
+.modalHeaderMain { /* ... */ }
+.modalMoscowIndicator { /* ... */ }
+.moscowMusthave { /* ... */ }
+.moscowShouldhave { /* ... */ }
+.moscowCouldhave { /* ... */ }
+.moscowWonthave { /* ... */ }
+.modalTitleV2 { /* ... */ }
+.modalHeaderActions { /* ... */ }
+.modalGitHubButton { /* ... */ }
+.modalCloseButtonV2 { /* ... */ }
+.modalBodyV2 { /* ... */ }
+.modalMainContentV2 { /* ... */ }
+.modalSidebarV2 { /* ... */ }
+.modalSectionV2 { /* ... */ }
+.sectionTitleV2 { /* ... */ }
+.objectiveTextV2 { /* ... */ }
+.metaItem { /* ... */ }
+.metaIcon { /* ... */ }
+.metaContent { /* ... */ }
+.metaLabel { /* ... */ }
+.metaValue { /* ... */ }
+.metaValueLink { /* ... */ }
+.markdownContentV2 { /* ... */ }
+.markdownContentV2 p { /* ... */ }
+.markdownContentV2 ul { /* ... */ }
+/* ... alla andra markdown-stilar ... */
+/* --- Checklist Styling --- */
+.markdownContentV2 ul li.task-list-item { /* ... */ }
+.markdownContentV2 li.task-list-item > input[type="checkbox"] { /* ... */ }
+.markdownContentV2 li.task-list-item::before { /* ... */ }
+.markdownContentV2 li.task-list-item > input[type="checkbox"]:checked::before { /* ... */ }
+.markdownContentV2 li.task-list-item > input[type="checkbox"]:checked::after { /* ... */ }
+.markdownContentV2 li.task-list-item > input[type="checkbox"]:checked + * { /* ... */ }
+/* --- Övriga Stilar --- */
+.spin { /* ... */ }
+@keyframes spin { /* ... */ }
+.discussionLink { /* ... */ }

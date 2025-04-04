@@ -1,17 +1,22 @@
+# routes/github.py
 from fastapi import APIRouter, HTTPException
+from typing import Dict, Any
 import logging
-from services.github_service import fetch_moscow_data
+from services.github_service import fetch_all_project_data_from_github
 
 router = APIRouter()
 logger = logging.getLogger(__name__)
 
-@router.get("/moscow", response_model=dict)
-async def get_moscow_data():  # Ta bort user: dict = Depends(verify_token)
-    """Hämtar MoSCoW-data från GitHub för ett specifikt projekt."""
+@router.get("/project",
+            response_model=Dict[str, Any],
+            summary="Hämta all projekt-data",
+            description="Hämtar all rådata för projekt 24 från GitHub.")
+async def get_project_data():
     try:
-        logger.info("Anrop till /github/moscow mottaget")
-        moscow_data = fetch_moscow_data()
-        return moscow_data
+        logger.info("Anrop till /api/github/project mottaget")
+        project_data = await fetch_all_project_data_from_github()
+        logger.info("Returnerar projekt-data")
+        return project_data
     except Exception as e:
-        logger.error(f"Fel vid hämtning av GitHub-data: {e}")
-        raise HTTPException(status_code=500, detail=f"Fel vid hämtning av GitHub-data: {str(e)}")
+        logger.error(f"Fel i /api/github/project: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Fel vid hämtning av projektdata: {str(e)}")
