@@ -49,7 +49,6 @@ const innerItemFadeInProps = (delay = 0) => ({ // För innehåll i korten
 
 // === Blog Highlights Komponenten ===
 const BlogHighlights: React.FC = () => {
-    // TODO: Ersätt detta med data från Docusaurus blog plugin
     const latestPosts = [
         {
             title: 'Levande Projektledning: Inner Journeys Metod...', // Korta ner?
