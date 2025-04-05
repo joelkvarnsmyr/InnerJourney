@@ -55,9 +55,28 @@ async def fetch_all_project_data_from_github() -> Dict[str, Any]:
               fields(first: 100) {
                 totalCount
                 nodes {
-                  ... on ProjectV2Field { id name dataType }
-                  ... on ProjectV2SingleSelectField { id name dataType options { id name color description } }
-                  ... on ProjectV2IterationField { id name dataType configuration { startDay duration iterations { id title startDate duration } completedIterations { id title startDate duration } } }
+                  ... on ProjectV2Field {
+                    id
+                    name
+                    dataType
+                  }
+                  ... on ProjectV2SingleSelectField {
+                    id
+                    name
+                    dataType
+                    options { id name color description }
+                  }
+                  ... on ProjectV2IterationField {
+                    id
+                    name
+                    dataType
+                    configuration {
+                      startDay
+                      duration
+                      iterations { id title startDate duration }
+                      completedIterations { id title startDate duration }
+                    }
+                  }
                 }
                 pageInfo { hasNextPage endCursor }
               }
@@ -72,18 +91,107 @@ async def fetch_all_project_data_from_github() -> Dict[str, Any]:
                   fieldValues(first: 100) {
                     totalCount
                     nodes {
-                      ... on ProjectV2ItemFieldTextValue { text field { id name dataType } }
-                      ... on ProjectV2ItemFieldNumberValue { number field { id name dataType } }
-                      ... on ProjectV2ItemFieldDateValue { date field { id name dataType } }
-                      ... on ProjectV2ItemFieldSingleSelectValue { name optionId field { id name dataType options { id name } } }
-                      ... on ProjectV2ItemFieldIterationValue { title iterationId startDate duration field { id name dataType } }
+                      ... on ProjectV2ItemFieldTextValue {
+                        text
+                        field {
+                          ... on ProjectV2Field {
+                            id
+                            name
+                            dataType
+                          }
+                        }
+                      }
+                      ... on ProjectV2ItemFieldNumberValue {
+                        number
+                        field {
+                          ... on ProjectV2Field {
+                            id
+                            name
+                            dataType
+                          }
+                        }
+                      }
+                      ... on ProjectV2ItemFieldDateValue {
+                        date
+                        field {
+                          ... on ProjectV2Field {
+                            id
+                            name
+                            dataType
+                          }
+                        }
+                      }
+                      ... on ProjectV2ItemFieldSingleSelectValue {
+                        name
+                        optionId
+                        field {
+                          ... on ProjectV2SingleSelectField {
+                            id
+                            name
+                            dataType
+                            options { id name }
+                          }
+                        }
+                      }
+                      ... on ProjectV2ItemFieldIterationValue {
+                        title
+                        iterationId
+                        startDate
+                        duration
+                        field {
+                          ... on ProjectV2IterationField {
+                            id
+                            name
+                            dataType
+                          }
+                        }
+                      }
                     }
                     pageInfo { hasNextPage endCursor }
                   }
                   content {
-                    ... on Issue { id title url body state number createdAt updatedAt closedAt author { login } assignees(first: 100) { totalCount nodes { login } } labels(first: 100) { totalCount nodes { id name color } } milestone { id title dueOn state } repository { id name owner { login } } }
-                    ... on PullRequest { id title url body state number createdAt updatedAt closedAt merged mergedAt author { login } assignees(first: 100) { totalCount nodes { login } } labels(first: 100) { totalCount nodes { id name color } } milestone { id title dueOn state } repository { id name owner { login } } }
-                    ... on DraftIssue { id title body createdAt updatedAt creator { login } }
+                    ... on Issue {
+                      id
+                      title
+                      url
+                      body
+                      state
+                      number
+                      createdAt
+                      updatedAt
+                      closedAt
+                      author { login }
+                      assignees(first: 100) { totalCount nodes { login } }
+                      labels(first: 100) { totalCount nodes { id name color } }
+                      milestone { id title dueOn state }
+                      repository { id name owner { login } }
+                    }
+                    ... on PullRequest {
+                      id
+                      title
+                      url
+                      body
+                      state
+                      number
+                      createdAt
+                      updatedAt
+                      closedAt
+                      merged
+                      mergedAt
+                      author { login }
+                      assignees(first: 100) { totalCount nodes { login } }
+                      labels(first: 100) { totalCount nodes { id name color } }
+                      milestone { id title dueOn state }
+                      repository { id name owner { login } }
+                    }
+                    ... on DraftIssue {
+                      id
+                      title
+                      body
+                      createdAt
+                      updatedAt
+                      creator { login }
+                    }
                   }
                 }
                 pageInfo { hasNextPage endCursor }
@@ -93,10 +201,11 @@ async def fetch_all_project_data_from_github() -> Dict[str, Any]:
         }
         """
         headers = {"Authorization": f"Bearer {github_token}", "Content-Type": "application/json"}
-        logger.info("Fetching ALL data from GitHub for project 24 under user joelkvarnsmyr...")
-        logger.debug(f"GraphQL query being sent: {query}")  # Lägg till debug-loggning
+        logger.info("Fetching data from GitHub for project 24...")
+        logger.debug(f"GraphQL query being sent: {query}")
         async with aiohttp.ClientSession() as session:
-            payload = {"query": query.strip()}  # Säkerställ att queryn är ren utan extra whitespace
+            payload = {"query": query.strip()}
+            logger.debug(f"Sending payload: {payload}")
             async with session.post("https://api.github.com/graphql", json=payload, headers=headers) as response:
                 response_text = await response.text()
                 logger.debug(f"GitHub API response: {response_text}")
