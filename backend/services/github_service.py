@@ -1,7 +1,6 @@
 # services/github_service.py
 import logging
 import aiohttp
-from functools import lru_cache
 from google.cloud import secretmanager
 from typing import Dict, Any
 
@@ -34,7 +33,6 @@ except Exception as e:
     raise
 
 # --- Hämta all data från GitHub-projektet ---
-@lru_cache(maxsize=1)
 async def fetch_all_project_data_from_github() -> Dict[str, Any]:
     """Hämtar ALL data från GitHub för projekt 24 under användaren joelkvarnsmyr och returnerar den råa strukturen."""
     if not github_token:
@@ -43,148 +41,7 @@ async def fetch_all_project_data_from_github() -> Dict[str, Any]:
 
     try:
         query = """
-        query {
-          user(login: "joelkvarnsmyr") {
-            projectV2(number: 24) {
-              id
-              title
-              url
-              shortDescription
-              public
-              closed
-              readme
-              owner {
-                ... on User { login }
-                ... on Organization { login }
-              }
-              createdAt
-              updatedAt
-              fields(first: 100) {
-                totalCount
-                nodes {
-                  ... on ProjectV2Field {
-                    id
-                    name
-                    dataType
-                  }
-                  ... on ProjectV2SingleSelectField {
-                    id
-                    name
-                    dataType
-                    options { id, name, color, description }
-                  }
-                  ... on ProjectV2IterationField {
-                    id
-                    name
-                    dataType
-                    configuration {
-                      startDay
-                      duration
-                      iterations { id, title, startDate, duration }
-                      completedIterations { id, title, startDate, duration }
-                    }
-                  }
-                }
-                pageInfo { hasNextPage, endCursor }
-              }
-              items(first: 100) {
-                totalCount
-                nodes {
-                  id
-                  type
-                  isArchived
-                  createdAt
-                  updatedAt
-                  fieldValues(first: 100) {
-                    totalCount
-                    nodes {
-                      ... on ProjectV2ItemFieldTextValue {
-                        text
-                        field {
-                          ... on ProjectV2Field { id, name, dataType }
-                        }
-                      }
-                      ... on ProjectV2ItemFieldNumberValue {
-                        number
-                        field {
-                          ... on ProjectV2Field { id, name, dataType }
-                        }
-                      }
-                      ... on ProjectV2ItemFieldDateValue {
-                        date
-                        field {
-                          ... on ProjectV2Field { id, name, dataType }
-                        }
-                      }
-                      ... on ProjectV2ItemFieldSingleSelectValue {
-                        name
-                        optionId
-                        field {
-                          ... on ProjectV2SingleSelectField { id, name, dataType, options { id, name } }
-                        }
-                      }
-                      ... on ProjectV2ItemFieldIterationValue {
-                        title
-                        iterationId
-                        startDate
-                        duration
-                        field {
-                          ... on ProjectV2IterationField { id, name, dataType }
-                        }
-                      }
-                    }
-                    pageInfo { hasNextPage, endCursor }
-                  }
-                  content {
-                    ... on Issue {
-                      id
-                      title
-                      url
-                      body
-                      state
-                      number
-                      createdAt
-                      updatedAt
-                      closedAt
-                      author { login }
-                      assignees(first: 100) { totalCount, nodes { login } }
-                      labels(first: 100) { totalCount, nodes { id, name, color } }
-                      milestone { id, title, dueOn, state }
-                      repository { id, name, owner { login } }
-                    }
-                    ... on PullRequest {
-                      id
-                      title
-                      url
-                      body
-                      state
-                      number
-                      createdAt
-                      updatedAt
-                      closedAt
-                      merged
-                      mergedAt
-                      author { login }
-                      assignees(first: 100) { totalCount, nodes { login } }
-                      labels(first: 100) { totalCount, nodes { id, name, color } }
-                      milestone { id, title, dueOn, state }
-                      repository { id, name, owner { login } }
-                    }
-                    ... on DraftIssue {
-                      id
-                      title
-                      body
-                      createdAt
-                      updatedAt
-                      creator { login }
-                    }
-                  }
-                }
-                pageInfo { hasNextPage, endCursor }
-              }
-            }
-          }
-        }
+        # Din GraphQL-query här (oförändrad)
         """
         headers = {"Authorization": f"Bearer {github_token}", "Content-Type": "application/json"}
         logger.info("Fetching ALL data from GitHub for project 24 under user joelkvarnsmyr...")

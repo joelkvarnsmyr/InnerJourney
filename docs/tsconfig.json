@@ -1,23 +1,25 @@
 {
   "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "src", // Ändrat till "src" för att göra importer mer intuitiva från src-mappen
     "moduleResolution": "node",
     "allowJs": true,
     "esModuleInterop": true,
-    "jsx": "react-jsx", // För att hantera JSX/TSX och lösa "Cannot find namespace 'JSX'"
-    "noEmit": true, // Vi vill inte generera JS-filer, Docusaurus hanterar det
-    "strict": true, // För att säkerställa strikt typkontroll
-    "skipLibCheck": true, // För att undvika problem med tredjepartsbibliotek
+    "jsx": "react-jsx",
+    "noEmit": true,
+    "strict": true,
+    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "@site/*": ["./*"] // För att lösa importer som '@site/static/img/SymbolDark.svg'
+      "@api/*": ["api/*"], // Exempel på användbar alias för src/api
+      "@components/*": ["components/*"] // Exempel för src/components
     },
     "types": [
-      "node", // För Node.js-typer (t.ex. för 'node:fs')
-      "@docusaurus/module-type-aliases" // För Docusaurus-moduler som '@theme/*'
+      "node",
+      "@docusaurus/module-type-aliases",
+      "@types/react" // Lägg till för React-typer
     ]
   },
-  "include": ["src/**/*", "docusaurus.config.js", "declarations.d.ts"],
+  "include": ["src/**/*", "docusaurus.config.ts", "declarations.d.ts"],
   "exclude": [".docusaurus", "build", "node_modules", "plugins/boards-data/**/*"]
 }

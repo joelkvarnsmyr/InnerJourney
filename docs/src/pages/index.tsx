@@ -173,6 +173,33 @@ function PathwaysSection() {
                             {translate({ id: 'home.pathways.forCoaches.buttonText', message: 'Discover the Benefits' })}
                         </Link>
                     </motion.div>
+                    {/* Nytt kort för arbetsplatser */}
+                    <motion.div className={pageStyles.pathwayCard} variants={itemFadeInProps} whileHover={{ y: -5, transition: {duration: 0.2} }}>
+                        <div className={pageStyles.pathwayIcon}>💼</div>
+                        <Heading as="h3" className={pageStyles.pathwayTitle}>
+                            {translate({ id: 'home.pathways.forWorkplaces.title', message: 'For Workplaces' })}
+                        </Heading>
+                        <p className={pageStyles.pathwayText}>
+                            {translate({ id: 'home.pathways.forWorkplaces.text', message: 'Empower your employees with tools for personal development and well-being.' })}
+                        </p>
+                        <Link className={clsx('button', pageStyles.pathwayButton)} to="/about/for-work">
+                            {translate({ id: 'home.pathways.forWorkplaces.buttonText', message: 'Learn More' })}
+                        </Link>
+                    </motion.div>
+                    {/* Nytt kort för skolor */}
+                    <motion.div className={pageStyles.pathwayCard} variants={itemFadeInProps} whileHover={{ y: -5, transition: {duration: 0.2} }}>
+                        <div className={pageStyles.pathwayIcon}>📚</div>
+                        <Heading as="h3" className={pageStyles.pathwayTitle}>
+                            {translate({ id: 'home.pathways.forSchools.title', message: 'For Schools' })}
+                        </Heading>
+                        <p className={pageStyles.pathwayText}>
+                            {translate-->
+                                { id: 'home.pathways.forSchools.text', message: 'Provide students with resources for personal growth and self-discovery.' })}
+                        </p>
+                        <Link className={clsx('button', pageStyles.pathwayButton)} to="/about/for-school">
+                            {translate({ id: 'home.pathways.forSchools.buttonText', message: 'Discover More' })}
+                        </Link>
+                    </motion.div>
                     <motion.div className={pageStyles.pathwayCard} variants={itemFadeInProps} whileHover={{ y: -5, transition: {duration: 0.2} }}>
                         <div className={pageStyles.pathwayIcon}>📈</div>
                         <Heading as="h3" className={pageStyles.pathwayTitle}>

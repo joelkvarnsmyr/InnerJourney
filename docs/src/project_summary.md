@@ -1,6 +1,6 @@
 # Projektkontext
 
-**Genererad:** 2025-04-04 17:39:26  
+**Genererad:** 2025-04-05 15:17:36  
 **Rotmapp:** `/home/joelkvarnsmyr/projects/innerjourney/docs/src`
 
 ## Fil- och Mappstruktur
@@ -63,8 +63,6 @@ src/
     css/
         custom.css
     theme/
-        NavbarItem/
-            index.tsx
 ```
 
 ## Filinnehåll (Max 150 KB per fil)
@@ -304,128 +302,63 @@ export default OverviewCard;
 
 ### `components/HomepageHeader/index.tsx`
 ```tsx
-// src/components/BlogHighlights/BlogHighlights.tsx
+// docs/src/components/HomepageHeader/index.tsx
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
-import { motion } from 'framer-motion';
-import { usePluginData } from '@docusaurus/useGlobalData';
-import { translate } from '@docusaurus/Translate'; // Importera translate
-import styles from './HomepageHeader.module.css';
 
-// --- Animationsvarianter (Behåll från tidigare) ---
-const fadeInYProps = (delay = 0, y = 20, duration = 0.6) => ({
-    initial: { opacity: 0, y },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.2 },
-    transition: { duration, delay, ease: 'easeOut' },
-});
+// === Importera den egna CSS-modulen ===
+import headerStyles from './HomepageHeader.module.css';
 
-const sectionTitleProps = {
-    initial: { opacity: 0, y: -15 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.5 },
-    transition: { duration: 0.5, ease: 'easeOut' },
-};
+// Importera AnimatedLogo
+import AnimatedLogo from '../AnimatedLogo/AnimatedLogo';
 
-const staggerContainerProps = (staggerChildren = 0.1) => ({
-    initial: 'hidden',
-    whileInView: 'visible',
-    viewport: { once: true, amount: 0.1 },
-    variants: {
-        hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { staggerChildren, delayChildren: 0.1 } },
-    },
-});
-
-const itemFadeInProps = {
-    variants: {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
-    },
-};
-
-const innerItemFadeInProps = (delay = 0) => ({
-    variants: {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay, ease: 'easeOut' } },
-    },
-});
-
-// Typ för bloggpost-metadata (kan behöva justeras baserat på exakt struktur)
-interface BlogPost {
-    id: string;
-    metadata: {
-        permalink: string;
-        title: string;
-        description: string;
-        date: string;
-        tags: { label: string; permalink: string }[];
-    };
-}
-
-interface BlogPluginData {
-    posts: BlogPost[];
-}
-
-const BlogHighlights: React.FC = () => {
-    const blogData = usePluginData('docusaurus-plugin-content-blog') as BlogPluginData;
-
-    const highlightedPosts = blogData?.posts
-        ?.filter(post =>
-            post.metadata.tags.some(tag => tag.label.toLowerCase() === 'highlights')
-        )
-        .sort((a, b) => new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime())
-        .slice(0, 3) ?? [];
-
-    if (highlightedPosts.length === 0) {
-        return null;
-    }
+// Definiera komponenten här
+function HomepageHeader(): JSX.Element {
 
     return (
-        <motion.section className={styles.blogHighlightsSection} {...fadeInYProps()}>
-            <div className="container">
-                <motion.div {...sectionTitleProps}>
-                    <Heading as="h2" className={styles.sectionTitle}>
-                        {translate({ id: 'blogHighlights.title', message: 'From Our Blog: Featured Insights' })}
-                    </Heading>
-                </motion.div>
-                <motion.p className={styles.sectionText} {...fadeInYProps(0.1)} style={{marginBottom: "3rem"}}>
-                    {translate({ id: 'blogHighlights.text', message: 'Explore some of our most-read articles and gain deeper insights into our methodology and vision.' })}
-                </motion.p>
+        // === Använd headerStyles ===
+        <header className={clsx('hero', headerStyles.heroBanner)}>
+            {/* === Använd headerStyles === */}
+            <div className={clsx('container', headerStyles.heroContainer)}>
 
-                <motion.div className={styles.blogPostPreviewGrid} {...staggerContainerProps(0.1)}>
-                    {highlightedPosts.map((post) => (
-                        <motion.div key={post.id} className={styles.blogPostPreviewCard} variants={itemFadeInProps} whileHover={{ y: -4, transition:{ duration: 0.2 }}}>
-                            <motion.div {...innerItemFadeInProps(0.1)}>
-                                <Heading as="h3" className={styles.blogPostPreviewTitle}>
-                                    <Link to={post.metadata.permalink}>{post.metadata.title}</Link>
-                                </Heading>
-                            </motion.div>
-                            <motion.p className={styles.blogPostPreviewExcerpt} {...innerItemFadeInProps(0.2)}>
-                                {post.metadata.description}
-                            </motion.p>
-                            <motion.div {...innerItemFadeInProps(0.3)}>
-                                <Link className={styles.blogPostReadMore} to={post.metadata.permalink}>
-                                    {translate({ id: 'blogHighlights.readMore', message: 'Read More' })} <span className={styles.arrowIcon}>→</span>
-                                </Link>
-                            </motion.div>
-                        </motion.div>
-                    ))}
-                </motion.div>
+                <AnimatedLogo />
 
-                <motion.div {...fadeInYProps(0.3)} style={{ textAlign: 'center', marginTop: '3rem' }}>
-                    <Link className={clsx('button', styles.viewAllPostsButton)} to="/blog">
-                        {translate({ id: 'blogHighlights.viewAll', message: 'Explore All Blog Posts' })}
+                {/* === Lägg till headerStyles.title === */}
+                <Heading as="h1" className={clsx('hero__title', headerStyles.title)}>
+                    Välkommen till vårt Backbone
+                </Heading>
+
+                {/* === Lägg till headerStyles.subtitle === */}
+                <p className={clsx('hero__subtitle', headerStyles.subtitle)}>
+                    Utforska guider, teknisk dokumentation och mer för att få ut det mesta av Inner Journey.
+                </p>
+
+                {/* === Använd headerStyles === */}
+                <div className={headerStyles.buttons}>
+                    <Link
+                        // === Använd headerStyles ===
+                        className={clsx('button button--lg', headerStyles.heroButton)}
+                        to="/docs/intro"
+                    >
+                        Kom igång – 5 min 🚀
                     </Link>
-                </motion.div>
+                    <Link
+                        // === Använd headerStyles ===
+                        className={clsx('button button--lg', headerStyles.secondaryButton)}
+                        to="https://innerjourney.kvarnsmyr.se"
+                    >
+                        Gå till appen
+                    </Link>
+                </div>
             </div>
-        </motion.section>
+        </header>
     );
 }
 
-export default BlogHighlights;
+// Exportera komponenten
+export default HomepageHeader;
 ```
 
 ### `components/GitHubCard/GitHubCard.tsx`
@@ -1421,7 +1354,7 @@ import axios from 'axios';
 
 // Sätt upp en bas-URL för API-anrop
 const apiClient = axios.create({
-    baseURL: process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:8080/api',
+    baseURL: 'https://innerjourney-backend-975065734812.europe-west1.run.app/api', // Uppdaterad till produktions-URL
     headers: {
         'Content-Type': 'application/json',
     },
@@ -1929,6 +1862,33 @@ function PathwaysSection() {
                         </p>
                         <Link className={clsx('button', pageStyles.pathwayButton)} to="/about/coaches">
                             {translate({ id: 'home.pathways.forCoaches.buttonText', message: 'Discover the Benefits' })}
+                        </Link>
+                    </motion.div>
+                    {/* Nytt kort för arbetsplatser */}
+                    <motion.div className={pageStyles.pathwayCard} variants={itemFadeInProps} whileHover={{ y: -5, transition: {duration: 0.2} }}>
+                        <div className={pageStyles.pathwayIcon}>💼</div>
+                        <Heading as="h3" className={pageStyles.pathwayTitle}>
+                            {translate({ id: 'home.pathways.forWorkplaces.title', message: 'For Workplaces' })}
+                        </Heading>
+                        <p className={pageStyles.pathwayText}>
+                            {translate({ id: 'home.pathways.forWorkplaces.text', message: 'Empower your employees with tools for personal development and well-being.' })}
+                        </p>
+                        <Link className={clsx('button', pageStyles.pathwayButton)} to="/about/for-work">
+                            {translate({ id: 'home.pathways.forWorkplaces.buttonText', message: 'Learn More' })}
+                        </Link>
+                    </motion.div>
+                    {/* Nytt kort för skolor */}
+                    <motion.div className={pageStyles.pathwayCard} variants={itemFadeInProps} whileHover={{ y: -5, transition: {duration: 0.2} }}>
+                        <div className={pageStyles.pathwayIcon}>📚</div>
+                        <Heading as="h3" className={pageStyles.pathwayTitle}>
+                            {translate({ id: 'home.pathways.forSchools.title', message: 'For Schools' })}
+                        </Heading>
+                        <p className={pageStyles.pathwayText}>
+                            {translate-->
+                                { id: 'home.pathways.forSchools.text', message: 'Provide students with resources for personal growth and self-discovery.' })}
+                        </p>
+                        <Link className={clsx('button', pageStyles.pathwayButton)} to="/about/for-school">
+                            {translate({ id: 'home.pathways.forSchools.buttonText', message: 'Discover More' })}
                         </Link>
                     </motion.div>
                     <motion.div className={pageStyles.pathwayCard} variants={itemFadeInProps} whileHover={{ y: -5, transition: {duration: 0.2} }}>
@@ -5335,6 +5295,7 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import { motion } from 'framer-motion';
 import { translate } from '@docusaurus/Translate';
+import ReactMarkdown from 'react-markdown'; // Importera react-markdown
 import styles from './coaches.module.css';
 
 // --- Animationsvarianter ---
@@ -5403,9 +5364,12 @@ function WhyInnerJourney() {
                         {translate({ id: 'coaches.why.title', message: 'From Chaos to Clarity: Your New Coaching Hub' })}
                     </Heading>
                 </motion.div>
-                <p className={styles.sectionText}>
-                    {translate({ id: 'coaches.why.text', message: 'Sound familiar? Notes in one document, exercises via email, feedback on SMS or Messenger... It’s time for a change. Inner Journey brings all your client work into <strong>one place</strong>. Deliver a professional experience to your clients and free up your time for what truly matters.' })}
-                </p>
+                <ReactMarkdown className={styles.sectionText}>
+                    {translate({
+                        id: 'coaches.why.text',
+                        message: 'Sound familiar? Notes in one document, exercises via email, feedback on SMS or Messenger... It’s time for a change. Inner Journey brings all your client work into <strong>one place</strong>. Deliver a professional experience to your clients and free up your time for what truly matters.',
+                    })}
+                </ReactMarkdown>
             </div>
         </motion.section>
     );
@@ -5492,6 +5456,11 @@ function BenefitsForCoaches() {
                         <p>{translate({ id: 'coaches.benefits.centralizedCommunication.text', message: 'All dialogue and feedback are gathered in the journal – professional and easy to follow up.' })}</p>
                     </motion.div>
                     <motion.div className={styles.benefitCard} variants={cardItemVariants} whileHover={{ scale: 1.04, y: -5, transition: { duration: 0.2 } }} whileTap={{ scale: 0.98 }}>
+                        <span className={styles.benefitIcon}>📝</span>
+                        <Heading as="h3">{translate({ id: 'coaches.benefits.createPrograms.title', message: 'Create Your Own Programs' })}</Heading>
+                        <p>{translate({ id: 'coaches.benefits.createPrograms.text', message: 'Design structured programs solo or collaborate with other coaches to combine expertise, like mindfulness and business strategy.' })}</p>
+                    </motion.div>
+                    <motion.div className={styles.benefitCard} variants={cardItemVariants} whileHover={{ scale: 1.04, y: -5, transition: { duration: 0.2 } }} whileTap={{ scale: 0.98 }}>
                         <span className={styles.benefitIcon}>💸</span>
                         <Heading as="h3">{translate({ id: 'coaches.benefits.easyPayments.title', message: 'Easy Payments (Coming Soon!)' })}</Heading>
                         <p>{translate({ id: 'coaches.benefits.easyPayments.text', message: 'Focus on coaching, we’ll handle the rest. Soon, we’ll launch a seamless solution for card payments from clients and easy payouts to you.' })}</p>
@@ -5516,9 +5485,12 @@ function CoachingPhilosophySection() {
                         {translate({ id: 'coaches.philosophy.title', message: 'Our Philosophy: Guidance, Not Directives' })}
                     </Heading>
                 </motion.div>
-                <p className={styles.sectionText}>
-                    {translate({ id: 'coaches.philosophy.text1', message: '"A platform that, through research-based, holistic tools, guides you to self-discovery and personal development – <strong>without telling you what to do.</strong>"' })}
-                </p>
+                <ReactMarkdown className={styles.sectionText}>
+                    {translate({
+                        id: 'coaches.philosophy.text1',
+                        message: '"A platform that, through research-based, holistic tools, guides you to self-discovery and personal development – <strong>without telling you what to do.</strong>"',
+                    })}
+                </ReactMarkdown>
                 <p className={styles.sectionText}>
                     {translate({ id: 'coaches.philosophy.text2', message: 'We believe in empowering both the client’s and coach’s autonomy. Our tools are designed to support genuine discovery and authentic partnership on the development journey. Does this align with your coaching approach?' })}
                 </p>
@@ -5545,6 +5517,9 @@ function FutureVisionSection() {
                     </motion.li>
                     <motion.li variants={listItemVariants}>
                         <strong>{translate({ id: 'coaches.future.aiRecording.title', message: 'AI-Supported Recording (Beta)' })}</strong> {translate({ id: 'coaches.future.aiRecording.text', message: 'Record your own meditations and guided sessions directly in the app, with automatic audio enhancement and the option to add background sounds.' })}
+                    </motion.li>
+                    <motion.li variants={listItemVariants}>
+                        <strong>{translate({ id: 'coaches.future.createPrograms.title', message: 'Custom Program Creation' })}</strong> {translate({ id: 'coaches.future.createPrograms.text', message: 'Build structured programs with a drag-and-drop builder, solo or in collaboration with other coaches, to offer clients tailored journeys.' })}
                     </motion.li>
                     <motion.li variants={listItemVariants}>
                         <strong>{translate({ id: 'coaches.future.advancedMatching.title', message: 'Advanced Matching' })}</strong> {translate({ id: 'coaches.future.advancedMatching.text', message: 'Even smarter matching based on deeper profiling to connect you with ideal clients.' })}
@@ -6497,29 +6472,3 @@ a.featureCard {
   z-index: 1; /* Förhindra att kort överlappas av andra element */
 }
 ```
-
-### `theme/NavbarItem/index.tsx`
-```tsx
-// src/theme/NavbarItem/index.tsx
-import React, { type ReactNode } from 'react';
-import NavbarItem from '@theme-original/NavbarItem';
-import type NavbarItemType from '@theme/NavbarItem';
-import type { WrapperProps } from '@docusaurus/types';
-import LanguageSwitcher from '../../components/LanguageSwitcher/LanguageSwitcher'; // Uppdaterad sökväg
-
-type Props = WrapperProps<typeof NavbarItemType>;
-
-export default function NavbarItemWrapper(props: Props): ReactNode {
-    if (props.type === 'custom-language-switcher') {
-        return <LanguageSwitcher />;
-    }
-
-    return <NavbarItem {...props} />;
-}
-```
-
-## Uppdrag till Gemini 2.5
-Ingen analys vald.
-
-## Resultat från Gemini 2.5
-Ingen analys genererad (valdes bort).

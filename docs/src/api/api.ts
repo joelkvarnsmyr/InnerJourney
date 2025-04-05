@@ -1,120 +1,24 @@
-// docs/src/api/api.ts
 import axios from 'axios';
 
-// Sätt upp en bas-URL för API-anrop
+const baseURL = process.env.REACT_APP_API_BASE_URL || 'https://innerjourney-backend-975065734812.europe-west1.run.app/api';
+
 const apiClient = axios.create({
-    baseURL: process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:8080/api',
+    baseURL,
     headers: {
         'Content-Type': 'application/json',
     },
-    timeout: 15000,
+    timeout: 30000,
 });
 
-/**
- * Interface för ett fält i ProjectV2
- */
-interface ProjectField {
-    id: string;
-    name: string;
-    dataType: string;
-    options?: { id: string; name: string; color: string; description?: string }[];
-    configuration?: {
-        startDay?: number;
-        duration?: number;
-        iterations?: { id: string; title: string; startDate: string; duration: number }[];
-        completedIterations?: { id: string; title: string; startDate: string; duration: number }[];
-    };
-}
+// Ta bort interceptor eftersom vi inte behöver token för denna endpoint
+// apiClient.interceptors.request.use(...)
 
-/**
- * Interface för ett fältvärde i ett item
- */
-interface FieldValue {
-    text?: string;
-    number?: number;
-    date?: string;
-    name?: string;
-    optionId?: string;
-    title?: string;
-    iterationId?: string;
-    startDate?: string;
-    duration?: number;
-    field: {
-        id: string;
-        name: string;
-        dataType: string;
-        options?: { id: string; name: string }[];
-    };
-}
-
-/**
- * Interface för ett item i ProjectV2
- */
-interface ProjectItem {
-    id: string;
-    type: 'ISSUE' | 'PULL_REQUEST' | 'DRAFT_ISSUE';
-    isArchived: boolean;
-    createdAt: string;
-    updatedAt: string;
-    fieldValues: {
-        totalCount: number;
-        nodes: FieldValue[];
-        pageInfo: { hasNextPage: boolean; endCursor: string };
-    };
-    content: {
-        id: string;
-        title: string;
-        body?: string;
-        url?: string;
-        state?: 'OPEN' | 'CLOSED';
-        number?: number;
-        createdAt?: string;
-        updatedAt?: string;
-        closedAt?: string | null;
-        merged?: boolean;
-        mergedAt?: string | null;
-        author?: { login: string };
-        creator?: { login: string };
-        assignees?: { totalCount: number; nodes: { login: string }[] };
-        labels?: { totalCount: number; nodes: { id: string; name: string; color: string }[] };
-        milestone?: { id: string; title: string; dueOn?: string; state?: string } | null;
-        repository?: { id: string; name: string; owner: { login: string } };
-    };
-}
-
-/**
- * Interface för hela ProjectV2-svaret från backend
- */
-export interface GitHubProjectData {
-    id: string;
-    title: string;
-    url: string;
-    shortDescription: string | null;
-    public: boolean;
-    closed: boolean;
-    readme: string | null;
-    owner: { login: string };
-    createdAt: string;
-    updatedAt: string;
-    fields: {
-        totalCount: number;
-        nodes: ProjectField[];
-        pageInfo: { hasNextPage: boolean; endCursor: string };
-    };
-    items: {
-        totalCount: number;
-        nodes: ProjectItem[];
-        pageInfo: { hasNextPage: boolean; endCursor: string };
-    };
-}
-
-/**
- * Hämtar all rådata för projektet från backend
- */
 export const fetchGitHubProjectData = async (): Promise<GitHubProjectData> => {
     try {
-        console.log('Frontend: Anropar /github/project...');
-        const response = await apiClient.get('/github/project');
+        console.log(`Frontend: Anropar ${baseURL}/github/project...`);
+        const response = await apiClient.get('/github/project', {
+            validateStatus: (status) => status >= 200 && status < 300,
+        });
         console.log('Frontend: Mottog svar från /github/project:', response.status);
 
         if (!response.data || typeof response.data !== 'object') {
@@ -129,7 +33,8 @@ export const fetchGitHubProjectData = async (): Promise<GitHubProjectData> => {
         let message = 'Kunde inte hämta projektdata från servern.';
         if (axios.isAxiosError(error)) {
             if (error.response) {
-                message = `Serverfel (${error.response.status}): ${error.response.data?.detail || 'Okänt serverfel'}`;
+                const { status, data } = error.response;
+                message = `Serverfel (${status}): ${data?.detail || 'Okänt fel'}`;
             } else if (error.request) {
                 message = 'Inget svar från servern. Kontrollera att backend körs och är nåbar.';
             } else {
@@ -141,3 +46,63 @@ export const fetchGitHubProjectData = async (): Promise<GitHubProjectData> => {
         throw new Error(message);
     }
 };
+
+// Typdefinitioner (uppdaterade från tidigare förslag)
+interface FieldNode {
+    id: string;
+    name: string;
+    dataType: string;
+    options?: { id: string; name: string; color: string; description: string }[];
+}
+
+interface ItemNode {
+    id: string;
+    type: string;
+    isArchived: boolean;
+    createdAt: string;
+    updatedAt: string;
+    fieldValues: {
+        totalCount: number;
+        nodes: { text?: string; name?: string; optionId?: string; field: { id: string; name: string; dataType: string } }[];
+        pageInfo: { hasNextPage: boolean; endCursor: string };
+    };
+    content: {
+        id: string;
+        title: string;
+        url: string;
+        body: string;
+        state?: string;
+        number?: number;
+        createdAt?: string;
+        updatedAt?: string;
+        closedAt?: string | null;
+        author?: { login: string };
+        assignees?: { totalCount: number; nodes: any[] };
+        labels?: { totalCount: number; nodes: { id: string; name: string; color: string }[] };
+        milestone?: any;
+        repository?: { id: string; name: string; owner: { login: string } };
+    };
+}
+
+export interface GitHubProjectData {
+    id: string;
+    title: string;
+    url: string;
+    shortDescription: string | null;
+    public: boolean;
+    closed: boolean;
+    readme: string | null;
+    owner: { login: string };
+    createdAt: string;
+    updatedAt: string;
+    fields: {
+        totalCount: number;
+        nodes: FieldNode[];
+        pageInfo: { hasNextPage: boolean; endCursor: string };
+    };
+    items: {
+        totalCount: number;
+        nodes: ItemNode[];
+        pageInfo: { hasNextPage: boolean; endCursor: string };
+    };
+}

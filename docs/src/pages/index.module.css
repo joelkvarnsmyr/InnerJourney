@@ -12,16 +12,15 @@
 .conceptSection, .communityCtaSection { background-color: #fffaf7; } /* Ljus orange/beige */
 
 /* Generell container-stil för INNEHÅLLET inom sektionerna */
-/* Notera: Docusaurus 'container'-klass används ofta också via clsx */
 .sectionContainer {
   padding: 2rem 0;
-  max-width: 1140px; /* Standardbredd */
+  max-width: 1140px;
   margin: 0 auto;
 }
 
 /* Generell rubrikstil H2 inom sektionerna */
 .sectionTitle {
-  color: #ff6f61; /* Primär accent */
+  color: #ff6f61;
   font-size: 2.8rem;
   margin-bottom: 1.5rem;
   text-align: center;
@@ -38,12 +37,14 @@
   max-width: 780px;
   margin: 0 auto 1.5rem auto;
 }
-/* Stil för fet text (<strong>) */
 .sectionText strong {
   font-weight: 600;
   color: #333;
 }
-/* Stil för länkar inuti text */
+.sectionText em { /* Ny regel för kursiv */
+  font-style: italic;
+  color: #444;
+}
 .sectionText a, .linkStyled {
   color: #ff6f61;
   text-decoration: none;
@@ -54,14 +55,24 @@
   text-decoration: underline;
   color: #e15a4f;
 }
-
+/* Tillval: Stöd för listor */
+.sectionText ul, .sectionText ol {
+  max-width: 780px;
+  margin: 0 auto 1.5rem auto;
+  text-align: left;
+  padding-left: 2rem;
+}
+.sectionText li {
+  color: #444;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
 
 /* --- Core Philosophy Section --- */
 .coreSection { padding-bottom: 4.5rem; }
-.coreContainer { max-width: 880px; } /* Specifik smalare container */
-.coreSection .sectionTitle { font-size: 2.6rem; margin-bottom: 2rem;}
+.coreContainer { max-width: 880px; }
+.coreSection .sectionTitle { font-size: 2.6rem; margin-bottom: 2rem; }
 .coreSection .sectionText { font-size: 1.25rem; }
-
 
 /* --- Concept Section --- */
 .conceptGrid {
@@ -69,12 +80,12 @@
   grid-template-columns: 1fr;
   gap: 2.5rem;
   margin-top: 3rem;
-  max-width: 960px; /* Begränsa bredden på grid */
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (min-width: 768px) {
-  .conceptGrid { grid-template-columns: 1fr 1fr; } /* Två kolumner */
+  .conceptGrid { grid-template-columns: 1fr 1fr; }
 }
 
 .conceptItem {
@@ -83,31 +94,30 @@
   gap: 1.5rem;
   text-align: left;
   padding: 1.5rem;
-  background-color: #ffffff; /* Vit bakgrund för korten */
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  border-left: 4px solid #ffb36b; /* Sekundär accent */
+  border-left: 4px solid #ffb36b;
 }
 .conceptIcon {
   font-size: 2.2rem;
-  color: #ff9f43; /* Matchar kantlinje */
+  color: #ff9f43;
   margin-top: 0.2rem;
   line-height: 1;
 }
-.conceptItemTitle { /* Klassnamn från TSX */
+.conceptItemTitle {
   font-size: 1.25rem;
   color: #333;
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
-.conceptItemText { /* Klassnamn från TSX */
+.conceptItemText {
   font-size: 1rem;
   line-height: 1.6;
   color: #555;
   margin-bottom: 0;
 }
-
 
 /* --- Pathways Section --- */
 .pathwaysSection { background-color: #ffffff; }
@@ -118,7 +128,7 @@
   margin-top: 3rem;
 }
 .pathwayCard {
-  background-color: #fffaf7; /* Ljus orange bakgrund för korten */
+  background-color: #fffaf7;
   border-radius: 12px;
   padding: 2.5rem 1.8rem;
   text-align: center;
@@ -129,37 +139,68 @@
   border: 1px solid #fff0e8;
   transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
 }
-/* Hover hanteras av Framer Motion */
 .pathwayIcon { font-size: 2.8rem; margin-bottom: 1.25rem; color: #ff6f61; line-height: 1; }
 .pathwayTitle { color: #333; font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600; }
-.pathwayText { color: #555; font-size: 1rem; line-height: 1.7; margin-bottom: 1.8rem; flex-grow: 1; }
+.pathwayText {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+  flex-grow: 1;
+}
+.pathwayText em { /* Ny regel för kursiv */
+  font-style: italic;
+  color: #555;
+}
 .pathwayButton {
-  background: #ff6f61; color: #ffffff; border: none; padding: 0.8rem 1.8rem;
-  font-weight: 500; font-size: 1rem; border-radius: 50px; cursor: pointer;
-  transition: all 0.2s ease; text-decoration: none; display: inline-block; margin-top: auto;
+  background: #ff6f61;
+  color: #ffffff;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: auto;
 }
 .pathwayButton:hover { background: #e15a4f; transform: scale(1.03); }
 
-/* --- Blog Highlights Section --- */
-/* === STILAR FÖR BLOG HIGHLIGHTS ÄR BORTTAGNA HÄRIFRÅN === */
-/* === De finns nu i BlogHighlights.module.css === */
-
-
 /* --- Community CTA Section --- */
 .communityCtaSection { background-color: #fffaf7; }
-.communityContainer { max-width: 800px; } /* Specifik smalare container */
-.communityCtaSection .sectionTitle { font-size: 2.5rem; color: #e15a4f; } /* Mörkare orange */
+.communityContainer { max-width: 800px; }
+.communityCtaSection .sectionTitle { font-size: 2.5rem; color: #e15a4f; }
 .communityCtaSection .sectionText { font-size: 1.15rem; }
 
+/* Övriga stilar (discordButton, media queries) behöver ingen ändring */
 .discordButton {
-  background-color: #5865F2; color: #ffffff; border: none; padding: 1rem 2.2rem;
-  font-weight: 600; font-size: 1.1rem; border-radius: 8px; transition: all 0.3s ease;
-  cursor: pointer; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); text-decoration: none;
-  display: inline-flex; align-items: center; gap: 0.5em;
+  background-color: #5865F2;
+  color: #ffffff;
+  border: none;
+  padding: 1rem 2.2rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
 }
-.discordButton:hover { background-color: #4752C4; transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); }
-.externalIcon { font-size: 1.1em; line-height: 1; display: inline-block; }
-
+.discordButton:hover {
+  background-color: #4752C4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.externalIcon {
+  font-size: 1.1em;
+  line-height: 1;
+  display: inline-block;
+}
 
 /* --- Media Queries --- */
 @media screen and (max-width: 996px) {
@@ -168,9 +209,8 @@
   .coreSection .sectionTitle { font-size: 2.3rem; }
   .coreSection .sectionText { font-size: 1.15rem; }
   .conceptGrid { gap: 2rem; }
-  .pathwaysGrid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;}
+  .pathwaysGrid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
   .pathwayTitle { font-size: 1.4rem; }
-  /* Ingen blogg-specifik MQ behövs här */
   .communityCtaSection .sectionTitle { font-size: 2.2rem; }
 }
 
@@ -182,8 +222,7 @@
   .conceptGrid { grid-template-columns: 1fr; gap: 1.5rem; }
   .conceptItemTitle { font-size: 1.15rem; }
   .conceptItemText { font-size: 0.95rem; }
-  .pathwaysGrid { grid-template-columns: 1fr; gap: 1.5rem;}
+  .pathwaysGrid { grid-template-columns: 1fr; gap: 1.5rem; }
   .pathwayTitle { font-size: 1.3rem; }
-  /* Ingen blogg-specifik MQ behövs här */
   .communityCtaSection .sectionTitle { font-size: 2rem; }
 }

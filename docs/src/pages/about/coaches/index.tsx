@@ -6,6 +6,7 @@ import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import { motion } from 'framer-motion';
 import { translate } from '@docusaurus/Translate';
+import ReactMarkdown from 'react-markdown'; // Importera react-markdown
 import styles from './coaches.module.css';
 
 // --- Animationsvarianter ---
@@ -74,9 +75,12 @@ function WhyInnerJourney() {
                         {translate({ id: 'coaches.why.title', message: 'From Chaos to Clarity: Your New Coaching Hub' })}
                     </Heading>
                 </motion.div>
-                <p className={styles.sectionText}>
-                    {translate({ id: 'coaches.why.text', message: 'Sound familiar? Notes in one document, exercises via email, feedback on SMS or Messenger... It’s time for a change. Inner Journey brings all your client work into <strong>one place</strong>. Deliver a professional experience to your clients and free up your time for what truly matters.' })}
-                </p>
+                <ReactMarkdown className={styles.sectionText}>
+                    {translate({
+                        id: 'coaches.why.text',
+                        message: 'Sound familiar? Notes in one document, exercises via email, feedback on SMS or Messenger... It’s time for a change. Inner Journey brings all your client work into <strong>one place</strong>. Deliver a professional experience to your clients and free up your time for what truly matters.',
+                    })}
+                </ReactMarkdown>
             </div>
         </motion.section>
     );
@@ -163,6 +167,11 @@ function BenefitsForCoaches() {
                         <p>{translate({ id: 'coaches.benefits.centralizedCommunication.text', message: 'All dialogue and feedback are gathered in the journal – professional and easy to follow up.' })}</p>
                     </motion.div>
                     <motion.div className={styles.benefitCard} variants={cardItemVariants} whileHover={{ scale: 1.04, y: -5, transition: { duration: 0.2 } }} whileTap={{ scale: 0.98 }}>
+                        <span className={styles.benefitIcon}>📝</span>
+                        <Heading as="h3">{translate({ id: 'coaches.benefits.createPrograms.title', message: 'Create Your Own Programs' })}</Heading>
+                        <p>{translate({ id: 'coaches.benefits.createPrograms.text', message: 'Design structured programs solo or collaborate with other coaches to combine expertise, like mindfulness and business strategy.' })}</p>
+                    </motion.div>
+                    <motion.div className={styles.benefitCard} variants={cardItemVariants} whileHover={{ scale: 1.04, y: -5, transition: { duration: 0.2 } }} whileTap={{ scale: 0.98 }}>
                         <span className={styles.benefitIcon}>💸</span>
                         <Heading as="h3">{translate({ id: 'coaches.benefits.easyPayments.title', message: 'Easy Payments (Coming Soon!)' })}</Heading>
                         <p>{translate({ id: 'coaches.benefits.easyPayments.text', message: 'Focus on coaching, we’ll handle the rest. Soon, we’ll launch a seamless solution for card payments from clients and easy payouts to you.' })}</p>
@@ -187,9 +196,12 @@ function CoachingPhilosophySection() {
                         {translate({ id: 'coaches.philosophy.title', message: 'Our Philosophy: Guidance, Not Directives' })}
                     </Heading>
                 </motion.div>
-                <p className={styles.sectionText}>
-                    {translate({ id: 'coaches.philosophy.text1', message: '"A platform that, through research-based, holistic tools, guides you to self-discovery and personal development – <strong>without telling you what to do.</strong>"' })}
-                </p>
+                <ReactMarkdown className={styles.sectionText}>
+                    {translate({
+                        id: 'coaches.philosophy.text1',
+                        message: '"A platform that, through research-based, holistic tools, guides you to self-discovery and personal development – <strong>without telling you what to do.</strong>"',
+                    })}
+                </ReactMarkdown>
                 <p className={styles.sectionText}>
                     {translate({ id: 'coaches.philosophy.text2', message: 'We believe in empowering both the client’s and coach’s autonomy. Our tools are designed to support genuine discovery and authentic partnership on the development journey. Does this align with your coaching approach?' })}
                 </p>
@@ -216,6 +228,9 @@ function FutureVisionSection() {
                     </motion.li>
                     <motion.li variants={listItemVariants}>
                         <strong>{translate({ id: 'coaches.future.aiRecording.title', message: 'AI-Supported Recording (Beta)' })}</strong> {translate({ id: 'coaches.future.aiRecording.text', message: 'Record your own meditations and guided sessions directly in the app, with automatic audio enhancement and the option to add background sounds.' })}
+                    </motion.li>
+                    <motion.li variants={listItemVariants}>
+                        <strong>{translate({ id: 'coaches.future.createPrograms.title', message: 'Custom Program Creation' })}</strong> {translate({ id: 'coaches.future.createPrograms.text', message: 'Build structured programs with a drag-and-drop builder, solo or in collaboration with other coaches, to offer clients tailored journeys.' })}
                     </motion.li>
                     <motion.li variants={listItemVariants}>
                         <strong>{translate({ id: 'coaches.future.advancedMatching.title', message: 'Advanced Matching' })}</strong> {translate({ id: 'coaches.future.advancedMatching.text', message: 'Even smarter matching based on deeper profiling to connect you with ideal clients.' })}

@@ -1,4 +1,4 @@
-// docs/src/pages/project/project-boards/status-board/index.tsx
+// src/pages/project/project-boards/status-board/index.tsx
 import React from 'react';
 import type { ReactNode } from 'react';
 import clsx from 'clsx';
@@ -7,6 +7,7 @@ import Heading from '@theme/Heading';
 import styles from './status-board.module.css';
 import { useGroupedGitHubData } from '../../../../hooks/useGroupedGitHubData';
 import GitHubCard from '../../../../components/GitHubCard/GitHubCard';
+import ProjectSummary from '../../../../components/ProjectSummary/ProjectSummary'; // Ny import
 import { ProjectItem } from '../../../api/api';
 
 // Definiera Status-kategoriernas ordning och namn
@@ -20,10 +21,8 @@ const statusCategories: string[] = [
 ];
 
 export default function StatusBoardPage(): ReactNode {
-    // Använd hooken med 'status' som argument för att gruppera efter status
     const { data: groupedData, loading, error } = useGroupedGitHubData('status');
 
-    // Hantera laddning och fel
     if (loading) {
         return (
             <Layout title="Status Board" description="Laddar...">
@@ -60,6 +59,9 @@ export default function StatusBoardPage(): ReactNode {
                     <p>Denna tavla visar uppgifter grupperade efter status (Idé, Backlog, Klar, etc.).</p>
                 </div>
 
+                {/* Lägg till ProjectSummary här */}
+                <ProjectSummary groupedData={groupedData} groupBy="status" />
+
                 <main className={styles.statusBoardGrid}>
                     {statusCategories.map((category) => {
                         const cardsInCategory = groupedData[category] || [];
@@ -77,13 +79,9 @@ export default function StatusBoardPage(): ReactNode {
                                     {category}
                                     <span className={styles.count}>({cardsInCategory.length})</span>
                                 </Heading>
-
                                 <div className={styles.cardContainer}>
                                     {cardsInCategory.map((card: ProjectItem) => (
-                                        <GitHubCard
-                                            key={card.id}
-                                            card={card}
-                                        />
+                                        <GitHubCard key={card.id} card={card} />
                                     ))}
                                     {cardsInCategory.length === 0 && (
                                         <p className={styles.noCards}>Inga kort.</p>

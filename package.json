@@ -2,6 +2,7 @@
   "dependencies": {
     "@fontsource/dm-sans": "^5.2.5",
     "@google-cloud/secret-manager": "^6.0.1",
-    "@octokit/graphql": "^8.2.1"
+    "@octokit/graphql": "^8.2.1",
+    "prism-react-renderer": "^2.4.1"
   }
 }

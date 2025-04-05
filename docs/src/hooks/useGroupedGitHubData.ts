@@ -1,13 +1,11 @@
-// /home/joelkvarnsmyr/projects/innerjourney/docs/src/hooks/useGroupedGitHubData.ts
-import { useState, useEffect } from 'react';
+// src/hooks/useGroupedGitHubData.ts
+import { useState, useEffect, useCallback } from 'react';
 import { fetchGitHubProjectData, GitHubProjectData } from '../api/api';
 
-// Typ för det grupperade resultatet
 export interface GroupedData {
     [key: string]: ProjectItem[];
 }
 
-// Interface för ett transformerat projektitem
 export interface ProjectItem {
     id: string;
     title: string;
@@ -44,21 +42,18 @@ export interface ProjectItem {
     subIssuesProgress?: string;
 }
 
-// Grupperingsnycklar
 export type GroupByKey = 'moscow' | 'status' | 'priority' | 'team' | 'ideaStatus';
 
-// Standardkategorier
 const defaultCategoryLists: { [key in GroupByKey]: string[] } = {
     moscow: ['Must have', 'Should have', 'Could have', "Won't have"],
     status: ['Ideas', 'Backlog', 'Ready', 'In progress', 'In review', 'Done'],
     priority: ['P0', 'P1', 'P2'],
     team: ['Dev', 'Design', 'Admin', 'Backend', 'Frontend', 'Finance', 'UX', 'UX + Dev'],
-    ideaStatus: ['New Idea', 'Under Discussion', 'Evaluated', 'Accepted', 'Rejected'], // Uppdaterade värden
+    ideaStatus: ['New Idea', 'Under Discussion', 'Evaluated', 'Accepted', 'Rejected'],
 };
 
 const UNCATEGORIZED_KEY = 'Okategoriserad';
 
-// Hjälpfunktion för att transformera rådata till ProjectItem
 const transformItem = (item: GitHubProjectData['items']['nodes'][0]): ProjectItem => {
     const fieldValues = item.fieldValues.nodes.reduce((acc, fv) => {
         acc[fv.field.name] = fv.text || fv.number || fv.date || fv.name || fv.title || null;
@@ -102,42 +97,35 @@ const transformItem = (item: GitHubProjectData['items']['nodes'][0]): ProjectIte
     };
 };
 
-/**
- * Custom Hook för att hämta och gruppera GitHub-projektdata dynamiskt
- */
 export function useGroupedGitHubData(groupBy: GroupByKey) {
     const [rawData, setRawData] = useState<GitHubProjectData | null>(null);
     const [groupedData, setGroupedData] = useState<GroupedData>({});
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
+    const [retryCount, setRetryCount] = useState<number>(0);
+
+    const fetchData = useCallback(async () => {
+        setLoading(true);
+        setError(null);
+        try {
+            const data = await fetchGitHubProjectData();
+            setRawData(data);
+            setError(null);
+            setRetryCount(0); // Återställ vid lyckat anrop
+        } catch (err: any) {
+            setError(err.message || 'Ett okänt fel inträffade vid datahämtning.');
+            setRawData(null);
+            if (retryCount < 3) {
+                setTimeout(() => setRetryCount(prev => prev + 1), 2000); // Försök igen efter 2 sekunder
+            }
+        } finally {
+            setLoading(false);
+        }
+    }, [retryCount]);
 
     useEffect(() => {
-        let isMounted = true;
-
-        async function fetchData() {
-            setLoading(true);
-            setError(null);
-            try {
-                const data = await fetchGitHubProjectData();
-                if (isMounted) {
-                    setRawData(data);
-                    setError(null);
-                }
-            } catch (err: any) {
-                if (isMounted) {
-                    setError(err.message || 'Ett okänt fel inträffade vid datahämtning.');
-                    setRawData(null);
-                }
-            } finally {
-                if (isMounted) setLoading(false);
-            }
-        }
-
         fetchData();
-        return () => {
-            isMounted = false;
-        };
-    }, []);
+    }, [fetchData]);
 
     useEffect(() => {
         if (loading || error || !rawData) {
@@ -167,5 +155,5 @@ export function useGroupedGitHubData(groupBy: GroupByKey) {
         setGroupedData(grouped);
     }, [rawData, groupBy, loading, error]);
 
-    return { data: groupedData, loading, error };
+    return { data: groupedData, loading, error, refetch: fetchData };
 }
